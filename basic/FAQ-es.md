@@ -15,13 +15,14 @@ Depende de la proyección que quieras para tu punto de acceso:
 
 Tu nodo debe conectarse a un SN o Super-Nodo y tus dispositivos se conectarán a tu nodo mediante un AP.
 
-### ¿Que es un nodo?
+### ¿Que es un Nodo?
 
 Un nodo es el punto de conexión final de la red al que se le pueden conectar diferentes equipos para dar diferentes servicios. 
 Por ejemplo: tu antena y router forman un nodo, tu conectas a la wifi que da ese router / AP o mediente cable de red. Además puedes conectar un servidor donde alojar una página web.
 
-### ¿Que es un supernodo?
+### ¿Que es un Super-Nodo?
 
+Un SN o Super-Nodo es un nodo dedicado ampliar la rama principal de la red guifi. Requiere una instalación y configuración mas amplia ya que su enlace debe ser mucho mas estable que un nodo.
 
 ### ¿Que es un AP?
 
@@ -41,11 +42,15 @@ Los simbolos significan:
 * Lineas:
 * Estrellas:
 
-### ¿El nodo debe estar apuntando hacia mi antena?
+### ¿El SN al que me conecto debe estar apuntando hacia mi antena?
+
+Cuanto mayor sea la alinación entre los dos puntos mejor será la señal. Normalmente se instalan antenas omnidireccionales para dar una señal de 360º
 
 ### ¿Cómo averiguo si el nodo que está cerca de mí encara hacia mi antena y puede darme una buena señal?
 
-### Qué frecuencia es mejor ¿2.4 Ghz o 5 Ghz?
+### Qué frecuencia es mejor ¿2.4 GHz o 5 GHz?
+
+Actualmente las ciudades estan saturadas de la frecuencia 2.4 GHz por lo que se recomienda usar 5 GHz
 
 ### ¿Puedo conectar mi antena de 5 Ghz a un nodo de 2.4 Ghz o al revés?
 
