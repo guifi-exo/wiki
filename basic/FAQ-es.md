@@ -1,5 +1,7 @@
 ### ¿Qué hardware necesito como mínimo para comenzar?
 
+
+
 ### ¿Necesito una antena y un router?
 Depende de la proyección que quieras para tu punto de acceso:
 
@@ -11,11 +13,19 @@ Depende de la proyección que quieras para tu punto de acceso:
 
 ### ¿A dónde me tengo que conectar?
 
+Tu nodo debe conectarse a un SN o Super-Nodo y tus dispositivos se conectarán a tu nodo mediante un AP.
+
 ### ¿Que es un nodo?
+
+Un nodo es el punto de conexión final de la red al que se le pueden conectar diferentes equipos para dar diferentes servicios. 
+Por ejemplo: tu antena y router forman un nodo, tu conectas a la wifi que da ese router / AP o mediente cable de red. Además puedes conectar un servidor donde alojar una página web.
 
 ### ¿Que es un supernodo?
 
-### ¿Que es un Ap?
+
+### ¿Que es un AP?
+
+AP es la abreviatura de "Access Point" en inglés o "Punto de acceso" en Español. Se hace referencia al punto de acceso que se utiliza para conectar los diferentes dispositivos finales (Móvil, tablet, Ordenador, etc)
 
 ### ¿Qué significan los puntos y estrellas del mapa de conexión?
 Los colores significan:
