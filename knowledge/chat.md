@@ -136,7 +136,7 @@ Extra: Matrix riot desde tor, así no nos preocupamos de ip's ni dominios
 script para instalar
 ====================
 
-
+```
 sudo apt-get install matrix-synapse-angular-client sudo
 
 cp -av /etc/matrix-synapse/conf.d/webclient.yaml /etc/matrix-synapse/conf.d/webclient.yaml.orig
@@ -156,7 +156,7 @@ sudo sed -i 's|enable_registration: False|enable_registration: True|g' -i /etc/m
 #rm -f /etc/matrix-synapse/conf.d/*.orig /etc/matrix-synapse/conf.d/*~
 
 sudo /etc/init.d/matrix-synapse restart
-
+```
 
 pruebas de federación
 =====================
