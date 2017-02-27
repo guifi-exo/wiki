@@ -1,60 +1,59 @@
 # matrix
 
-Backend: Matrix (identidades y datos)
-Granularidad de los permisos, genérico y por sala
-Frontend (visualización):
-Matrix angular client (simple) http://chat.hackmeeting:8008
-Riot.im http://chat.hackmeeting.tgz
-Federación parecida a correo electrónico.
-Ejemplo desde guifi.net: chat local, que se conecta con otros chat locales y/o internet
-Hace bridge con IRC, XMPP (?), Telegram, Rocketchat, etc.
+- Backend: Matrix (identidades y datos).
+- Características: Granularidad de los permisos, genérico y por sala
+- Frontend (visualización):
+    - Matrix angular client (simple) http://chat.hackmeeting:8008
+    - Riot.im http://chat.hackmeeting.tgz
+    - Cliente Android. Enlace apk riot.im: https://f-droid.org/repository/browse/?fdfilter=riot&fdid=im.vector.alpha
+- Federación parecida a correo electrónico.
+- Ejemplo desde guifi.net: chat local, que se conecta con otros chat locales y/o internet
+- Hace bridge con IRC, XMPP (?), Telegram, Rocketchat, etc.
 
+```
 sintaxis:
     @ usuario:servidor
     # canal:servidor
     nota: a veces es opcional poner servidor (no lo tenemos claro :D)
+```
 
 instalación (leer más abajo para más detalles):
-ponemos matrix con cliente angular simple
-si queremos un buen cliente, ponemos apache2 con ficheros estáticos del riot.im
-si DNS configurar SRV para que federe Matrix
-si HTTPS configurar certificado
--------------
+- ponemos matrix con cliente angular simple
+- si queremos un buen cliente, ponemos apache2 con ficheros estáticos del riot.im
+- si DNS configurar SRV para que federe Matrix
 
-Enlace apk riot.im:
-https://f-droid.org/repository/browse/?fdfilter=riot&fdid=im.vector.alpha
+si quieres HTTPS configurar certificado letsencrypt
 
-Chat para Hackmeeting y organizaciones
+## Chat para Hackmeeting y organizaciones
 
 links iniciales:
-https://matrix.org
-https://matrix.org/docs/guides/faq.html
-https://xo.tc/seting-up-matrix-synapse-and-riot-on-debian-8-jessie.html
+- https://matrix.org
+- https://matrix.org/docs/guides/faq.html
+- https://xo.tc/seting-up-matrix-synapse-and-riot-on-debian-8-jessie.html
 server hemos puesto: chat.hackmeeting.tgz
 https://dockr.eurogiciel.fr/blogs/embedded/matrix-debian/
 Este segundo enlace nos ha permitido corregir el error que teníamos con el primer enlace.
-Faltava cambiar una línia de codigo en el fichero del arranque del servicio
+Faltaba cambiar una línia de codigo en el fichero del arranque del servicio
 /etc/init.d/matrix-synapse
 de tener 
-chown $USER:nogroup $PIDFILE
+`chown $USER:nogroup $PIDFILE`
 hemos puesto
-chown $USER:nogroup $PIDFILE /var/lib/$NAME/media
+`chown $USER:nogroup $PIDFILE /var/lib/$NAME/media`
 también ha sido necesario quitar las comas al final de las línias del fichero
-/etc/matrix-synapse/conf.d/webclient.yaml
+`/etc/matrix-synapse/conf.d/webclient.yaml`
 I cambiar el fichero de configuración para habilitar el webclient.
 
 Cliente por defecto
-http://chat.hackmeeting.tgz:8008
+`http://chat.hackmeeting.tgz:8008`
 
 ## BASE DE DATOS
-Por defecto utiliza sqlite3 y el fichero apunta a : 
+
+Por defecto utiliza sqlite3 y el fichero apunta a:
 
 database: "/var/lib/matrix-synapse/homeserver.db"
 podemos utilizar Postgres para mejorar el rendimiento y mejorar la seguridad de los backups
 
 https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst
-
-
 
 ## CLIENTE WEB
 
@@ -90,7 +89,7 @@ dominio
 
 
 
-Extras
+## Extras
 
 notas sueltas:
 apt-get install python-pip
