@@ -1,7 +1,6 @@
 ### ¿Qué hardware necesito como mínimo para comenzar?
 
 
-
 ### ¿Necesito una antena y un router?
 Depende de la proyección que quieras para tu punto de acceso:
 
@@ -53,6 +52,8 @@ Cuanto mayor sea la alinación entre los dos puntos mejor será la señal. Norma
 Actualmente las ciudades estan saturadas de la frecuencia 2.4 GHz por lo que se recomienda usar 5 GHz
 
 ### ¿Puedo conectar mi antena de 5 Ghz a un nodo de 2.4 Ghz o al revés?
+
+No. Antes de comprar el equipo debes tener bien claro a que SN vas a conectarte y a que frecuencia trabaja.
 
 ### ¿Cómo averiguo el tipo de antena que tiene y a que frequencia trabaja el nodo al que quiero conectarme?
 
