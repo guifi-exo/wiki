@@ -52,6 +52,7 @@ Cuanto mayor sea la alinación entre los dos puntos mejor será la señal. Norma
 ### ¿Cómo averiguo si el nodo que está cerca de mí encara hacia mi antena y puede darme una buena señal?
 
 Se puede hacer por aproximaciones. Si te guías por alguien que ya forma parte de guifi o tiene experiencia, la aproximación será mejor. Especialmente, compartir esta información con quien vas a conectar puede ayudar mucho.
+
 1. La más sencilla: hay visibilidad directa entre los nodos.
 2. Comprobar que las elevaciones son apropiadas para las zonas fresnel con esta aplicación. Alerta, no tiene en cuenta edificios, solo terreno. Lo cual lo hace más fiable en entorno rural http://wisp.heywhatsthat.com/
 3. Hacer una prueba de cobertura: comprar una antena, o preguntar en tu comunidad si hay disponible una antena para hacer pruebas, o que un voluntario o instalador nos ayude. Cuanto más realista sea la prueba, mejor aproximación será. Necesitaremos un palo y conexión eléctrica allí donde haremos la prueba. Por ejemplo, durante esta prueba usar la conexión con el uso previsto a ver qué tal funciona. Y tratar de ponerla en la ubicación donde sería la instalación definitiva. Esta es la prueba más fiable, si funciona bien, la instalación final también.
