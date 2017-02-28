@@ -1,3 +1,5 @@
+Es muy probable que hasta que no esté 100% en markdown (y revisado) se vea mejor así: https://raw.githubusercontent.com/guifi-exo/doc/master/knowledge/chat.md
+
 # matrix
 
 - Backend: Matrix (identidades y datos).
