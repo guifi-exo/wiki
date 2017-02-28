@@ -71,4 +71,4 @@ La aplicación de guifi.net es en sí una base de datos gelocalizada que da info
 
 ### ¿Que puede hacer un instalador por mí?
 
-En pocas palabras: garantizar que la instalación va a salir bien. Esto es especialmente importante si el colectivo que gestiona el espacio quiere depositar la confianza de la instalación en alguien que presuntamente lo va a ejecutar correctamente ya sea por su experiencia, certificados, responsabilidad, etc.
+En pocas palabras: garantizar que la instalación va a salir bien. Esto es especialmente importante si el colectivo que gestiona el espacio quiere depositar la confianza de la instalación en alguien que presuntamente lo va a ejecutar de forma profesional y que va a aportar a través de su experiencia, certificados, responsabilidad, reputación, etc.
