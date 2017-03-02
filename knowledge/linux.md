@@ -2,7 +2,7 @@
 
 ## adreçament estàtic
 
-suposem que tenim el rang de guifi de 10.1.1.0/27 en el nostre node, l'enrutador de guifi té la 10.1.1.1 i el servidor la 10.1.1.2
+suposem que tenim el rang de guifi de `10.1.1.0/27` en el nostre node, l'enrutador de guifi té la `10.1.1.1` i el servidor la `10.1.1.2`.
 
 la forma més fàcil d'enrutar el tràfic de guifi cap a guifi és a través d'una ruta estàtica en la interfície a través de l'interfície que està a la xarxa guifi
 
@@ -20,10 +20,9 @@ iface eth0 inet static
 
 ## policy routing
 
-suposem que volem que el tràfic que ve de la IP 192.168.98.2 volem que s'enviï per la 192.168.98.1. I que ho farem a través de la taula1
+suposem que volem que el tràfic que ve de la IP `192.168.98.2` volem que s'enviï per la `192.168.98.1`. I que ho farem a través de la taula1 que la posarem en `252`
 
-afegir la taula1 a les taules de rutes:
-echo "taula1 252" >> /etc/iproute2/rt_tables
+Llavors, afegir `taula1 252` a `/etc/iproute2/rt_tables`
 
 en debian, `/etc/network/interfaces` hauria de ser de l'estil (està incomplet):
 
