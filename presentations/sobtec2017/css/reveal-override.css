@@ -1,0 +1,6 @@
+body:after {
+  content: url(../../assets/guifi-logo.png);
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
