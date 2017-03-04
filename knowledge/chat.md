@@ -61,6 +61,7 @@ https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst
 
 cambiar servidores por defecto; haciéndolo fácil
 
+```
 cp config.sample.json config.json
 en config.json cambiar las lineas
     "default_hs_url": "https://matrix.org",
@@ -68,6 +69,7 @@ en config.json cambiar las lineas
     por
     "default_hs_url": "https://chat.hackmeeting.tgz:8448",
     "default_is_url": "https://chat.hackmeting.tgz",
+```
 más detalles https://github.com/vector-im/vector-web#configjson
 
 si tienes un HTTPS self signed tienes que aceptar el certificado del homeserver matrix
