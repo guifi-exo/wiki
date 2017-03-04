@@ -109,8 +109,8 @@ Instalar cliente vector
 apt-get install apache2
 wget https://vector.im/packages/vector-v0.8.3.tar.gz
 tar xvf vector-v0.8.3.tar.gz
-mv vector-v0.8.3.tar.gz /var/www/html/vector
-chown www-data:www-data /var/www/html/vector
+mv vector-v0.8.3 /var/www/html/vector
+chown www-data:www-data /var/www/html/vector -R
 
 Extra:
 Docker container para probar (se lanza en 2 pasos):
@@ -166,7 +166,7 @@ sudo apt-get install build-essential python2.7-dev libffi-dev \
                      libssl-dev python-virtualenv libjpeg-dev libxslt1-dev
 ```
 
-* Vamos a instalar en homeserver con usuario no privilegiado del sistema:
+* Vamos a instalar el homeserver con un usuario no privilegiado del sistema:
 
 ```
 virtualenv -p python2.7 ~/.synapse
@@ -187,7 +187,7 @@ python -m synapse.app.homeserver \
 
 ```
 
-* Finalmente vamos a crear el primer usuario del sistema
+* Finalmente crearemos el primer usuario del sistema
 
 ```
 source ~/.synapse/bin/activate
@@ -198,6 +198,16 @@ Password:
 Confirm password:
 Success!
 ```
+
+* Para arrancar el homeserver introducimos estos comandos
+
+```
+cd ~/.synapse
+source ./bin/activate
+synctl start 
+```
+
+
 
 pruebas de federación
 =====================
