@@ -109,8 +109,8 @@ Instalar cliente vector
 apt-get install apache2
 wget https://vector.im/packages/vector-v0.8.3.tar.gz
 tar xvf vector-v0.8.3.tar.gz
-mv vector-v0.8.3.tar.gz /var/www/html/vector
-chown www-data:www-data /var/www/html/vector
+mv vector-v0.8.3 /var/www/html/vector
+chown www-data:www-data /var/www/html/vector -R
 
 Extra:
 Docker container para probar (se lanza en 2 pasos):
@@ -130,17 +130,13 @@ Extra: Matrix riot desde tor, así no nos preocupamos de ip's ni dominios
 
 
 
-
-
-
-
 script para instalar
 ====================
 
 ```
-sudo apt-get install matrix-synapse-angular-client sudo
+sudo apt-get install matrix-synapse-angular-client 
 
-cp -av /etc/matrix-synapse/conf.d/webclient.yaml /etc/matrix-synapse/conf.d/webclient.yaml.orig
+sudo cp -av /etc/matrix-synapse/conf.d/webclient.yaml /etc/matrix-synapse/conf.d/webclient.yaml.orig
 
 sudo sed -e 's|,$||g' -i /etc/matrix-synapse/conf.d/webclient.yaml
 
@@ -158,6 +154,60 @@ sudo sed -i 's|enable_registration: False|enable_registration: True|g' -i /etc/m
 
 sudo /etc/init.d/matrix-synapse restart
 ```
+
+Instalación mediante virtualenv partiendo de Debian 8 básico
+============================================================
+
+* Primero satisfacemos las dependencias necesarias:
+
+```
+sudo apt-get install build-essential python2.7-dev libffi-dev \
+                     python-pip python-setuptools sqlite3 \
+                     libssl-dev python-virtualenv libjpeg-dev libxslt1-dev
+```
+
+* Vamos a instalar el homeserver con un usuario no privilegiado del sistema:
+
+```
+virtualenv -p python2.7 ~/.synapse
+source ~/.synapse/bin/activate
+pip install --upgrade setuptools
+pip install https://github.com/matrix-org/synapse/tarball/master
+
+```
+
+* Ahora creamos los archivos de configuración (sustituye tu dominio)
+
+```
+python -m synapse.app.homeserver \
+    --server-name sevilla.guifi.net \
+    --config-path homeserver.yaml \
+    --generate-config \
+    --report-stats=yes
+
+```
+
+* Finalmente crearemos el primer usuario del sistema
+
+```
+source ~/.synapse/bin/activate
+synctl start # if not already running
+register_new_matrix_user -c homeserver.yaml https://localhost:8448
+New user localpart: Usuario1
+Password:
+Confirm password:
+Success!
+```
+
+* Para arrancar el homeserver introducimos estos comandos
+
+```
+cd ~/.synapse
+source ./bin/activate
+synctl start 
+```
+
+
 
 pruebas de federación
 =====================
