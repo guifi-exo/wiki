@@ -59,7 +59,7 @@ https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst
 
 ## CLIENTE WEB
 
-cambiar servidores por defecto; haciéndolo fácil
+cambiar configuración del cliente para que la gente se registre por defecto en tu servidor
 
 ```
 cp config.sample.json config.json
