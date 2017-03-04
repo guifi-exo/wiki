@@ -73,13 +73,24 @@ en config.json cambiar las lineas
 más detalles https://github.com/vector-im/vector-web#configjson
 
 si tienes un HTTPS self signed tienes que aceptar el certificado del homeserver matrix
-siguiente paso: vamos a probar a quitar el HTTPS
 
-Si queremos quitar el https, simplemente cambiamos en el archivo de configuracion 
-  "default_hs_url": "http://192.168.10.19:8008",
+siguiente prueba: quitar el HTTPS, para ello hay que cambiar en el archivo de configuracion a http: 
+
+`"default_hs_url": "http://192.168.10.19:8008",`
  
 Para permitir usuarios invitados, cambiar
-allow_guest_access: True
+
+`allow_guest_access: True`
+
+Si aceptamos invitados, sería conveniente tener una sala acoja a los invitados, crea una sala y ponle estas opciones:
+
+`Who can access this room?
+Anyone who knows the room's link, including guests`
+
+`[X] List this room <domain>'s room directory?`
+
+`Who can read the history?
+Anyone`
 
 ## BRIDGE CLIENTE IRC
 
