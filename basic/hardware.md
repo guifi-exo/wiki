@@ -19,7 +19,7 @@ Recomanem equips de 5 GHz per evitar interferències, especialment en entorns ur
 - ~~Ubiquiti Nanostation 5~~: És un model massa antic, no funcionarà amb mesh/qMp
 - ~~Ubiquiti Nanostation Loco M5~~: No la recomanem, molta gent ha tingut males experiències amb elles, té mala qualitat, pot tenir comportament no esperat.
 - Ubiquiti Nanostation M5 sèrie XM (antiga) o XW (nova): Tenen tota la funcionalitat
-- Alfa Network N5 [1](http://www.ciudadwireless.com/network_802-11an_long-range_outdoor_ap-cpe_built-in_dual-polarity_antenna-p-5585.html): alternativa a Nanostation M5. Contra, no es pot treure el PoE passthrough del port WAN
+- Alfa Network N5 [[1](http://www.ciudadwireless.com/network_802-11an_long-range_outdoor_ap-cpe_built-in_dual-polarity_antenna-p-5585.html)]: alternativa a Nanostation M5. Contra, no es pot treure el PoE passthrough del port WAN
 
 ## Switch
 
