@@ -31,7 +31,29 @@ auto eth0
 iface eth0 #?
     # (...)
     up ip route add table taula1 default via 192.168.98.1
-    up ip rule add from 192.168.98.2 from table taula1
+    up ip rule add from 192.168.98.2 lookup table taula1
     down ip route del table taula1 default via 192.168.98.1
-    down ip rule del from 192.168.98.2 from table taula1
+    down ip rule del from 192.168.98.2 lookup table taula1
 ```
+
+checkers:
+
+```
+# ip route show table taula1
+default via 192.168.98.1 dev eth0 
+```
+
+ip rule list
+
+ip rule s
+
+## queries routing
+
+`ip route show table <taula>`
+
+(abreviació: `ip r s t <taula>`
+
+
+`ip route get <ip>` només consulta la taula main
+
+(abreviació: `ip r g <ip>`

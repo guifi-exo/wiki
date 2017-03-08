@@ -1,3 +1,22 @@
+# ISO image
+
+per defecte el sistema escriu en blocs de 64
+
+```
+cp /path/to/iso /dev/sdc
+sync
+```
+
+Però una memòria flash està estructurada per borrar blocs de 1024k, és millor si adaptem a aquest tamany l'escriptura
+
+`dd if=/path/to/iso of=/dev/sdX bs=1024k conv=fsync`
+
+# Services
+
+## nextcloud
+
+src https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-nextcloud-on-ubuntu-16-04
+
 # Disks
 
 ## SSD
@@ -13,6 +32,16 @@ Un disk SSD Enterprise read intensive permet 0.3 Full Disk Write per Day durant 
 Hi han discs Enterprise que els hi diuen Mix Load amb 3x Full Disk Writes per Day i els que reben la denominació Write Intensive que suporten 10x ( o més) Full Disk Write per Day, en els dos casos durant 5 anys de garantia
 
 Si només és per el SO amb els desktop de 0.1 FDWD durant 3 anys és prou correcte però si hi han BBDD millor un nivell Enterprise...
+
+el important per la durada desl dispositius és la temperatura de treball i les variacions d'aquesta
+
+les variacions afecten més als dispositius electromecanics degut a les dilatacions
+
+però en tots els casos la vida mitja estimada s'escurça a la meitat per cada 10° d'increment de temperatura
+
+això és el MTBF (Mean Time Before Failure) que és completament estadístic i extrapolat i cada fabricant ho fà com li sembla
+
+el SSD d'Intel tenen 5 anys de garantia i 2.000.000 hores de MTBF
 
 # Filesystems
 
