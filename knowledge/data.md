@@ -68,3 +68,15 @@ qcow:
 It would be interesting to evaluate Brtfs as a solution for snapshots and/or as a backup solution
 
 https://btrfs.wiki.kernel.org/index.php/Incremental_Backup
+
+# benchmark
+
+example using `dd` (throughput ssd of trax1)
+```
+dd if=/dev/zero of=/kk bs=1024k count=4k conv=fsync
+4096+0 records in
+4096+0 records out
+4294967296 bytes (4.3 GB) copied, 19.4548 s, 221 MB/s
+```
+
+another interesting advanced tool for benchmarking data is `fio` (flexible I/O tester)
