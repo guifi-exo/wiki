@@ -265,3 +265,5 @@ InvalidAddressError: write() only accepts IP addresses, not hostnames
 # ldap info
 
 necesitamos que autentique contra el ldap de guifi
+
+aquí habla de que hay integración posible con ldap, faltaría más información: https://matrix.org/blog/2016/08/08/synapse-0-17-0-released/
