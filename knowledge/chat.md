@@ -1,3 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [matrix](#matrix)
+  - [Chat para Hackmeeting y organizaciones](#chat-para-hackmeeting-y-organizaciones)
+  - [BASE DE DATOS](#base-de-datos)
+  - [CLIENTE WEB](#cliente-web)
+  - [BRIDGE CLIENTE IRC](#bridge-cliente-irc)
+  - [Extras](#extras)
+- [script para instalar](#script-para-instalar)
+- [Instalación mediante virtualenv partiendo de Debian 8 básico](#instalaci%C3%B3n-mediante-virtualenv-partiendo-de-debian-8-b%C3%A1sico)
+- [pruebas de federación](#pruebas-de-federaci%C3%B3n)
+- [doc federation](#doc-federation)
+- [error de federación](#error-de-federaci%C3%B3n)
+- [ldap info](#ldap-info)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Es muy probable que hasta que no esté 100% en markdown (y revisado) se vea mejor así: https://raw.githubusercontent.com/guifi-exo/doc/master/knowledge/chat.md
 
 # matrix
@@ -243,3 +262,6 @@ error de federación
 ===============
 InvalidAddressError: write() only accepts IP addresses, not hostnames
 
+# ldap info
+
+necesitamos que autentique contra el ldap de guifi
