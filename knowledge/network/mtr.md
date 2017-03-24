@@ -5,7 +5,7 @@ Per exemple, en GNU/Linux en una consola: `mtr 141.1.1.1`, et dira quants salts 
 En windows, descomprimir l'arxiu descarregat, obrir el programa WinMTR.exe, i afegir la IP(en aquest exemple es 141.1.1.1) a on posa `host`. 
 Tambe podeu posar un nom en comtes de IP, per exemple: `mtr guifi.net`.
 
-![captura]()
+![captura](https://github.com/guifi-exo/doc/raw/master/knowledge/network/mtr.jpeg)
 
 obtenir MTR:
 - Per [Windows](http://erebes.exo.cat/mtr/WinMTR-v092.zip)
