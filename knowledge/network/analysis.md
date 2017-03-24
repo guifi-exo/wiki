@@ -28,4 +28,10 @@ in my case, I use it as function _aliased_ in `~/.bash_aliases`:
 
 `alias sws='function _swireshark() { ssh $1 "tcpdump -U -s0 -w - not port 22 || sudo tcpdump -U -s0 -w - not port 22" | wireshark -k -i - }; _swireshark'`
 
-this way, each time I do `sws myHost` (taken from `~/.ssh/config`, starts the capture. sws for me means: Ssh WireShark. Seems that is available and no software is using it.
+this way, for each capture I do:
+
+`sws myHost`
+
+where:
+- `myHost` is taken from `~/.ssh/config`
+- sws for me means: Ssh WireShark
