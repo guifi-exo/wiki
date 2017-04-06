@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 
-# check if IPs of a network have good resolution of reverse and resolution of reverse
 # author: guifipedro
 # license: GPLv3+
+
+# What is about? This tool checks if IPs of a network have good resolution of reverse and resolution of reverse
+# TODO:
+# - Allow unique IP address as argument
+# - Allow IPv6
 
 # requirement: apt-get install python3-netaddr
 import netaddr
