@@ -5,6 +5,8 @@
 
 # What is about? This tool checks if IPs of a network have good resolution of reverse and resolution of reverse
 
+# As argument supports: an IPv4, an IPv6, a network in CIDR notation IPv4, a network in CIDR notation IPv6
+
 import ipaddress
 
 # used to exit program -> http://stackoverflow.com/questions/73663/terminating-a-python-script
