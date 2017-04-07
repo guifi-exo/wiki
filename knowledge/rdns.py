@@ -4,12 +4,8 @@
 # license: GPLv3+
 
 # What is about? This tool checks if IPs of a network have good resolution of reverse and resolution of reverse
-# TODO:
-# - Allow unique IP address as argument
-# - Allow IPv6
 
-# requirement: apt-get install python3-netaddr
-import netaddr
+import ipaddress
 
 # used to exit program -> http://stackoverflow.com/questions/73663/terminating-a-python-script
 import sys
@@ -20,12 +16,10 @@ from dns.exception import DNSException,Timeout
 # parse argument
 import argparse
 
-#sys.exit(0)
-
 parser = argparse.ArgumentParser()
-parser.add_argument("net", help="put ip you want to test")
+parser.add_argument("obj", help="put ip or network (CIDR notation) you want to test")
 args = parser.parse_args()
-net = args.net
+obj = args.obj
 
 print("""
 Note: Network identity and broadcast are not evaluated
@@ -33,13 +27,30 @@ Error means that the IP does not comply with RFC1912 in that part:
 PTR records must point back to a valid A record, not a alias defined by a CNAME.
 """)
 
-try:
-    # http://stackoverflow.com/questions/4525492/python-list-of-addressable-ip-addresses/4545864#4545864
-    # list IPs
-    network = list(netaddr.IPNetwork(net).iter_hosts())
-except AddFormatError:
-    print("Error1: You entered an invalid network as argument of this program. Should be something like a.b.c.d/e")
-    sys.exit(1)
+detect_cidr = obj.find('/')
+
+ipv_version=None
+
+# network of 1 IP :)
+if detect_cidr == -1:
+    try:
+        network = ipaddress.ip_address(obj)
+        ip_version = network.version
+        network = iter([str(network)])
+    except ValueError:
+        print("Error1: You entered an invalid network as argument of this program. Should be something like a.b.c.d/e")
+        sys.exit(1)
+
+# some IPs (a network)
+else:
+    try:
+        network = ipaddress.ip_network(obj, strict=False)
+        ip_version = network.version
+    except ValueError:
+        print("Error1: You entered an invalid network as argument of this program. Should be something like a.b.c.d/e")
+        sys.exit(1)
+
+network = iter(network)
 
 for ip in network:
     # dns lookups -> https://spareclockcycles.org/2010/04/13/reverse-dns-lookups-with-dnspython.html
@@ -65,7 +76,10 @@ for ip in network:
 
     ip_r_ip=None
     try:
-        ip_r_ip = str(resolver.query(r_ip,"A")[0])
+        if ip_version == 4:
+            ip_r_ip = str(resolver.query(r_ip,"A")[0])
+        else:
+            ip_r_ip = str(resolver.query(r_ip,"AAAA")[0])
     except DNSException:
         print(" ERROR  | %s => %s => NULL" % (ip, r_ip))
     else:
