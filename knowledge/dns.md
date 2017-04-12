@@ -4,13 +4,11 @@ Enlloc de mirar un DNS com els de proveïdors externs que probablement van molt 
 
 # Resolució inversa de DNS
 
-Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt)
+Qui s'encarrega de la resolució inversa d'una IP és el seu propietari o titular. Es pot demanar a aquesta persona o organització (normalment és qui ens ha venut el servei d'Internet) que ens doni una o vàries resolucions inverses concretes (o que hi hagi una resolució genèrica per un rang d'IPs). També es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): [RFC2317](http://ietf.org/rfc/rfc2317.txt)
 
-Qui s'encarrega de la resolució inversa del DNS és el titular de les IPs. Es pot demanar al titular que hi hagi una resolució concreta (o que hi hagi una resolució genèrica per un rang d'IPs). També es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): http://ietf.org/rfc/rfc2317.txt
+Algú ens ha dit que has de tenir com a mínim un /24 en el cas de IPv4. Confirmem veracitat de la info en el [RFC2317](http://ietf.org/rfc/rfc2317.txt)
 
-Algú ens ha dit que has de tenir com a mínim un /24 en el cas de IPv4. Confirmem veracitat de la info en el RFC2317
-
-Hi ha serveis que es poden queixar de una mala resolució inversa:
+Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt) hi han serveis (inclòs el sistema dns mateix) que es poden tenir un mal funcionament per una mala resolució inversa:
 
 ## ssh
 
