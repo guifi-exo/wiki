@@ -6,9 +6,9 @@ Enlloc de mirar un DNS com els de proveïdors externs que probablement van molt 
 
 Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt)
 
-Per delegar la resolució inversa de DNS (PTR) has de tenir com a mínim un /24 (segons el protocol de DNS)
+Qui s'encarrega de la resolució inversa del DNS és el titular de les IPs. Es pot demanar al titular que hi hagi una resolució concreta, o es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): http://ietf.org/rfc/rfc2317.txt
 
-Qui s'encarrega de la resolució inversa del DNS és el titular de les IPs. Es pot demanar al titular que hi hagi una resolució concreta
+Algú ens ha dit que has de tenir com a mínim un /24 en el cas de IPv4. Confirmem veracitat de la info en el RFC2317
 
 Hi ha serveis que es poden queixar de una mala resolució inversa:
 
