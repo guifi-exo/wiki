@@ -8,7 +8,11 @@ Qui s'encarrega de la resolució inversa d'una IP és el seu propietari o titula
 
 Algú ens ha dit que has de tenir com a mínim un /24 en el cas de IPv4. Confirmem veracitat de la info en el [RFC2317](http://ietf.org/rfc/rfc2317.txt)
 
-Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt) hi han serveis (inclòs el sistema dns mateix) que es poden tenir un mal funcionament per una mala resolució inversa:
+Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt) hi han serveis (inclòs el sistema dns mateix) que es poden tenir un mal funcionament per una mala resolució inversa
+
+Per tal de fer comprovacions a les vostres IPs utilitzeu l'eina [rdns.py](https://github.com/guifi-exo/doc/blob/master/knowledge/rdns.py)
+
+extra: https://www.dnstree.com/cat/exo/
 
 ## ssh
 
@@ -39,6 +43,3 @@ dig +trace exo.cat
 
 Amb el mail (postfix) m'han dit que mail també (reputació), però no sé exactament com, per què
 
-Per tal de fer comprovacions als vostres rangs, proveu de comprovar-ho amb l'eina [rdns.py](https://github.com/guifi-exo/doc/blob/master/knowledge/rdns.py)
-
-extra: https://www.dnstree.com/cat/exo/
