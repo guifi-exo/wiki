@@ -6,21 +6,40 @@ Enlloc de mirar un DNS com els de proveïdors externs que probablement van molt 
 
 Segons [RFC1912](https://www.ietf.org/rfc/rfc1912.txt)
 
-Qui s'encarrega de la resolució inversa del DNS és el titular de les IPs. Es pot demanar al titular que hi hagi una resolució concreta, o es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): http://ietf.org/rfc/rfc2317.txt
+Qui s'encarrega de la resolució inversa del DNS és el titular de les IPs. Es pot demanar al titular que hi hagi una resolució concreta (o que hi hagi una resolució genèrica per un rang d'IPs). També es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): http://ietf.org/rfc/rfc2317.txt
 
 Algú ens ha dit que has de tenir com a mínim un /24 en el cas de IPv4. Confirmem veracitat de la info en el RFC2317
 
 Hi ha serveis que es poden queixar de una mala resolució inversa:
 
-**ssh**
+## ssh
+
+als logs apareix aquest missatge ja que ssh fa moltes comprovacions per verificar qui és qui vol entrar:
 
 `Xxx x xx:xx:xx si sshd[xxxxx]: reverse mapping checking getaddrinfo for xxx-xx-xx-xx-exo.ip4.guifi.net [xxx.xx.xx.xx] failed - POSSIBLE BREAK-IN ATTEMPT!`
 
-**dns**
+## dns
 
-`dig: couldn't get address for 'xxx-xx-xx-xxx-exo.ip4.guifi.net': no more`
+afecta a la reputació del dns, ens ha passat que amb dinahosting, quan poses la IP te la converteix a resolució inversa, i evidentment quan fas consultes intenta fer resolució de la resolució inversa
 
-**mail** m'han dit que mail també, però no sé exactament com, per què
+quan resolució inversa estava malament:
+```
+dig +trace exo.cat
+(...)
+dig: couldn't get address for 'xxx-xx-xx-xxx-exo.ip4.guifi.net': no more
+```
+
+quan la vam arreglar:
+```
+dig +trace exo.cat
+(...)
+;; Received 198 bytes from xxx.xx.xx.xxx#53(xxx-xx-xx-xxx-exo.ip4.guifi.net) in 7 ms
+
+```
+
+## mail
+
+Amb el mail (postfix) m'han dit que mail també (reputació), però no sé exactament com, per què
 
 Per tal de fer comprovacions als vostres rangs, proveu de comprovar-ho amb l'eina [rdns.py](https://github.com/guifi-exo/doc/blob/master/knowledge/rdns.py)
 
