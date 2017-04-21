@@ -4,6 +4,10 @@
 
 - https://arstechnica.com/security/2017/04/chrome-firefox-and-opera-users-beware-this-isnt-the-apple-com-you-want/
 
+# curl vulnerabilities
+ 
+https://jordaneldredge.com/blog/one-way-curl-pipe-sh-install-scripts-can-be-dangerous/
+
 # entropy
 
 The plain simple reality of entropy Or how I learned to stop worrying and love urandom https://media.ccc.de/v/32c3-7441-the_plain_simple_reality_of_entropy#video&t=6
