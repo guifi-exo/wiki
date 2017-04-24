@@ -12,6 +12,14 @@ Actualment és un arbre de 5 branques:
 
 - La branca experimental. Un laboratori d'experimentació. Guifi dona flexibilitat, i això l'ha fet escenari de diferents projectes de recerca europeus, universitaris, etc.
 
+# Por qué guifi está tan extendido en los pueblos?
+
+Porque los operadores de telecomunicacions son esencialmente grandes multinacionales y no invierten en zonas rurales
+
+artículos que reflejan la situación:
+
+- [Cero G, el mapa de la España sin wifi](http://www.elmundo.es/sociedad/2017/04/24/58fa3de946163f36758b4639.html)
+
 # De què depén que em pugui connectar a guifi?
 
 ## Ubicació i cobertura
