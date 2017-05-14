@@ -3,6 +3,8 @@
 - https://thejh.net/misc/website-terminal-copy-paste
 
 - https://arstechnica.com/security/2017/04/chrome-firefox-and-opera-users-beware-this-isnt-the-apple-com-you-want/
+    - chrome/chromium: patched!
+    - firefox: they won't fix. but in about config you can put "network.IDN_show_punycode" to true
 
 # curl vulnerabilities
  
