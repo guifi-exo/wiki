@@ -8,5 +8,9 @@
   - [vozelia](https://www.vozelia.com/es/en/) per empreses?
   - [voztelecom](https://www.voztele.com/) ?
   - sipgate [uk](https://www.sipgatebasic.co.uk/) [de](https://www.sipgate.de/) ?
+  - [infocaller](https://infocaller.com/?ch=INFOE) empresas?
+  - [polartel](http://polartel.es) empresas?
+  - [lista "todos" los operadores voip españa](https://blog.sinologic.net/2014-03/lista-todos-operadores-voip-espana.html)
+  - [nubip](http://www.nubip.com/contacto/]) has de posar-te en contacte amb ells (i preguntar per les tarifes); per particulars m'han dit que OK
 - sin pasarela a telefonía tradicional
   - [ostel](https://ostel.co/faq)
