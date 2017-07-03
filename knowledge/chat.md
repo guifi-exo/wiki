@@ -267,3 +267,39 @@ InvalidAddressError: write() only accepts IP addresses, not hostnames
 necesitamos que autentique contra el ldap de guifi
 
 aquí habla de que hay integración posible con ldap, faltaría más información: https://matrix.org/blog/2016/08/08/synapse-0-17-0-released/
+
+# script para actualizar la web estática
+
+asumimos que el riot está en /var/www/html (y el servidor web apunta aquí)
+
+```
+#!/bin/bash
+
+# thanks MTRNord (@MTRNord:matrix.ffslfl.net)
+
+cd /var/www
+mv html html.bkp
+mkdir html
+cd html
+
+content=$(curl -s https://api.github.com/repos/vector-im/riot-web/releases/latest)
+package_id=$(jq -r '.id' <<<"$content")
+if [ "$package_id" != "$(cat ./riot_version-id)" ]
+  then
+    assets=$(jq -r '.assets' <<<"$content")
+    download_asset=$(jq -r '.[0]' <<<"$assets")
+    content_type=$(jq -r '.content_type' <<<"$download_asset")
+    if [ "$content_type" == "application/x-gzip" ]
+      then
+        download=$(jq -r '.browser_download_url' <<<"$download_asset")
+        echo "New Version found starting download"
+        curl -Ls "$download" | tar xz --strip-components=1 -C ./
+        echo "$package_id" >> ./riot_version-id
+      else
+        echo "Found a new version but first download link doesn't match needed file format"
+    fi
+fi
+
+cd ..
+chown www-data:www-data html
+```
