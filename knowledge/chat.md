@@ -293,6 +293,7 @@ if [ "$package_id" != "$(cat ./riot_version-id)" ]
         download=$(jq -r '.browser_download_url' <<<"$download_asset")
 
         cd /var/www
+        rm -rf html.bkp
         mv html html.bkp
         mkdir html
         cd html
