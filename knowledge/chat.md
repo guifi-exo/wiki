@@ -14,6 +14,7 @@
 - [doc federation](#doc-federation)
 - [error de federación](#error-de-federaci%C3%B3n)
 - [ldap info](#ldap-info)
+- [script para actualizar la web estática](#script-para-actualizar-la-web-est%C3%A1tica)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
