@@ -278,10 +278,8 @@ asumimos que el riot está en /var/www/html (y el servidor web apunta aquí)
 
 # thanks MTRNord (@MTRNord:matrix.ffslfl.net)
 
-cd /var/www
-mv html html.bkp
-mkdir html
-cd html
+# ir a ruta de riot estatico
+cd /var/www/html
 
 content=$(curl -s https://api.github.com/repos/vector-im/riot-web/releases/latest)
 package_id=$(jq -r '.id' <<<"$content")
@@ -293,14 +291,24 @@ if [ "$package_id" != "$(cat ./riot_version-id)" ]
     if [ "$content_type" == "application/x-gzip" ]
       then
         download=$(jq -r '.browser_download_url' <<<"$download_asset")
+
+        cd /var/www
+        mv html html.bkp
+        mkdir html
+        cd html
+
         echo "New Version found starting download"
         curl -Ls "$download" | tar xz --strip-components=1 -C ./
         echo "$package_id" >> ./riot_version-id
+
+        cd ..
+        chown -R www-data:www-data html
+
       else
         echo "Found a new version but first download link doesn't match needed file format"
     fi
-fi
 
-cd ..
-chown www-data:www-data html
+  else
+    echo "Already latest version"
+fi
 ```
