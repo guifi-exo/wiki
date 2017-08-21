@@ -10,7 +10,7 @@ Para cada router:
 2. El mismo ESSID, por ejemplo guifi.net-CentroSocialLaPalma
 3. Contraseña sí, no? Lo mismo para todos
 4. Seleccionar diferentes canales wifi libres (cuanto más espacio entre ellos, mejor)
-5. Deshabilitar el DHCP, y conectarlos al punto central que da Internet por el conector amarillo, switch (no por el conector de Internet). Esto dificultará el acceso del wifi-router (que habrá que usar direccionamiento estático para acceder), pero de esta forma no interferirá en absoluto con otras redes.
+5. Deshabilitar el DHCP, y conectarlos al punto central que da Internet por la LAN: uno de los 4 conectores amarillos (puede haber variaciones, no son 4, no son amarillos, ...), pero **no** por el conector a Internet, WAN, Azul. Esto dificultará el acceso al wifi-router pero de esta forma no interferirá en absoluto con otras redes. Cuando nos haga falta acceder a este router en concreto necesitaremos direccionamiento estático para acceder, en GNU/Linux y por consola sería algo así `ip add address 192.168.1.2/24 dev <interfaz>`.
 
 # Utilidades
 
