@@ -23,7 +23,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-debian server template
+debian server template and operations
 
 # Installed applications and related config
 
