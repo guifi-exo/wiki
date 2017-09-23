@@ -64,8 +64,7 @@ storage options:
 - virtio
 - writeback
 
-cpu options:
-- host
+cpu options: `host` (use instead `kvm64` if you have High Availability and you want to perform hot migrations)
 
 ram options:
 - uncheck ballooning [discussion required] enabled by default by proxmox. but disabled at the moment
