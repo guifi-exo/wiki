@@ -2,6 +2,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
+- [Persistent firewall](#persistent-firewall)
+  - [IPv4](#ipv4)
+  - [IPv6](#ipv6)
+  - [Config file](#config-file)
+  - [IPv4 vs IPv6](#ipv4-vs-ipv6)
 - [Installed applications and related config](#installed-applications-and-related-config)
 - [APT sources](#apt-sources)
 - [Credentials](#credentials)
