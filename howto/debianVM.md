@@ -25,6 +25,62 @@
 
 debian server template and operations
 
+# Persistent firewall
+
+src https://wiki.debian.org/iptables
+
+## IPv4
+
+```
+cat > /etc/network/if-pre-up.d/firewall4 <<EOF
+#!/bin/sh
+/sbin/iptables-restore < /etc/firewall4
+EOF
+chmod +x /etc/network/if-pre-up.d/firewall4
+```
+
+save current rules: `iptables-save > /etc/firewall4`
+
+load current rules: `iptables-restore < /etc/firewall4`
+
+## IPv6
+
+```
+cat > /etc/network/if-pre-up.d/firewall6 <<EOF
+#!/bin/sh
+/sbin/ip6tables-restore < /etc/firewall6
+EOF
+chmod +x /etc/network/if-pre-up.d/firewall6
+```
+
+save current rules: `ip6tables-save > /etc/firewall4`
+
+load current rules: `ip6tables-restore < /etc/firewall4`
+
+## Config file
+
+example default content of /etc/firewall4 or /etc/firewall6
+
+```
+*mangle
+# content about mangle (?) mss tcp?
+COMMIT
+
+*filter
+# input, output or forward
+COMMIT
+
+*nat
+# content about nat: dest nat, src nat or masquerade
+COMMIT
+```
+
+## IPv4 vs IPv6
+
+| IPv4 | IPv6 |
+| ---- | ---- |
+| `-p icmp` | `-p ipv6-icmp` |
+
 # Installed applications and related config
 
 `apt-get install vim tmux screen`
