@@ -86,6 +86,15 @@ COMMIT
 EOF
 ```
 
+example with comment
+
+```
+*nat
+# content about nat: dest nat, src nat or masquerade
+-A POSTROUTING -o eth0 -j MASQUERADE -m comment --comment "from VPN access to guifi"
+COMMIT
+```
+
 ## IPv4 vs IPv6
 
 | IPv4 | IPv6 |
