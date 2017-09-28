@@ -255,6 +255,6 @@ it resizes. Grr!
 
 You can avoid that adding to `/etc/default/grub` option `bochs_drm.fbdev=off` src https://unix.stackexchange.com/questions/346090/disable-framebuffer-in-qemu-guests
 
-## summary: all options
+## summary: all kernel options
 
-GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 biosdevname=0 verbose bochs_drm.fbdev=off"
+`GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 biosdevname=0 verbose bochs_drm.fbdev=off"`
