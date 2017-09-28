@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
+- [Default credentials (change)](#default-credentials-change)
 - [Persistent firewall](#persistent-firewall)
   - [IPv4](#ipv4)
   - [IPv6](#ipv6)
@@ -9,7 +10,6 @@
   - [IPv4 vs IPv6](#ipv4-vs-ipv6)
 - [Installed applications and related config](#installed-applications-and-related-config)
 - [APT sources](#apt-sources)
-- [Credentials](#credentials)
 - [Resource policy](#resource-policy)
 - [Disk policy](#disk-policy)
   - [Create](#create)
@@ -24,11 +24,17 @@
   - [network interfaces](#network-interfaces)
   - [I want to know what's going on](#i-want-to-know-whats-going-on)
   - [novnc proxmox resize issue](#novnc-proxmox-resize-issue)
-  - [summary: all options](#summary-all-options)
+  - [summary: all kernel options](#summary-all-kernel-options)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 debian server template and operations
+
+# Default credentials (change)
+
+- hostname: host
+- user: user (without sudo). root account activated
+- password: debian
 
 # Persistent firewall
 
@@ -120,12 +126,6 @@ deb-src http://security.debian.org/debian-security stretch/updates main
 deb http://deb.debian.org/debian/ stretch-updates main
 deb-src http://deb.debian.org/debian/ stretch-updates main
 ```
-
-# Credentials
-
-- hostname: host
-- user: user (without sudo). root account activated
-- password: debian
 
 # Resource policy
 
