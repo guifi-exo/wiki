@@ -36,6 +36,8 @@ src https://wiki.debian.org/iptables
 
 ## IPv4
 
+init persistent firewall4:
+
 ```
 cat > /etc/network/if-pre-up.d/firewall4 <<EOF
 #!/bin/sh
@@ -49,6 +51,8 @@ save current rules: `iptables-save > /etc/firewall4`
 load current rules: `iptables-restore < /etc/firewall4`
 
 ## IPv6
+
+init persistent firewall6:
 
 ```
 cat > /etc/network/if-pre-up.d/firewall6 <<EOF
@@ -64,9 +68,10 @@ load current rules: `ip6tables-restore < /etc/firewall4`
 
 ## Config file
 
-example default content of /etc/firewall4 or /etc/firewall6
+init with empty content (thanks https://unix.stackexchange.com/questions/88490/how-do-you-use-output-redirection-in-combination-with-here-documents-and-cat)
 
 ```
+cat <<EOF | tee /etc/firewall4 /etc/firewall6 &> /dev/null
 *mangle
 # content about mangle (?) mss tcp?
 COMMIT
@@ -78,6 +83,7 @@ COMMIT
 *nat
 # content about nat: dest nat, src nat or masquerade
 COMMIT
+EOF
 ```
 
 ## IPv4 vs IPv6
