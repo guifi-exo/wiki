@@ -1,4 +1,7 @@
-**Article destacat**: [Integració BMX6 i BGP amb LEDE](https://github.com/guifi-exo/doc/blob/master/knowledge/bmx6-bgp-lede.md)
+**Articles destacats**:
+
+- [Integració BMX6 i BGP amb LEDE](bmx6-bgp-lede.md)
+- [Servei d'accés a Internet per L2TP Aggregation Architecture (LAA)](arquitectura-laa-acces-inet.md)
 
 # TODO backup / other refs
 
