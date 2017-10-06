@@ -109,8 +109,8 @@ ifconfig_vtnet1="192.168.31.7/24"
 
 El LNS era a ITConic (185.32.16.105) amb un Router OS físic. Les configuracions eren les estàndard per un LNS L2TP. En aquest cas s'ha activat un client PPPoE en un PC connectat a la VLAN d'accés del LAC. Un cop enllestit el procés d'autenticació, hem obtingut el rendiment de la connexió PPPoE que es pot veure a la imatge.
 
-![speedtest](/img/laa_speedtest)
+![speedtest](./img/laa_speedtest)
 
 L'encapsulament ocupa entre 16 i 20 bytes extra corresponents a la capçelera UDP, L2TP i PPP. Suman-t'hi els 20 bytes de la capçelera IP obtenim una MTU d'usuari de entre 1464 i 1460. Podem veure un detall del contingut d'un paquet enviat per l'usuari.
 
-![wireshark-lac](/img/laa_wireshark-lac)
+![wireshark-lac](./img/laa_wireshark-lac)
