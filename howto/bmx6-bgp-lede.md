@@ -18,7 +18,7 @@
 
 # Integració entre BMX6 i BGP en dispositius basats en LEDE
 
-Autor: Víctor
+Autor: Víctor Oncins
 
 Les xarxes basades en el protocol [BMX6](http://bmx6.net/projects/bmx6) o mesh en el sentit més ampli, constitueixen part de la xarxa guifi.net des de fa alguns anys. BMX6 és un protocol de routing dinàmic de capa 3 de tipus vector de distància. BMX6 permet establir un domini de routing intern, és a dir, els nodes que el conformen són capaços d'anunciar i calcular la distància a certa destinació, i finalment triar el veí més adient. Fóra d'aquests dominis BMX6 l'anunci de prefixes i càlcul de rutes es
 fa amb protocols diferents, ja sigui OSPF o bé BGP.
