@@ -1,24 +1,23 @@
+# Integració entre BMX6 i BGP en dispositius basats en LEDE
+
+Autor: Víctor Oncins
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [Integració entre BMX6 i BGP en dispositius basats en LEDE](#integraci%C3%B3-entre-bmx6-i-bgp-en-dispositius-basats-en-lede)
-  - [Descripció de l'escenari i objectius](#descripci%C3%B3-de-lescenari-i-objectius)
-  - [Estratègia general](#estrat%C3%A8gia-general)
-  - [Descripció de les plataformes de proves](#descripci%C3%B3-de-les-plataformes-de-proves)
-    - [Compilar LEDE](#compilar-lede)
-  - [Diagrama funcional dels daemons de routing Bird i BMX6](#diagrama-funcional-dels-daemons-de-routing-bird-i-bmx6)
-    - [Detall de les configuracions finals](#detall-de-les-configuracions-finals)
-  - [Proves i conclusions](#proves-i-conclusions)
-    - [Prova amb llista completa de prefixos](#prova-amb-llista-completa-de-prefixos)
-    - [Prova amb llista parcial de prefixos](#prova-amb-llista-parcial-de-prefixos)
-  - [001-filters_fix_new_protocols.patch](#001-filters_fix_new_protocolspatch)
+- [Descripció de l'escenari i objectius](#descripci%C3%B3-de-lescenari-i-objectius)
+- [Estratègia general](#estrat%C3%A8gia-general)
+- [Descripció de les plataformes de proves](#descripci%C3%B3-de-les-plataformes-de-proves)
+  - [Compilar LEDE](#compilar-lede)
+- [Diagrama funcional dels daemons de routing Bird i BMX6](#diagrama-funcional-dels-daemons-de-routing-bird-i-bmx6)
+  - [Detall de les configuracions finals](#detall-de-les-configuracions-finals)
+- [Proves i conclusions](#proves-i-conclusions)
+  - [Prova amb llista completa de prefixos](#prova-amb-llista-completa-de-prefixos)
+  - [Prova amb llista parcial de prefixos](#prova-amb-llista-parcial-de-prefixos)
+- [001-filters_fix_new_protocols.patch](#001-filters_fix_new_protocolspatch)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# Integració entre BMX6 i BGP en dispositius basats en LEDE
-
-Autor: Víctor Oncins
 
 Les xarxes basades en el protocol [BMX6](http://bmx6.net/projects/bmx6) o mesh en el sentit més ampli, constitueixen part de la xarxa guifi.net des de fa alguns anys. BMX6 és un protocol de routing dinàmic de capa 3 de tipus vector de distància. BMX6 permet establir un domini de routing intern, és a dir, els nodes que el conformen són capaços d'anunciar i calcular la distància a certa destinació, i finalment triar el veí més adient. Fóra d'aquests dominis BMX6 l'anunci de prefixes i càlcul de rutes es
 fa amb protocols diferents, ja sigui OSPF o bé BGP.
