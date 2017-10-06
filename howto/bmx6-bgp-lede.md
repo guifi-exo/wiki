@@ -1,6 +1,6 @@
 # Integració entre BMX6 i BGP en dispositius basats en LEDE
 
-Autor: Víctor Oncins
+Autor: Víctor Oncins 2016
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

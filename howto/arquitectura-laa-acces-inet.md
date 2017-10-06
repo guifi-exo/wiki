@@ -1,6 +1,6 @@
 # Servei d'accés a Internet per L2TP Aggregation Architecture (LAA)
 
-Autor: Víctor Oncins
+Autor: Víctor Oncins 2017-10-05
 
 Com a novetat es planteja un nou router d'accés per usuaris específics (ITConic-LNS) que permeti l'accés directe a Internet a través d'un procés d'AAA. Aquest nou paradigma d'accés permetria:
 
