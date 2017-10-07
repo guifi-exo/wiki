@@ -20,6 +20,10 @@ nota: un supernode difícilment consumeix més de 50 W
 
 # Més informació
 
+Calculadora de la pèrdua de voltatge (per veure la diferència de 24 a 48 V). El cable acostuma a ser 24 AWG
+
+http://www.calculator.net/voltage-drop-calculator.html
+
 https://en.wikipedia.org/wiki/Power_over_Ethernet
 
 els dos estàndards es diuen:
