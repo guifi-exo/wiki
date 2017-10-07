@@ -1,11 +1,28 @@
-PoE 24 V
+El PoE ens facilita alimentar les antenes de dalt utilitzant el mateix cable de xarxa per on van les dades
+
+# PoE 24 V
 
 - fins a 30 m si has de pujar més d'una antena
-- fins a 50 m si has de pujar 10 W
+- fins a 50 m si has de pujar 10 W (potser justet)
 
-PoE 48 V, aguanta fins a 100 m però requereix d'un equip adicional:
+# PoE 48 V
 
-- solució barata: convertidor 48 a 24 a dalt
-- solució bona: switch de 48 V a dalt
+Aguanta fins a 100 m però requereix d'un equip adicional:
 
-nota: supernode difícilment consumeix més de 50 W
+- "solució barata", convertidor 48 a 16 o 24 a dalt, si és una ubiquiti es recomana l'ús d'aquests dos components:
+    - Ubiquiti POE-48-24W
+    - Ubiquiti Instant Power 8023AF Outdoor
+- "solució bona", switch de 48 V a dalt. Possibilitats (un o altre):
+    - Ubiquiti Tough Switch-5-POE en caixa estanca
+    - Netonix WS-6-MINI en caixa estanca
+
+nota: un supernode difícilment consumeix més de 50 W
+
+# Més informació
+
+https://en.wikipedia.org/wiki/Power_over_Ethernet
+
+els dos estàndards es diuen:
+
+- IEEE 802.3af-2003
+- IEEE 802.3at-2009
