@@ -18,9 +18,20 @@ Aguanta fins a 100 m però requereix d'un equip adicional:
 
 nota: un supernode difícilment consumeix més de 50 W
 
+# Preguntes freqüents
+
+- P: Si tinc més corrent (A) la caiguda de tensió o voltatge (V) és menor?
+- R: La caiguda de tensió depén del consum de la càrrega. Un PoE de 0.5A 24V pots alimentar una càrrega de 12W i un de 1A una de 24W, per tant no arriba més lluny simplement pot alimentar més coses
+
 # Més informació
 
-Calculadora de la pèrdua de voltatge (per veure la diferència de 24 a 48 V). El cable acostuma a ser 24 AWG
+La clau es troba en la llei de omh, és a dir la relació entre current, voltatge i resistència
+
+V = I * R
+
+Un cable llarg es pot considerar una resistència, i la forma de calcular-ho la podeu trobar aquí http://chemandy.com/calculators/round-wire-resistance-calculator.htm 
+
+Calculadora de la pèrdua de voltatge (per veure la diferència de PoE de 24 i 48 V). El cable acostuma de xarxa categoria 5E a ser de 24 AWG
 
 http://www.calculator.net/voltage-drop-calculator.html
 
@@ -30,3 +41,5 @@ els dos estàndards es diuen:
 
 - IEEE 802.3af-2003
 - IEEE 802.3at-2009
+
+Un altre fòrmula que ens pot ser útil és la potència elèctrica: P = V * I
