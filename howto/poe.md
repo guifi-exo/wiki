@@ -9,12 +9,14 @@ El PoE ens facilita alimentar les antenes de dalt utilitzant el mateix cable de 
 
 Aguanta fins a 100 m però requereix d'un equip adicional:
 
-- "solució barata", convertidor 48 a 16 o 24 a dalt, si és una ubiquiti es recomana l'ús d'aquests dos components:
-    - Ubiquiti POE-48-24W
-    - Ubiquiti Instant Power 8023AF Outdoor
+- "solució barata", convertidor 48 a 18 o 24 a dalt
+    - si és alguna Ubiquiti compatible (veure el seu manual) es pot utilitzar aquests dos components:
+        - [Ubiquiti POE-48-24W](https://dl.ubnt.com/poe48_ds.pdf)
+        - [Ubiquiti Instant Power 8023AF Outdoor](https://dl.ubnt.com/datasheets/instant/instant8023af.pdf) o el [model gigabit](https://dl.ubnt.com/datasheets/instant/Instant_802.3af_Gigabit_PoE_Converters_DS.pdf)
+    - genèric (requereix caixa estanca): [48 to 24V Gigabit PoE Converter](https://mikrotik.com/product/rbgpoe_con_hp)
 - "solució bona", switch de 48 V a dalt. Possibilitats (un o altre):
-    - Ubiquiti Tough Switch-5-POE en caixa estanca
-    - Netonix WS-6-MINI en caixa estanca
+    - [Ubiquiti Tough Switch-5-POE](https://dl.ubnt.com/datasheets/toughswitch/TOUGHSwitch_PoE_DS.pdf) en caixa estanca
+    - [Netonix WS-6-MINI](https://www.netonix.com/ws-6-mini.html) en caixa estanca
 
 nota: un supernode difícilment consumeix més de 50 W
 
