@@ -42,7 +42,7 @@ nota: un supernode difícilment consumeix més de 50 W
 
 # L'anàlisis i els números ens diuen
 
-La clau és la [llei d'Omh](https://ca.wikipedia.org/wiki/Llei_d%27Ohm), és a dir la relació entre voltatge, corrent i resistència
+La clau és la [llei d'Omh](https://ca.wikipedia.org/wiki/Llei_d%27Ohm), és a dir la relació entre voltatge (unitats [volts](https://ca.wikipedia.org/wiki/Volt)), intensitat de corrent elèctric (unitats: [Ampères](https://ca.wikipedia.org/wiki/Ampere)) i resistència `R` (Unitats: [Ohms](https://ca.wikipedia.org/wiki/Ohm) o Ω)
 
     V = I * R
 
@@ -66,13 +66,13 @@ En general els trastos consumeixem entre 3W i 6W a 24V per tant els hi cal una c
 
 Per tal de suportar l'arrancada normalment utilitzo el pijor cas 6W @24V = 250mA
 
-Per tant si creiem que podem aguantar una caiguda de 3V ( és a dir, si alimentem un extrem amb 24V en el altre en tindrem 21V) un trasto de 6W permet tenir un cable de 3V/250mA=12Ohm el que fa que puguis tenir un cable de llargada 12Ohm/0,08422=142m
+Per tant si creiem que podem aguantar una caiguda de 3V ( és a dir, si alimentem un extrem amb 24V en el altre en tindrem 21V) un trasto de 6W permet tenir un cable de 3V/250mA=12Ω el que fa que puguis tenir un cable de llargada 12Ω/0,08422=142m
 
 Per cada trasto que afegeixis has de dividir aquesta llargada per el nombre de trastos: així una Omnitik UPA amb 4 trastos penjats, o sigui, 5 trastos en total la llargada no pot superar els 142m/5=28,5m
 
 També es pot calcular dient que 5 trastos a 6W cadascun són 30W de consum o sigui 30w/24V=1.25A
 
-3V/1.25A=2.4Ohm com a màxim, per tant 2.4Ohm/0,08422=28.5m
+3V/1.25A=2.4Ω com a màxim, per tant 2.4Ω/0,08422=28.5m
 
 Si vols fer el càlcul per 48v només hi ha que saber que per 6W la corrent serà la meitat ja que la tensió és el doble: 6W/48v=125mA
 
