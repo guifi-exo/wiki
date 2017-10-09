@@ -52,7 +52,7 @@ Calculadora de la pèrdua de voltatge (per veure la diferència de PoE de 24 i 4
 
 http://www.calculator.net/voltage-drop-calculator.html
 
-Un altre fòrmula que ens pot ser útil és la potència elèctrica:
+Un altre fòrmula que ens pot ser útil és la de [potència elèctrica](https://ca.wikipedia.org/wiki/Pot%C3%A8ncia_el%C3%A8ctrica#Pot.C3.A8ncia_en_corrent_continu):
 
     P = V * I
 
