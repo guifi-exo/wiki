@@ -42,7 +42,7 @@ nota: un supernode difícilment consumeix més de 50 W
 
 # L'anàlisis i els números ens diuen
 
-La clau és la llei de omh, és a dir la relació entre corrent, voltatge i resistència
+La clau és la [llei d'Omh](https://ca.wikipedia.org/wiki/Llei_d%27Ohm), és a dir la relació entre voltatge, corrent i resistència
 
     V = I * R
 
