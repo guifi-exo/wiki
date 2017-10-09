@@ -42,7 +42,7 @@ nota: un supernode difícilment consumeix més de 50 W
 
 # L'anàlisis i els números ens diuen
 
-La clau és la llei de omh, és a dir la relació entre current, voltatge i resistència
+La clau és la llei de omh, és a dir la relació entre corrent, voltatge i resistència
 
     V = I * R
 
@@ -70,9 +70,9 @@ També es pot calcular dient que 5 trastos a 6W cadascun són 30W de consum o si
 
 3V/1.25A=2.4Ohm com a màxim, per tant 2.4Ohm/0,08422=28.5m
 
-Si vols fer el càlcul per 48v només hi ha que saber que per 6W la current serà la meitat ja que la tensió és el doble: 6W/48v=125mA
+Si vols fer el càlcul per 48v només hi ha que saber que per 6W la corrent serà la meitat ja que la tensió és el doble: 6W/48v=125mA
 
-Per tant la llargada serà del doble ja que cada trasto necessita la meitat de current
+Per tant la llargada serà del doble ja que cada trasto necessita la meitat de corrent
 
 A 48v un trasto de 6W pot tenir un cable PoE de 284m
 
@@ -84,7 +84,7 @@ Hi han molts convertidors que treballen de 36v a 52v d'entrada i donen 24v de so
 
 ## Fes els teus números!
 
-Donada tota aquesta informació, ja pots fer els teus números. A més a més, mira de disposar d'algun aparell per mesurar potència elèctrica, current, voltatge, etc. En el meu cas tinc un [Chacon](http://www.conrad.fr/ce/fr/product/090158/Compteur-de-consommation-Chacon-54355) que em va ajudar molt per tenir els peus a terra.
+Donada tota aquesta informació, ja pots fer els teus números. A més a més, mira de disposar d'algun aparell per mesurar potència elèctrica (W), current (A), voltatge (V), etc. En el meu cas he utilitzat [aquest](http://www.conrad.fr/ce/fr/product/090158/Compteur-de-consommation-Chacon-54355) mesurador d'aparells electrònics a la llar, que em va ajudar molt per tenir els peus a terra.
 
 # Preguntes freqüents
 
