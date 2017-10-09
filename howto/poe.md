@@ -52,6 +52,10 @@ Calculadora de la pèrdua de voltatge (per veure la diferència de PoE de 24 i 4
 
 http://www.calculator.net/voltage-drop-calculator.html
 
+Un altre fòrmula que ens pot ser útil és la potència elèctrica:
+
+    P = V * I
+
 ## Alguns números
 
 El calculador no és gaire adient per les nostres necessitats (excepte per la dada que ens dóna de 24 AWG en la resistència)
@@ -99,5 +103,3 @@ els dos estàndards es diuen:
 
 - IEEE 802.3af-2003
 - IEEE 802.3at-2009
-
-Un altre fòrmula que ens pot ser útil és la potència elèctrica: P = V * I
