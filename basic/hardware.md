@@ -2,9 +2,9 @@
 
 Habitualment no et serviran les botigues que pots anar presencial i per tant hauràs de fer la compra per Internet
 
-- landashop.com
-- ciudadwireless.com
-- shop.setup.cat
+- [landashop.com](https://www.landashop.com)
+- [ciudadwireless.com](https://www.ciudadwireless.com)
+- [shop.setup.cat](http://shop.setup.cat/) no HTTPS?
 
 # Barat
 
