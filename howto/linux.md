@@ -1,3 +1,11 @@
+# openwrt i lede
+
+scan operation
+
+iw dev wlan0 scan
+
+iwinfo wlan0 scan
+
 # Linux i debian
 
 ## adreçament estàtic
