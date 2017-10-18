@@ -165,7 +165,7 @@ EOF
 
 [Set up requirements](https://wiki.debian.org/PostgreSql#Installation)
 
-`sudo apt-get install postgresql`
+    apt-get install postgresql
 
 create user
 
