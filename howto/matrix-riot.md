@@ -14,6 +14,7 @@
 - [known problems](#known-problems)
   - [notifications](#notifications)
 - [todo / extra](#todo--extra)
+  - [telegram bridge](#telegram-bridge)
   - [telegram channel in riot/matrix ?](#telegram-channel-in-riotmatrix-)
   - [captcha](#captcha)
 
