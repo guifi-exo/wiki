@@ -189,7 +189,7 @@ and [set up database](https://github.com/matrix-org/synapse/blob/master/docs/pos
      OWNER synapse_user;
 
 
-[Set up client in Debian/Ubuntu](https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst#set-up-client-in-debianubuntu), as root:
+[Set up client in Debian/Ubuntu](https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst#set-up-client-in-debianubuntu)
 
     apt-get install libpq-dev python-pip
     pip install psycopg2
