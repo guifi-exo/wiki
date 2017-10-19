@@ -171,7 +171,7 @@ create user
 
     su -s /bin/bash postgres -c "createuser synapse_user"
 
-enter postresql CLI [ref](https://wiki.debian.org/PostgreSql#User_access):
+[enter postresql CLI](https://wiki.debian.org/PostgreSql#User_access):
 
     su -s /bin/bash postgres -c psql
 
