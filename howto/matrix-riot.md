@@ -419,6 +419,10 @@ some people do not receive notifications in its smartphone
 
 # todo / extra
 
+## telegram bridge
+
+https://github.com/SijmenSchoon/telematrix
+
 ## telegram channel in riot/matrix ?
 
 https://telegram.org/faq_channels#q-what-39s-a-channel
