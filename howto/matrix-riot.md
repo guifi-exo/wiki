@@ -44,6 +44,8 @@
 
 # Install on Debian 9 stretch 2017-10-06
 
+This guide helps you to install a matrix server using authentication of a particular LDAP (guifi.net) with a postgresql database. Hope it helps you to be inspired on your particular needs.
+
 ## First steps
 
 Run all following commands as root user
