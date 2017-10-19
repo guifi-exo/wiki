@@ -39,8 +39,8 @@
         - Room directory (public channels)
         - Start chat
     - Cliente Android. Enlace apk riot.im: https://f-droid.org/repository/browse/?fdfilter=riot&fdid=im.vector.alpha
-- Puente con otras redes. [Reflexión](https://xkcd.com/1810/), [respuesta de Matrix](https://twitter.com/matrixdotorg/status/841424770025545730)
-- Riot Integrations: IRC networks (pujar imatge integrations-irc.png), jitsi (jitsi.png), [more](https://medium.com/@RiotChat/riot-im-web-0-12-7c4ea84b180a)
+- Bridge with other networks. [Thought](https://xkcd.com/1810/), [response from Matrix](https://twitter.com/matrixdotorg/status/841424770025545730)
+- Riot Integrations: IRC networks (TODO: upload integrations-irc.png), jitsi (TODO: upload jitsi.png), [more](https://medium.com/@RiotChat/riot-im-web-0-12-7c4ea84b180a)
 - Locations: Spanish 79%, Catalan 0%
 
 # Install on Debian 9 stretch 2017-10-06
