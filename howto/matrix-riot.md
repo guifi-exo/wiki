@@ -91,7 +91,6 @@ database:
 ldap_config:
   enabled: true
   uri: "ldaps://ldap.guifi.net"
-  start_tls: false # this means plaintext? this line is required?
   base: "o=webusers,dc=guifi,dc=net"
   attributes:
     uid: "uid"
