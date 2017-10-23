@@ -339,7 +339,7 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
 
         # delete piwik and change homeserver URL
         jq -M -r 'del(.piwik)' config.sample.json |
-          jq -M -r '.default_hs_url = "https://matrix.guifi.net"' > config.json
+          jq -M -r '.default_hs_url = "https://matrix.example.com"' > config.json
 
         cd ..
         chown -R www-data:www-data riot-web
