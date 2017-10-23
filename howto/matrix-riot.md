@@ -338,8 +338,9 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         echo "New Version found starting download"
         curl -Ls "$download" | tar xz --strip-components=1 -C ./
 
-        cp config.sample.json config.json
-        sed -i 's|"default_hs_url": "https://matrix.org",|"default_hs_url": "https://matrix.guifi.net",|g' config.json
+        # delete piwik and change homeserver URL
+        jq -M -r 'del(.piwik)' config.sample.json |
+          jq -M -r '.default_hs_url = "https://matrix.guifi.net"' > config.json
 
         cd ..
         chown -R www-data:www-data riot-web
