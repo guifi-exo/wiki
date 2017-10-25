@@ -250,9 +250,7 @@ server {
     # static front page to anounce how works the service
     location ~ /$ {
         root /var/www/html;
-        index /matrix.html;
-        # alternate method
-        #try_files /matrix.html /matrix.html;
+        try_files /matrix.html /matrix.html;
     }
 
     location /_matrix {
