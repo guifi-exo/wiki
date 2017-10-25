@@ -17,6 +17,7 @@
   - [telegram bridge](#telegram-bridge)
   - [telegram channel in riot/matrix ?](#telegram-channel-in-riotmatrix-)
   - [captcha](#captcha)
+- [specification for script that migrates user from one server to another](#specification-for-script-that-migrates-user-from-one-server-to-another)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
