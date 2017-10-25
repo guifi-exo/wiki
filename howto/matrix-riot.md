@@ -294,9 +294,7 @@ server {
     ssl_certificate /etc/letsencrypt/live/${riot_domain}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/${riot_domain}/privkey.pem;
 
-    location /_matrix {
-        root /var/www/html/riot-web;
-    }
+    root /var/www/html/riot-web;
 }
 EOF
 
