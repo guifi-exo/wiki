@@ -439,3 +439,22 @@ https://telegram.org/faq_channels#q-what-39s-a-channel
 ## captcha
 
 https://github.com/matrix-org/synapse/blob/master/docs/CAPTCHA_SETUP.rst
+
+# specification for script that migrates user from one server to another
+
+TODO: implement
+
+ingredients:
+
+- matrix API
+- userA_A: user A in server matrix.a.com
+- userA_B: user A in server matrix.b.com
+
+objective: perform migration from userA_A to userA_B
+
+procedure:
+
+- userA_A massively invites userA_B to all rooms userA_A where she is
+- userA_B massively accepts invitations of userA_A
+- userA_A puts the same permissions it has on userA_B
+- [optional: blank account in server A] userA_A leaves all rooms where she is
