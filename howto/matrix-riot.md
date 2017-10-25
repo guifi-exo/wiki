@@ -455,7 +455,7 @@ objective: perform migration from userA_A to userA_B
 
 procedure:
 
-- userA_A massively invites userA_B to all rooms userA_A where she is
+- userA_A massively invites userA_B to all its rooms
 - userA_B massively accepts invitations of userA_A
 - userA_A puts the same permissions it has on userA_B
-- [optional: blank account in server A] userA_A leaves all rooms where she is
+- [optional: blank account in server A] userA_A leaves all rooms she is in
