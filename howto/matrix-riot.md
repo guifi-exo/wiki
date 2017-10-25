@@ -247,6 +247,14 @@ server {
     ssl_certificate /etc/letsencrypt/live/${matrix_domain}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/${matrix_domain}/privkey.pem;
 
+    # static front page to anounce how works the service
+    location ~ /$ {
+        root /var/www/html;
+        index /matrix.html;
+        # alternate method
+        #try_files /matrix.html /matrix.html;
+    }
+
     location /_matrix {
         proxy_pass http://localhost:8008;
         proxy_set_header X-Forwarded-For $remote_addr;
