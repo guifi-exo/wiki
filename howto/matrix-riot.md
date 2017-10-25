@@ -441,7 +441,7 @@ https://telegram.org/faq_channels#q-what-39s-a-channel
 
 https://github.com/matrix-org/synapse/blob/master/docs/CAPTCHA_SETUP.rst
 
-# specification for script that migrates user from one server to another
+## specification for script that migrates user from one server to another
 
 TODO: implement
 
