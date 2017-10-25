@@ -248,7 +248,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/${matrix_domain}/privkey.pem;
 
     # static front page to anounce how works the service
-    location ~ /$ {
+    location / {
         root /var/www/html;
         try_files /matrix.html /matrix.html;
     }
