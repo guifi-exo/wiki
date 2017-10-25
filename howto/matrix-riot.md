@@ -369,6 +369,8 @@ SHELL=/bin/bash
 40 6 * * * root /usr/local/bin/update-riot.sh
 ```
 
+alternate version: https://github.com/grigruss/Riot-web-server-update/blob/master/riot-update.sh
+
 # Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi
 
 * Primero satisfacemos las dependencias necesarias:
