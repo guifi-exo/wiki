@@ -442,6 +442,10 @@ some people do not receive notifications in its smartphone
 
 https://github.com/SijmenSchoon/telematrix
 
+https://t2bot.io/telegram/
+
+https://medium.com/@mujeebcpy/bridging-of-riot-and-telegram-cccb16a955f1
+
 ## telegram channel in riot/matrix ?
 
 https://telegram.org/faq_channels#q-what-39s-a-channel
