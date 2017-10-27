@@ -369,6 +369,15 @@ SHELL=/bin/bash
 
 This script breaks if the gzip file isn't at the first position, TODO: be inspired in this improved (not reviewed) version: https://github.com/grigruss/Riot-web-server-update/blob/master/riot-update.sh
 
+## Data
+
+Data grows here:
+
+- /var/lib/postgresql
+- /var/lib/matrix-synapse/media
+
+I symlink this directories to specific volume
+
 # Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi
 
 * Primero satisfacemos las dependencias necesarias:
