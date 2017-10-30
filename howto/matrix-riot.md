@@ -375,6 +375,7 @@ Data grows here:
 
 - /var/lib/postgresql
 - /var/lib/matrix-synapse/media
+- /var/log/matrix-synapse/ (warning, uses up to 1 GB)
 
 I symlink this directories to specific volume
 
