@@ -373,9 +373,9 @@ This script breaks if the gzip file isn't at the first position, TODO: be inspir
 
 Data grows here:
 
-- /var/lib/postgresql
-- /var/lib/matrix-synapse/media
-- /var/log/matrix-synapse/ (warning, uses up to 1 GB)
+- `/var/lib/postgresql`
+- `/var/lib/matrix-synapse/media`
+- `/var/log/matrix-synapse/` - warning, uses up to 1 GB, change behavior in `/etc/matrix-synapse/log.yaml`
 
 I symlink this directories to specific volume
 
