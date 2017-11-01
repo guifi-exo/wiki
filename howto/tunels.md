@@ -24,3 +24,10 @@ EOF
 reboot
 ```
 
+## PPPoE
+
+requirement: an interface prepared to transmit pppoe
+
+apt-get install pppoeconf
+
+pppoeconf
