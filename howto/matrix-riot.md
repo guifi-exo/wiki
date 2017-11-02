@@ -115,7 +115,9 @@ listeners:
 
     # Local interface to listen on.
     # The empty string will cause synapse to listen on all interfaces.
-    bind_address: ''
+    #bind_address: ''
+    # includes IPv6 -> src https://github.com/matrix-org/synapse/issues/1886
+    bind_address: '::'
 
     # This is a 'http' listener, allows us to specify 'resources'.
     type: http
