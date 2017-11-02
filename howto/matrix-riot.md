@@ -10,6 +10,8 @@
     - [reverse proxy server with nginx](#reverse-proxy-server-with-nginx)
     - [web static client](#web-static-client)
       - [script to upgrade static riot](#script-to-upgrade-static-riot)
+  - [Data](#data)
+  - [Test federation](#test-federation)
 - [Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi](#instalaci%C3%B3n-desde-el-c%C3%B3digo-fuente-y-con-virtualenv-partiendo-de-debian-8-b%C3%A1sico---sevillaguifi)
 - [known problems](#known-problems)
   - [notifications](#notifications)
@@ -380,6 +382,12 @@ Data grows here:
 - `/var/log/matrix-synapse/` - warning, uses up to 1 GB, change behavior in `/etc/matrix-synapse/log.yaml`
 
 I symlink this directories to specific volume
+
+## Test federation
+
+To test federation you can use this service: https://matrix.org/federationtester/api/report?server_name=matrix.example.com
+
+or use the source: https://github.com/matrix-org/matrix-federation-tester
 
 # Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi
 
