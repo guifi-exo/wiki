@@ -20,6 +20,7 @@
   - [telegram channel in riot/matrix ?](#telegram-channel-in-riotmatrix-)
   - [captcha](#captcha)
   - [specification for script that migrates user from one server to another](#specification-for-script-that-migrates-user-from-one-server-to-another)
+  - [use our own integration server](#use-our-own-integration-server)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -485,3 +486,7 @@ procedure:
 - export riot encryption keys from userA_A to file
 - import riot encryption keys from file to userA_B
 - [optional: blank account in server A] userA_A leaves all rooms she is in
+
+## use our own integration server
+
+dimension.t2bot.io https://github.com/turt2live/matrix-dimension
