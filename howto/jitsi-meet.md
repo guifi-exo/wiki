@@ -7,8 +7,8 @@
 - [Enable Screen Capture for Firefox](#enable-screen-capture-for-firefox)
 - [Enable Screen Capture for Chromium/Chrome](#enable-screen-capture-for-chromiumchrome)
   - [DIY](#diy)
-  - [Optional additional step: going official](#optional-additional-step-going-official)
   - [Optional additional step: facilitate DIY](#optional-additional-step-facilitate-diy)
+  - [Optional additional step: going official](#optional-additional-step-going-official)
 - [Troubleshooting](#troubleshooting)
 - [More info](#more-info)
 
@@ -77,16 +77,6 @@ In your jitsi server (replace example.com with your domain) `/etc/jitsi/meet/mee
     + desktopSharingChromeExtId: 'myidisherelalalalalalalalalalala',
 ```
 
-## Optional additional step: going official
-
-If you want facilitate plugin installation (as you may see in meet.jit.si) you have to do the following:
-
-- get developer account https://chrome.google.com/webstore/developer/dashboard
-- pay 5$ (one time payment) - but you can register limited (20) number of applications in store -> src https://chrome.google.com/webstore/developer/about_signup
-- Verify that this is an official item for a website you own (add new, select), scp html that gives google to /usr/share/jitsi-meet (remember to use https, and set https as the url, redirection won't work)
-- check `inline install` -> src info about inline install https://developer.chrome.com/webstore/inline_installation?hl=en-US
-- put `visibility options` as `unlisted`
-
 ## Optional additional step: facilitate DIY
 
 You can put a message in the welcome page explaining how to install chrome/chromium extension:
@@ -116,6 +106,16 @@ You can put a message in the welcome page explaining how to install chrome/chrom
      <div id="react"></div>
      <div id="keyboard-shortcuts" class="keyboard-shortcuts" style="display:none;">
 ```
+
+## Optional additional step: going official
+
+If you want facilitate plugin installation (as you may see in meet.jit.si) you have to do the following:
+
+- get developer account https://chrome.google.com/webstore/developer/dashboard
+- pay 5$ (one time payment) - but you can register limited (20) number of applications in store -> src https://chrome.google.com/webstore/developer/about_signup
+- Verify that this is an official item for a website you own (add new, select), scp html that gives google to /usr/share/jitsi-meet (remember to use https, and set https as the url, redirection won't work)
+- check `inline install` -> src info about inline install https://developer.chrome.com/webstore/inline_installation?hl=en-US
+- put `visibility options` as `unlisted`
 
 # Troubleshooting
 
