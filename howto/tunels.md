@@ -38,3 +38,5 @@ Someone tested the maximum bandwidth from encrypted Tincd, Fastd and Wireguard a
 there's some more people in Freifunk testing it: https://forum.freifunk.net/t/wireguard-als-zukuenftige-vpn-loesung/12858
 
 try/test softether.org
+
+https://justus.berlin/2016/02/performance-of-tunneling-methods-in-openwrt/
