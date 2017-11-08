@@ -31,3 +31,10 @@ requirement: an interface prepared to transmit pppoe
 apt-get install pppoeconf
 
 pppoeconf
+
+## Encrypted tunnels
+
+Someone tested the maximum bandwidth from encrypted Tincd, Fastd and Wireguard and the best results were with Wireguard
+there's some more people in Freifunk testing it: https://forum.freifunk.net/t/wireguard-als-zukuenftige-vpn-loesung/12858
+
+try/test softether.org
