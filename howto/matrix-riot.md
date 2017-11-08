@@ -477,7 +477,11 @@ Comment about telegram bridge: A matrix els usuaris de telegram es veuen com un 
 
 ## "telegram channel" (lista de difusión) in riot/matrix ?
 
+Only some people can send messages, and lots of listeners
+
 https://telegram.org/faq_channels#q-what-39s-a-channel
+
+Solution? You can restrict users from sending messages to the room and only accept Moderator, Admin, etc. The rule has the name "To send messages, you must be a" 
 
 ## captcha
 
