@@ -40,3 +40,5 @@ there's some more people in Freifunk testing it: https://forum.freifunk.net/t/wi
 try/test softether.org
 
 https://justus.berlin/2016/02/performance-of-tunneling-methods-in-openwrt/
+
+issue/discussion on libremesh: https://github.com/libremesh/lime-packages/issues/99
