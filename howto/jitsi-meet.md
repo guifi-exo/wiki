@@ -14,6 +14,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+Deploy your own meet.jit.si service
+
 First of all I recommend that before starting this guide you have a public IP directly attached to the server jitsi is going to be installed. Jitsi allows NAT, etc. but I could not make it work without that public IP. If you can, please share it and I will put it here.
 
 # Quick install instructions
