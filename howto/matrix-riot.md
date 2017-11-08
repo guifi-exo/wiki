@@ -254,6 +254,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/${matrix_domain}/privkey.pem;
 
     # static front page to anounce how works the service
+    # example: https://github.com/guifi-exo/public/tree/master/web/matrix.guifi.net
     location / {
         root /var/www/html;
         try_files /matrix.html /matrix.html;
@@ -300,6 +301,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/${riot_domain}/privkey.pem;
 
     # static front page to anounce how works the service (inside riot)
+    # example: https://github.com/guifi-exo/public/tree/master/web/riot.guifi.net
     location /welcome {
         alias /var/www/html/riot.guifi.net;
         index /matrix.html;
