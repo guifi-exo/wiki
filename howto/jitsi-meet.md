@@ -33,11 +33,11 @@ Third party stuff example: the random funny avatars
 # Enable Screen Capture for Firefox
 
 ```diff
-    - desktopSharingFirefoxDisabled: true,
-    + desktopSharingFirefoxDisabled: false,
-    // (...)
-    - desktopSharingFirefoxMaxVersionExtRequired: -1,
-    + desktopSharingFirefoxMaxVersionExtRequired: 51,
+- desktopSharingFirefoxDisabled: true,
++ desktopSharingFirefoxDisabled: false,
+// (...)
+- desktopSharingFirefoxMaxVersionExtRequired: -1,
++ desktopSharingFirefoxMaxVersionExtRequired: 51,
 ```
 
 src https://github.com/jitsi/jidesha/blob/master/firefox/README.md#deprecation
@@ -75,8 +75,8 @@ drag it to your extensions in chrome/chromium and copy the `id`
 In your jitsi server (replace example.com with your domain) `/etc/jitsi/meet/meet.example.com-config.js` paste your `id`:
 
 ```diff
-    - desktopSharingChromeExtId: 'diibjkoicjeejcmhdnailmkgecihlobk',
-    + desktopSharingChromeExtId: 'myidisherelalalalalalalalalalala',
+- desktopSharingChromeExtId: 'diibjkoicjeejcmhdnailmkgecihlobk',
++ desktopSharingChromeExtId: 'myidisherelalalalalalalalalalala',
 ```
 
 ## Optional additional step: facilitate DIY
