@@ -361,8 +361,8 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         # - point to your own homeserver
         # - select a specific welcome static page
         jq -M -r 'del(.piwik)' config.sample.json |
-          jq -M -r '.default_hs_url = "https://matrix.guifi.net"' |
-            jq -M -r '.welcomePageUrl = "https://riot.guifi.net/welcome/matrix.html"' > config.riot.guifi.net.json
+          jq -M -r '.default_hs_url = "https://matrix.example.com"' |
+            jq -M -r '.welcomePageUrl = "https://riot.example.com/welcome/matrix.html"' > config.riot.example.com.json
 
         cd ..
         chown -R www-data:www-data riot-web
