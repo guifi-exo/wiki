@@ -299,6 +299,15 @@ server {
     ssl_certificate /etc/letsencrypt/live/${riot_domain}/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/${riot_domain}/privkey.pem;
 
+    # static front page to anounce how works the service (inside riot)
+    location /welcome {
+        alias /var/www/html/riot.guifi.net;
+        index /matrix.html;
+    }
+    location /fp-img {
+        alias /var/www/html/riot.guifi.net/fp-img;
+    }
+
     root /var/www/html/riot-web;
 }
 EOF
@@ -347,9 +356,13 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         echo "New Version found starting download"
         curl -Ls "$download" | tar xz --strip-components=1 -C ./
 
-        # delete piwik and change homeserver URL
+        # customizations:
+        # - delete piwik and change homeserver URL
+        # - point to your own homeserver
+        # - select a specific welcome static page
         jq -M -r 'del(.piwik)' config.sample.json |
-          jq -M -r '.default_hs_url = "https://matrix.example.com"' > config.riot.example.com.json
+          jq -M -r '.default_hs_url = "https://matrix.guifi.net"' |
+            jq -M -r '.welcomePageUrl = "https://riot.guifi.net/welcome/matrix.html"' > config.riot.guifi.net.json
 
         cd ..
         chown -R www-data:www-data riot-web
@@ -458,7 +471,9 @@ https://t2bot.io/telegram/
 
 https://medium.com/@mujeebcpy/bridging-of-riot-and-telegram-cccb16a955f1
 
-## telegram channel in riot/matrix ?
+Comment about telegram bridge: A matrix els usuaris de telegram es veuen com un usuari de matrix, però els missatges escrits a matrix a telegram els diu un bot que diu "tal persona a dit"
+
+## "telegram channel" (lista de difusión) in riot/matrix ?
 
 https://telegram.org/faq_channels#q-what-39s-a-channel
 
