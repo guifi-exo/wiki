@@ -4,15 +4,17 @@
 
 - [Quick install instructions](#quick-install-instructions)
 - [Disable third party stuff](#disable-third-party-stuff)
+- [Enable Screen Capture for Firefox](#enable-screen-capture-for-firefox)
 - [Enable Screen Capture for Chromium/Chrome](#enable-screen-capture-for-chromiumchrome)
   - [DIY](#diy)
   - [Optional additional step: going official](#optional-additional-step-going-official)
   - [Optional additional step: facilitate DIY](#optional-additional-step-facilitate-diy)
-- [Enable Screen Capture for Firefox](#enable-screen-capture-for-firefox)
 - [Troubleshooting](#troubleshooting)
 - [More info](#more-info)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+First of all I recommend that before starting this guide you have a public IP directly attached to the server jitsi is going to be installed. Jitsi allows NAT, etc. but I could not make it work without that public IP. If you can, please share it and I will put it here.
 
 # Quick install instructions
 
@@ -20,9 +22,23 @@ https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md
 
 # Disable third party stuff
 
+Third party stuff example: the random funny avatars
+
 /etc/jitsi/meet/meet.tips.es-config.js
 
     disableThirdPartyRequests: true,
+
+# Enable Screen Capture for Firefox
+
+```diff
+    - desktopSharingFirefoxDisabled: true,
+    + desktopSharingFirefoxDisabled: false,
+    // (...)
+    - desktopSharingFirefoxMaxVersionExtRequired: -1,
+    + desktopSharingFirefoxMaxVersionExtRequired: 51,
+```
+
+src https://github.com/jitsi/jidesha/blob/master/firefox/README.md#deprecation
 
 # Enable Screen Capture for Chromium/Chrome
 
@@ -100,18 +116,6 @@ You can put a message in the welcome page explaining how to install chrome/chrom
      <div id="react"></div>
      <div id="keyboard-shortcuts" class="keyboard-shortcuts" style="display:none;">
 ```
-
-# Enable Screen Capture for Firefox
-
-```diff
-    - desktopSharingFirefoxDisabled: true,
-    + desktopSharingFirefoxDisabled: false,
-    // (...)
-    - desktopSharingFirefoxMaxVersionExtRequired: -1,
-    + desktopSharingFirefoxMaxVersionExtRequired: 51,
-```
-
-src https://github.com/jitsi/jidesha/blob/master/firefox/README.md#deprecation
 
 # Troubleshooting
 
