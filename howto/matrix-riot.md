@@ -512,3 +512,9 @@ procedure:
 
 - https://dimension.t2bot.io
 - https://github.com/turt2live/matrix-dimension
+
+## more bots, bridges
+
+https://github.com/turt2live/t2bot.io
+
+https://t2bot.io
