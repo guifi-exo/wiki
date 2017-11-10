@@ -510,4 +510,5 @@ procedure:
 
 ## use our own integration server
 
-dimension.t2bot.io https://github.com/turt2live/matrix-dimension
+- https://dimension.t2bot.io
+- https://github.com/turt2live/matrix-dimension
