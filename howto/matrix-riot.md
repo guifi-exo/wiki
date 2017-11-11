@@ -513,6 +513,11 @@ procedure:
 - https://dimension.t2bot.io
 - https://github.com/turt2live/matrix-dimension
 
+### particular interest: monitoring with prometheus and grafana
+
+- add grafana widget https://github.com/turt2live/matrix-dimension/issues/86
+- prometheus alertmanager bot https://github.com/turt2live/matrix-wishlist/issues/28
+
 ## more bots, bridges
 
 https://github.com/turt2live/t2bot.io
