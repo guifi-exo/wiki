@@ -199,8 +199,7 @@ and [set up database](https://github.com/matrix-org/synapse/blob/master/docs/pos
 
 [Set up client in Debian/Ubuntu](https://github.com/matrix-org/synapse/blob/master/docs/postgres.rst#set-up-client-in-debianubuntu)
 
-    apt-get install libpq-dev python-pip
-    pip install psycopg2
+    apt-get install libpq-dev python-pip python-psycopg2
 
 note: [synapse currently assumes python 2.7 by default](https://github.com/matrix-org/synapse#archlinux)
 
