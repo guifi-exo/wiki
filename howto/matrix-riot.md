@@ -17,10 +17,12 @@
   - [notifications](#notifications)
 - [todo / extra](#todo--extra)
   - [telegram bridge](#telegram-bridge)
-  - [telegram channel in riot/matrix ?](#telegram-channel-in-riotmatrix-)
+  - ["telegram channel" (lista de difusión) in riot/matrix ?](#telegram-channel-lista-de-difusi%C3%B3n-in-riotmatrix-)
   - [captcha](#captcha)
   - [specification for script that migrates user from one server to another](#specification-for-script-that-migrates-user-from-one-server-to-another)
   - [use our own integration server](#use-our-own-integration-server)
+    - [particular interest: monitoring with prometheus and grafana](#particular-interest-monitoring-with-prometheus-and-grafana)
+  - [more bots, bridges](#more-bots-bridges)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
