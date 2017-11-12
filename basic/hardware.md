@@ -27,6 +27,15 @@ Recomanem equips de 5 GHz per evitar interferències, especialment en entorns ur
 
 ## Routers
 
+Si vols instal·lar OpenWrt o LEDE que tinguin més de 4 MB de flash i 32 MB de RAM
+
+- En general:
+    - tp-link
+    - ubiquiti
+    - https://www.gl-inet.com/
+- routers de la estètica (assegurar-se consultant les wikis de OpenWrt i LEDE):
+    - https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd
+    - https://wiki.openwrt.org/toh/tp-link/tl-wdr4300
 - Router "debian" edgeos: https://www.landashop.com/ubiquiti-networks-edge-routerx-sfp-eu.html
 - Routers amb SIM 4G
     - TP-Link TL-MR6400
