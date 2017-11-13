@@ -21,7 +21,7 @@ root@OpenWrt:~# opkg install xl2tpd ip tcpdump
 
 ## Configuració de la connexió a Guifi.net
 
-Cal tenir clar quina és la IP i rang (màscara) del node comunitari, típicament situat al terrat. Consulteu la pàgina web de Guifi.net o bé accediu directament al node. Normalment la IP té el format 10.a.b.c/27. Reservem una nova IP dins d'aquest rang per router residencial, per exemple la 10.a.b.c+1/27.
+Cal tenir clar quina és la IP i rang (màscara) del node comunitari, típicament situat al terrat. Consulteu la pàgina web de Guifi.net o bé accediu directament al node. Normalment la IP té el format `10.a.b.c/27`. Reservem una nova IP dins d'aquest rang per router residencial, per exemple la `10.a.b.c+1/27`.
 
 Anem a la part *Interfaces* i editem la WAN. Triem en el desplegable *Static address* i cliquem *Switch protocol*. Emplenem els camps amb aquests valors:
 
@@ -44,7 +44,22 @@ PING 10.38.140.225 (10.38.140.225): 56 data bytes
 round-trip min/avg/max = 4.980/5.880/6.780 ms
 ```
 
-## Configuració de la connexió L2TP d'accés a Internet
+## Configuració de la connexió L2TP d'accés a Internet IPv4
 
+Ens situem a la part de Interface i afegin una nova interfície clicant el botó *Add interface*. L'anomenem `exo`. Triem com a protocol de la nova interfície el *L2TP*. No hi vinculem cap interfície física. Apliquem els canvi i apareixeran els camps que caldrà emplenar:
+
+```
+L2TP Server = 10.38.140.225
+PAP/CHAP username = <nom d'usuari proveït per eXO>
+PAP/CHAP password = <password proveït per eXO>
+```
+A la secció *Advanced Settings*, marquem els punts següents:
+
+- [X] Bring up on boot
+- [x] Use builtin IPv6-management
+- [x] Use default gateway
+- [x] Use DNS servers advertised by peer (Opcional)
+
+Si som en una xarxa de tipus mesh el camp `Overrride MTU = 1420` en cas contrari `Override MTU = 1456`. Situem la nova interfície a la zona WAN del firewall a la part *Firewall Settings*. Apliquem i desem canvis.
 
 
