@@ -77,13 +77,13 @@ Apliqueu i deseu canvis. Per tal de fer efectiva la delegació del prefixe IPv6 
 ```
 IPv6 assigment length = 64
 ```
-Deseu, apliqueu canvis i reinicieu el router.
+Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu d'accepdir a Internet per IPv4 i IPv6.
 
 ## Resolució del bug de *redial* de L2TP
 
 Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connextivitat amb el concentrador es reestableixi.
 
-Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen, proposem per el següent:
+Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen, proposem el següent:
 
 1. Baixeu-vos l'arxiu [l2tp.sh](https://github.com/guifi-exo/wiki/blob/master/howto/code/l2tp.sh), tot clicant l'opció *raw*.
 2. Des del vostre PC executeu `scp l2tp.sh root@192.168.1.1:/lib/netifd/proto/l2tp.sh`
