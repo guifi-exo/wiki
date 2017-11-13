@@ -8,7 +8,7 @@ El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. Per obt
 
 Aquesta és una guia tècnica per configurar aquest servei en routers residencials amb OpenWRT/LEDE. **Aquest document cobreix les versions estables d'OpenWRT 15.05.1 (Chaos Calmer) i LEDE 17.01.4 (Reboot).**
 
-Podem trobar les imatges pre-compilades al dipòsit del projecte [OpenWRT](https://downloads.openwrt.org/chaos_calmer/15.05.1/) o [LEDE](https://downloads.lede-project.org/releases/17.01.4/). Trieu l'arquitectura de hardware i el model de router i procediu a gravar el nou firmware seguint les recomanacions dels webs dels respectius projectes.
+Podem trobar les imatges pre-compilades al dipòsit del projecte [OpenWRT](https://downloads.openwrt.org/chaos_calmer/15.05.1/) o [LEDE](https://downloads.lede-project.org/releases/17.01.4/). Trieu l'arquitectura de hardware i el model de router i procediu a gravar el nou firmware seguint les recomanacions dels webs dels respectius projectes. **Cal tenir en compte que no es recomana fer ús de dispositius de 4M de flash i 32M de RAM o menys.**
 
 ## Instal·lació dels paquets necessaris
 
@@ -20,8 +20,6 @@ Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar
 root@OpenWrt:~# opkg update
 root@OpenWrt:~# opkg install xl2tpd ip tcpdump
 ```
-
-*Cal tenir en compte que no es recomana fer ús de dispositius de 4M de flash i 32M de RAM o menys.*
 
 ## Configuració de la connexió a Guifi.net
 
@@ -35,7 +33,7 @@ IPv4 netmask = 255.255.255.224
 IPv4 gateway = 10.a.b.c
 ```
 
-A l'apartat *Firewall Settings*, vinculem la interfície de xarxa a la zona WAN del firewall. Això impedirà l'accés de les connexions entrants al router residencial. Apliquem i desem canvis. Connectem el port que correspongui a la interfície WAN al cable del node comunitari o a l'equipment de xarxa que hi permeti l'accés. Assegurem-nos que teniu accés al concentrador de túnels de l'eXO:
+A l'apartat *Firewall Settings*, vinculem la interfície de xarxa a la zona WAN del firewall. Això impedirà l'accés de les connexions entrants al router residencial. Apliquem i desem canvis. Connectem el port que correspongui a la interfície WAN al cable del node comunitari o a l'equipment de xarxa que hi permeti l'accés. Assegureu-vos que teniu accés al concentrador de túnels de l'eXO:
 
 ```
 root@OpenWrt:~# ping 10.38.140.225
@@ -61,6 +59,7 @@ A la secció *Advanced Settings*, marquem els punts següents:
 
 - [X] Bring up on boot
 - [x] Use builtin IPv6-management
+- [ ] Trieu l'opció *Manual* del desplegable si feu servir LEDE
 - [x] Use default gateway
 - [x] Use DNS servers advertised by peer (Opcional)
 
@@ -68,22 +67,22 @@ A la secció *Advanced Settings*, marquem els punts següents:
 
 ## Configuració de la connexió d'accés a Internet per IPv6
 
-L'eXO també proveeix d'accés a Internet per IPv6. Per activar-ho caldrà editar la interfície WAN6. Anem a *Physical Settings* i activem la següent opció tot emplenant el camp de text amb el valor `@exo`
+L'eXO també proveeix d'accés a Internet per IPv6. Per activar-lo caldrà editar la interfície WAN6. Anem a *Physical Settings* i activem la següent opció tot emplenant el camp de text amb el valor `@exo`
 
 - [X] Custom interface {@exo}
 
-Apliqueu i deseu canvis. Per tal de fer efectiva la delegació del prefixe IPv6 provinent del concentrador, caldrà editar la interfície BR-LAN i modificar el camp següent:
+Apliqueu i deseu canvis. Per tal de fer efectiva la delegació del prefix IPv6 provinent del concentrador, caldrà editar la interfície BR-LAN i modificar el camp següent:
 
 ```
 IPv6 assigment length = 64
 ```
-Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu d'accepdir a Internet per IPv4 i IPv6.
+Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu de poder accedir a Internet per IPv4 i IPv6.
 
 ## Resolució del bug de *redial* de L2TP
 
 Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connectivitat amb el concentrador es reestableixi.
 
-Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen, proposem el següent:
+Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen de manera definitiva, proposem el següent:
 
 1. Baixeu-vos l'arxiu [l2tp.sh](https://github.com/guifi-exo/wiki/blob/master/howto/code/l2tp.sh), tot clicant l'opció *raw*.
 2. Des del vostre PC executeu `scp l2tp.sh root@192.168.1.1:/lib/netifd/proto/l2tp.sh`
