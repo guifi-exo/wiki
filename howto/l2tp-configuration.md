@@ -68,8 +68,12 @@ L'eXO proveeix d'accés a Internet per IPv6. Per activar-ho caldrà edit la inte
 
 - [X] Custom interface {@exo}
 
-Apliquei i deseu canvis. Per tant de fer efectiva la delegació del prefixe IPv6 provinent de l'eXO, caldrà editar la interfície BR-LAN i modificar el camp següent:
+Apliqueu i deseu canvis. Per tant de fer efectiva la delegació del prefixe IPv6 provinent de l'eXO, caldrà editar la interfície BR-LAN i modificar el camp següent:
 
 ```
 IPv6 assigment length = 64
 ```
+
+## Resolució del bug de redial de L2TP
+
+Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd). Aquest paquet permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI. Tanmateix no permet activar la funció de redial del mateix, és a dir, quan es perd la comunicació i el túnel d'abaixa, aquest no es torna a recuperar automàticament.
