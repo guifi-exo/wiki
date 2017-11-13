@@ -50,7 +50,7 @@ round-trip min/avg/max = 4.980/5.880/6.780 ms
 
 ## Configuració de la connexió L2TP d'accés a Internet IPv4
 
-Ens situem a la part de *Interfaces* i afegim una nova interfície clicant el botó *Add interface*. L'anomenem `exo`. Triem com a protocol de la nova interfície el *L2TP*. No hi vinculem cap interfície física. Apliquem els canvmi i apareixeran els camps que caldrà emplenar:
+Ens situem a la part de *Interfaces* i afegim una nova interfície clicant el botó *Add interface*. L'anomenem `exo`. Triem com a protocol de la nova interfície el L2TP. No hi vinculem cap interfície física. Apliquem els canvis i apareixeran els camps que caldrà emplenar:
 
 ```
 L2TP Server = 10.38.140.225
