@@ -85,9 +85,9 @@ Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https:/
 
 Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen, proposem per el següent:
 
-1.- Baixeu-vos l'arxiu [l2tp.sh](https://github.com/guifi-exo/wiki/blob/master/howto/code/l2tp.sh)
-2.- Des del vostre PC executeu `scp l2tp.sh root@192.168.1.1:/lib/netifd/proto/l2tp.sh`
-3.- Iniciceu una sessió ssh amb el router i afegiu les línies que faltin respecte la següent secció de configuració de l'arxiu `/etc/config/network`:
+1. Baixeu-vos l'arxiu [l2tp.sh](https://github.com/guifi-exo/wiki/blob/master/howto/code/l2tp.sh), tot clicant l'opció *raw*.
+2. Des del vostre PC executeu `scp l2tp.sh root@192.168.1.1:/lib/netifd/proto/l2tp.sh`
+3. Iniciceu una sessió ssh amb el router i afegiu les línies que faltin respecte la següent secció de configuració de l'arxiu `/etc/config/network`:
 
 ```
 config interface 'exo'
