@@ -77,3 +77,7 @@ IPv6 assigment length = 64
 ## Resolució del bug de redial de L2TP
 
 Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd). Aquest paquet permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI. Tanmateix no permet activar la funció de redial del mateix, és a dir, quan es perd la comunicació i el túnel d'abaixa, aquest no es torna a recuperar automàticament.
+
+Per resoldre aquest problema mentre els mantenidors oficials del paquet no ho solucionen, proposem per el següent:
+
+1.- Baixeu-vos l'arxiu l2tp.sh
