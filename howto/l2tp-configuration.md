@@ -80,7 +80,7 @@ Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu de p
 
 ## Resolució del bug de *redial* de L2TP
 
-Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connectivitat amb el concentrador es reestableixi.
+Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon *xl2tpd* en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connectivitat amb el concentrador es reestableixi.
 
 Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen de manera definitiva, proposem el següent:
 
@@ -100,4 +100,4 @@ config interface 'exo'
         option keepalive '30,10'
 ```
 
-Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especificat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i `xl2tpd` el donarà de baixa, tot activant la funció *redial*.
+Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especificat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i *xl2tpd* el donarà de baixa, tot activant la funció *redial*.
