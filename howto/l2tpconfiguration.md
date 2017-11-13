@@ -1,15 +1,10 @@
-# Servei d'accés a Internet per L2TP Aggregation Architecture (LAA)
+# Configuració de túnels L2TP per routers OpenWER/LEDE
 
-Autor: Víctor Oncins 2017-10-05
+Autor: Víctor Oncins 2017-11-12
 
-Com a novetat es planteja un nou router d'accés per usuaris específics (ITConic-LNS) que permeti l'accés directe a Internet a través d'un procés d'AAA. Aquest nou paradigma d'accés permetria:
+El servei d'accés a Internet a través de l'eXO amb el protocol L2TP presenta certs avantatges. D'una banda millora els processos de gestió i control de la subscripció a Internet. De l'altra simplifica la configuració dels routers residencials i permet integrar el suport de IPv4 i IPv6 a través d'una sola connexió. Els routers que suporten el sistema OpenWRT permeten aquest tipus de connexió. Tanmateix hi ha routers amb firmwares propietaris que també el suporten. Si teniu un router residencial amb el firmware original, comproveu que el protocol L2TP està suportat.
 
-* Control centralitzat de l'accés
-* Autenticació de la subscripció (local, PAM, RADIUS, ...)
-* Assignació dinàmica d'adreces públiques o de Guifi.net
-* Establiment sota arquitectura client-servidor, cosa que elimina els possible problemes de NAT i DNS dinàmics que es donen amb els túnels estàtics GRE/IPIP
-
-Una solució coneguda pels ISPs per aquest tipus d'accés és l'arquitectura L2TP Aggregation Architecture o [LAA](https://www.broadband-forum.org/technical/download/TR-025.pdf). Aquesta solució es basa en una xarxa de commutació de paquets (L3 PSN) que en el nostre cas pot ser Guifi.net o les xarxes amb peering de la FXOLN. L'escenari contemplat seria el següent:
+El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. La connexió PPP requereix un nom d'usuari i un password que serà proveït per l'associació eXO. Un cop disposem d'aquestes dades ja podem configurar el router OpenWRT.
 
 ```
                SN/Client                  L3 PSN                PoP-IX  
@@ -31,13 +26,6 @@ Una solució coneguda pels ISPs per aquest tipus d'accés és l'arquitectura L2T
   |         |           |    NAT    |<====PPP+AAA===>|       |<==AAA===>|RADIUS|
   +---------+           +-----------+    +------+    +-------+          +------+
 ```
-
-Els Border Network Gateway (BNG) fan servir les funcions de LAC i LNS de L2TP però redirigint els paquets PPPoE cap el LNS. Aquest paradigma de connexió té cert avantatges:
-
- * Permet connectar múltiples CPE de usuari situats en el mateix emplaçament, és a dir emprant els mateixos punts extrems L2TP
- * PPPoE és un protocol implementat per molts fabricants, distribucions de routing i dispositius personals
-
-Tanmateix la implementació de la LAA requereix de més anàlisi. Tot i que les distribucions basades en Linux (VyOS i OpenWRT) suporten l'establiment de túnels L2TP per PPP, la funcionalitat prevista requereix una implementació que permeti que els paquets PPPoE generats pel CPE d'usuari s'encapsulin dins un túnel L2TP. És a dir, que elimini les capceleres Ethernet i el procés de AAA i IPCP es faci directament entre el CPE i ITConic (LNS). Per la funció de LAC forwarder només hem trobat una distribució de codi obert que és [BSDRP](https://bsdrp.net/) (FreeBSD). El següent quadre resumeix les funcions suportades per cada implementació:
 
 
 | Distribució     | L2TP LAC forwarder |L2TP LAC no-IPsec |L2TP LNS no-IPsec | 
