@@ -62,4 +62,14 @@ A la secció *Advanced Settings*, marquem els punts següents:
 
 Si som en una xarxa de tipus mesh el camp `Overrride MTU = 1420` en cas contrari `Override MTU = 1456`. Situem la nova interfície a la zona WAN del firewall a la part *Firewall Settings*. Apliquem i desem canvis.
 
+## Coniguració de la connexió d'accés a Internet per IPv6
 
+L'eXO proveeix d'accés a Internet per IPv6. Per activar-ho caldrà edit la interfície WAN6. Anem a *Physical Settings* i activem la segünt opció tot emplenant el camp de text amb el valor `@exo`
+
+- [X] Custom interface {@exo}
+
+Apliquei i deseu canvis. Per tant de fer efectiva la delegació del prefixe IPv6 provinent de l'eXO, caldrà editar la interfície BR-LAN i modificar el camp següent:
+
+```
+IPv6 assigment length = 64
+```
