@@ -400,6 +400,8 @@ Data grows here:
 
 I symlink this directories to specific volume
 
+learn more about how data grows https://matrix.org/docs/projects/other/hdd-space-calc-for-synapse.html
+
 ## Test federation
 
 To test federation you can use this service: https://matrix.org/federationtester/api/report?server_name=matrix.example.com
