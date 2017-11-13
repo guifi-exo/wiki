@@ -21,7 +21,7 @@ root@OpenWrt:~# opkg update
 root@OpenWrt:~# opkg install xl2tpd ip tcpdump
 ```
 
-Cal tenir en compte que no es recomana fer ús de dis
+*Cal tenir en compte que no es recomana fer ús de dispositius de 4M de flash i 32M de RAM o menys.*
 
 ## Configuració de la connexió a Guifi.net
 
