@@ -4,7 +4,7 @@ Autor: Víctor Oncins 2017-11-12
 
 El servei d'accés a Internet a través de l'eXO amb el protocol L2TP presenta certs avantatges. D'una banda millora els processos de gestió i control de la subscripció a Internet. De l'altra, simplifica la configuració dels routers residencials i permet integrar el suport de IPv4 i IPv6 a través d'una sola connexió. Els routers que suporten el sistema OpenWRT/LEDE permeten aquest tipus de connexió. Tanmateix hi ha routers amb firmwares propietaris que també el suporten. Si teniu un router residencial amb el firmware original, comproveu que el protocol L2TP està suportat.
 
-El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. Ver obtenir més informació cliqueu el document de referència [LAA](https://github.com/guifi-exo/wiki/blob/master/howto/arquitectura-laa-acces-inet.md). La connexió PPP requereix un nom d'usuari i un password que serà proveït per l'associació eXO. Un cop disposem d'aquestes dades ja podem configurar el router OpenWRT. Els esquemes d'autenticació suportants pel conceptrador són PAP, CHAP i MSCHAP.
+El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. Per obtenir més informació cliqueu el document de referència [LAA](https://github.com/guifi-exo/wiki/blob/master/howto/arquitectura-laa-acces-inet.md). La connexió PPP requereix un nom d'usuari i un password que serà proveït per l'associació eXO. Un cop disposem d'aquestes dades ja podem configurar el router OpenWRT. Els esquemes d'autenticació suportats pel concentrador són PAP, CHAP i MSCHAP.
 
 Aquesta és una guia tècnica per configurar aquest servei en routers residencials amb OpenWRT/LEDE. **Aquest document cobreix les versions estables d'OpenWRT 15.05.1 (Chaos Calmer) i LEDE 17.01.4 (Reboot).**
 
@@ -81,7 +81,7 @@ Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu d'ac
 
 ## Resolució del bug de *redial* de L2TP
 
-Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connextivitat amb el concentrador es reestableixi.
+Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon `xl2tpd` en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connectivitat amb el concentrador es reestableixi.
 
 Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen, proposem el següent:
 
@@ -101,4 +101,4 @@ config interface 'exo'
         option keepalive '30,10'
 ```
 
-Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especifiat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i `xl2tpd` el donarà de baixa, tot activant la funció *redial*.
+Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especificat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i `xl2tpd` el donarà de baixa, tot activant la funció *redial*.
