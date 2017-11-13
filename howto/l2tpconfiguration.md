@@ -22,3 +22,14 @@ root@OpenWrt:~# opkg install xl2tpd ip tcpdump
 ## Configuració de la connexió a Guifi.net
 
 Cal tenir clar quina és la IP i rang (màscara) del node comunitari, típicament situat al terrat. Consulteu la pàgina web de Guifi.net o bé accediu directament al node. Normalment la IP té el format 10.a.b.c/27. Reservem una nova IP dins d'aquest rang per router residencial, per exemple la 10.a.b.c+1/27.
+
+Anem a la part *Interfaces* i editem la WAN. Triem en el desplegable *Static address* i cliquem *Switch protocol*. Emplenem els camps amb aquests valors:
+
+```
+IPv4 address = 10.a.b.c+1
+IPv4 netmask = 255.255.255.224
+IPv4 gateway = 10.a.b.c
+```
+A l'apartat *Firewall Settings*, vinculem la interfície de xarxa a la zona WAN del firewall. Això impedirà l'accés de les connexions entrants al router residencial. Apliquem i desem canvis. Connectem el port que correspongui a la interfície WAN al cable del node comunitari o a l'equipment de xarxa que hi permeti l'accés.
+
+
