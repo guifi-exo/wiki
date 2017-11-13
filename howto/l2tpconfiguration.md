@@ -1,4 +1,4 @@
-# Configuració de túnels L2TP per routers OpenWER/LEDE
+# Configuració de túnels L2TP per routers OpenWRT/LEDE
 
 Autor: Víctor Oncins 2017-11-12
 
