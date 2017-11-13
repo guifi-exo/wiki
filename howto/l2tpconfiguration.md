@@ -12,7 +12,7 @@ El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. La conn
 
 Suposem que tenim un router amb un firmware OpenWRT amb les configuracions per defecte. Podem trobar les imatges pre-compilades al dipòsit del projecte [OpenWRT](https://downloads.openwrt.org/chaos_calmer/15.05.1/) o [LEDE](https://downloads.lede-project.org/releases/17.01.4/). Trieu l'arquitectura de hardware i el model de router i procediu a gravar el nou firmware. Un cop el tinguem a punt, connecteu la porta WAN a una connexió a Internet. Si els valors de la configuració són per defecte, hi haurà un client DHCP activat. Entrem al web de configuració http://192.168.1.1/. Entrem a la part *System > Software*. Cliquem *Update lists* i actualitzem la llista de dipòsits.
 
-Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump*. Alternativament podem instal·lar els paquets per linia de comandes:
+Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump* que poden ser útils en una fase posterior de depuració de problemes. Alternativament podem instal·lar els paquets per línia de comandes:
 
 ```
 root@OpenWrt:~# opkg update
@@ -30,6 +30,19 @@ IPv4 address = 10.a.b.c+1
 IPv4 netmask = 255.255.255.224
 IPv4 gateway = 10.a.b.c
 ```
-A l'apartat *Firewall Settings*, vinculem la interfície de xarxa a la zona WAN del firewall. Això impedirà l'accés de les connexions entrants al router residencial. Apliquem i desem canvis. Connectem el port que correspongui a la interfície WAN al cable del node comunitari o a l'equipment de xarxa que hi permeti l'accés.
+
+A l'apartat *Firewall Settings*, vinculem la interfície de xarxa a la zona WAN del firewall. Això impedirà l'accés de les connexions entrants al router residencial. Apliquem i desem canvis. Connectem el port que correspongui a la interfície WAN al cable del node comunitari o a l'equipment de xarxa que hi permeti l'accés. Assegurem-nos que teniu accés al concentrador de connexión de l'eXO:
+
+```
+root@OpenWrt:~# ping 10.38.140.225
+PING 10.38.140.225 (10.38.140.225): 56 data bytes
+64 bytes from 10.38.140.225: seq=0 ttl=61 time=6.780 ms
+64 bytes from 10.38.140.225: seq=1 ttl=61 time=4.980 ms
+^C
+--- 10.38.140.225 ping statistics ---
+2 packets transmitted, 2 packets received, 0% packet loss
+round-trip min/avg/max = 4.980/5.880/6.780 ms
+```
+
 
 
