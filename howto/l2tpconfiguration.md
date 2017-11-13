@@ -44,5 +44,7 @@ PING 10.38.140.225 (10.38.140.225): 56 data bytes
 round-trip min/avg/max = 4.980/5.880/6.780 ms
 ```
 
+## Configuració de la connexió L2TP d'accés a Internet
+
 
 
