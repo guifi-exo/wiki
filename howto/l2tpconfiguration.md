@@ -12,34 +12,13 @@ El protocol L2TP encapsula una connexió de capa d'enllaç de tipus PPP. La conn
 
 Suposem que tenim un router amb un firmware OpenWRT amb les configuracions per defecte. Podem trobar les imatges pre-compilades al dipòsit del projecte [OpenWRT](https://downloads.openwrt.org/chaos_calmer/15.05.1/) o [LEDE](https://downloads.lede-project.org/releases/17.01.4/). Trieu l'arquitectura de hardware i el model de router i procediu a gravar el nou firmware. Un cop el tinguem a punt, connecteu la porta WAN a una connexió a Internet. Si els valors de la configuració són per defecte, hi haurà un client DHCP activat. Entrem al web de configuració http://192.168.1.1/. Entrem a la part *System > Software*. Cliquem *Update lists* i actualitzem la llista de dipòsits.
 
-Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump*.
-
+Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump*. Alternativament podem instal·lar els paquets per linia de comandes:
 
 ```
-               SN/Client                  L3 PSN                PoP-IX  
-
-+-----------+           +-----------+    +------+    +-------+          +------+
-|           |           |           |    |      |    |       |          |      |
-| PC1/ CPE1 +-----------+           +<-----L2TP----->+       |          |      |
-|           |<==PPPoE==>*<=========>*<====PPP+AAA===>|       |          |  IX  |
-+-----------+           |           |    |      |    |       +--VLAN95--+      +->FXOLN
-+-----------+           |    LAC    |    |      |    |       |          |      |
-|           |           |           |    |      |    |       |          |      |
-| PC2/ CPE2 +-----------+           |    |      |    |       |          |      |
-|           |<==PPPoE==>*<=========>*<====PPP+AAA===>+  LNS  |          |      |
-+-----------+           +-----------+    |      |    |       |          |      |
-                                         |      |    |       |          |      |
-  +---------+           +-----------+    |      |    |       |          +------+
-  |         |           |    LAC    |    |      |    |       |
-  |   PC    +-----------+   usuari  +<-----L2TP----->+       |          +------+
-  |         |           |    NAT    |<====PPP+AAA===>|       |<==AAA===>|RADIUS|
-  +---------+           +-----------+    +------+    +-------+          +------+
+root@OpenWrt:~# opkg update
+root@OpenWrt:~# opkg install xl2tpd ip tcpdump
 ```
 
+## Configuració de la connexió a Guifi.net
 
-| Distribució     | L2TP LAC forwarder |L2TP LAC no-IPsec |L2TP LNS no-IPsec | 
-| ----------------| ------------------ |----------------- |------------------|
-| RouterOS 6.38.X | NO                 | SI               | SI               |
-| VyOS 1.1.7      | NO                 | NO               | NO               |
-| BSDRP 11.1      | SI                 | SI               | SI               |
-| OpenWRT CC      | NO                 | SI               | SI               |
+Cal tenir clar quina és la IP i rang (màscara) del node comunitari, típicament situat al terrat. Consulteu la pàgina web de Guifi.net o bé accediu directament al node. Normalment la IP té el format 10.a.b.c/27. Reservem una nova IP dins d'aquest rang per router residencial, per exemple la 10.a.b.c+1/27.
