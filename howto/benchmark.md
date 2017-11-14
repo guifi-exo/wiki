@@ -15,9 +15,9 @@ CPU benchmark:
 - cpu
     - `stress`
 - network
-    - `iperf` and `iperf3` (download/upload ~ rw)
+    - `iperf` and `iperf3` (download/upload ~ read/write)
     - `ping` or `mtr` or `traceroute` (latency)
 - disk
-    - `fio` (rw)
-    - `hdparm` example `sudo hdparm -Tt /dev/sda` (rw)
+    - `fio` (read/write)
+    - `hdparm` example `sudo hdparm -Tt /dev/sda` (read/write)
     - `ioping` https://github.com/koct9i/ioping#examples (latency)
