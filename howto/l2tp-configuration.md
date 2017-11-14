@@ -101,3 +101,9 @@ config interface 'exo'
 ```
 
 Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especificat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i *xl2tpd* el donarà de baixa, tot activant la funció *redial*.
+
+En aquests moments ja s'han obert els correcponents pull requests als mantenidors del paquet:
+
+- OpenWrt packages: https://github.com/openwrt/packages/pull/5125
+- LuCI: https://github.com/openwrt/luci/pull/1440
+
