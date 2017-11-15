@@ -32,6 +32,20 @@ apt-get install pppoeconf
 
 pppoeconf
 
+## L2TP
+
+(Configuració L2TP)[l2tp-configuration.md]
+
+algunes de les seves avantatges
+
+- és de tipus dial-up
+    - és molt fàcil de configurar (usuari, contraseña), tant per la banda de client com de operador
+    - per la banda de operador, a més a més, et permet fer gestió professional dels usuaris. Amb IPIP s'han de fer inventillos. L2TP es presta més a un eina de gestió bonica per manegar usuaris-tunels (radius, LDAP)
+- es poden canviar les característiques associades al tunel: ara li poso un altre IP4, o li trec IPv6, ara el dono de baixa
+- el pots moure de lloc sense demanar permís (IPIP s'ha de saber la IP d'origen)
+- el pots posar contra un router que faci NAT, té tècniques de NAT traversal que IPIP i GRE no tenen
+pots posar xifratge al tunel. això està en recerca, qui ho vulgui investigar...
+
 ## Encrypted tunnels
 
 Someone tested the maximum bandwidth from encrypted Tincd, Fastd and Wireguard and the best results were with Wireguard
