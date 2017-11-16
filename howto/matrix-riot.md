@@ -94,14 +94,18 @@ database:
     cp_max: 10
 
 # LDAP from guifi
-ldap_config:
-  enabled: true
-  uri: "ldaps://ldap.guifi.net"
-  base: "o=webusers,dc=guifi,dc=net"
-  attributes:
-    uid: "uid"
-    mail: "mail"
-    name: "cn"
+
+password_providers:
+ - module: "ldap_auth_provider.LdapAuthProvider"
+   config:
+     enabled: true
+     uri: "ldaps://ldap.guifi.net"
+     start_tls: true
+     base: "o=webusers,dc=guifi,dc=net"
+     attributes:
+        uid: "uid"
+        mail: "mail"
+        name: "uid"
 
 # overridden: default is false
 allow_guest_access: True
@@ -164,12 +168,15 @@ listeners:
       - names: [federation]
         compress: false
 
+# enable communities feature
+enable_group_creation: True
+
 EOF
 ```
 
 [Set up requirements for guifi LDAP](https://github.com/matrix-org/matrix-synapse-ldap3#installation)
 
-    pip install matrix-synapse-ldap3
+    apt-get install python-matrix-synapse-ldap3
 
 [Set up requirements](https://wiki.debian.org/PostgreSql#Installation)
 
