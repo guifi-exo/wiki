@@ -195,7 +195,7 @@ swapon -a
 
 The first operation is to resize the disk using proxmox, after that you require to put some commands depending on purpose on that disk
 
-resize disk when is a root partition
+resize disk when is a root partition at /dev/vda1
 
 ```
 # sometimes this command is required to force kernel update partition table
@@ -203,7 +203,7 @@ resize disk when is a root partition
 parted /dev/vda resizepart 1 Yes 100%
 # alternatively
 # parted /dev/vda resizepart 1 Yes -1
-xfs_grow /path/to/mounted/disk
+xfs_growfs /dev/vda1
 ```
 
 ### Regular disk
