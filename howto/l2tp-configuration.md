@@ -14,7 +14,7 @@ Podem trobar les imatges pre-compilades al dipòsit del projecte [OpenWRT](https
 
 Suposem que tenim un router amb un firmware OpenWRT amb les configuracions per defecte. Un cop el tinguem a punt, connecteu el port WAN a una connexió a Internet. Si els valors de la configuració són els per defecte, hi haurà un client DHCP activat. Entrem al web de configuració http://192.168.1.1/. Entrem a la part *System > Software*. Cliquem *Update lists* i actualitzem la llista de dipòsits.
 
-Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump* que poden ser útils en una fase posterior de depuració de problemes. Alternativament podem instal·lar tots els paquets de cop per línia de comandes:
+Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar d'altres com ara el *ip* o el *tcpdump* que poden ser útils en una fase posterior de depuració de problemes. Si feu servir LEDE el paquet *ip* ja ve instal·lat. Alternativament podem instal·lar tots els paquets de cop per línia de comandes:
 
 ```
 root@OpenWrt:~# opkg update
