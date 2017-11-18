@@ -78,15 +78,9 @@ IPv6 assigment length = 64
 ```
 Deseu, apliqueu canvis i reinicieu el router. Un cop recuperat, ja hauríeu de poder accedir a Internet per IPv4 i IPv6.
 
-## Resolució del bug de *redial* de L2TP
+## Activació de reconnexió automàtica
 
-Les versions considerades d'OpenWRT i LEDE fan servir el mateix [paquet](https://github.com/openwrt/packages/tree/master/net/xl2tpd), que permet integrar la configuració del daemon *xl2tpd* en l'entorn UCI/LuCI. Tanmateix no permet activar la funció de *redial* del daemon *xl2tpd*, és a dir, quan es perd la comunicació i el túnel s'abaixa, aquest no es torna a recuperar automàticament, encara que la connectivitat amb el concentrador es reestableixi.
-
-Per resoldre aquest problema i mentre els mantenidors oficials del paquet no ho solucionen de manera definitiva, proposem el següent:
-
-1. Baixeu-vos l'arxiu [l2tp.sh](https://github.com/guifi-exo/wiki/blob/master/howto/code/l2tp.sh), tot clicant l'opció *raw*.
-2. Des del vostre PC executeu `scp l2tp.sh root@192.168.1.1:/lib/netifd/proto/l2tp.sh`
-3. Inicieu de nou una sessió ssh amb el router i afegiu les línies que faltin respecte la següent secció de configuració de l'arxiu `/etc/config/network`:
+Per defecte la reconnexió del túnel en cas d'interrupció de la comunicació està deshabilitada. Per activar-la caldrà editar l'arxiu `/etc/config/network` i afegir el camp `chekup_interval` amb el valor en segons del temps de reintent de connexió. Podem afegir també el camp `keepalive` per modular les comprovacions periòdiques de l'estat del túnel. En el nostre exemple, cada 10 segons enviarà un paquet de keepalive. Si durant 20 segons no es rep cap altre keepalive el túnel es considera desconnectat. Tornarà a fer intents cada 10 segons per tornar-lo a aixecar.
 
 ```
 config interface 'exo'
@@ -95,15 +89,8 @@ config interface 'exo'
         option username '<el-vostre-usuari>'
         option password '<el-vostre-password>'
         option ipv6 '1'
-        option redial '1'
-        option redial_timeout '15'
-        option keepalive '30,10'
+        option checkup_interval '10'
+        option keepalive '20,10'
 ```
 
-Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada. El camp `redial` habilita (`1`) o deshabilita (`0`) la funció de reestabliment del túnel després del temps (en segons) especificat en el camp `redial_timeout`. El valor `keepalive` configura el ritme de comprovacions de la salut del túnel. En aquest cas `30,10` vol dir que cada 10 segons envia un missatge de *keepalive*. En cas que després de 30 segons no es rebi cap resposta, es considera que el túnel està caigut i *xl2tpd* el donarà de baixa, tot activant la funció *redial*.
-
-En aquests moments ja s'han obert els correcponents pull requests als mantenidors del paquet:
-
-- OpenWrt packages: https://github.com/openwrt/packages/pull/5125
-- LuCI: https://github.com/openwrt/luci/pull/1440
-
+Un cop desats els canvis, reinicieu el router i ja tindrem la funció de reestabliment habilitada i la resta de configuracions aplicades.
