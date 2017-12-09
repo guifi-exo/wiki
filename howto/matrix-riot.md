@@ -12,7 +12,7 @@
       - [script to upgrade static riot](#script-to-upgrade-static-riot)
   - [Data](#data)
   - [Test federation](#test-federation)
-- [Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi](#instalaci%C3%B3n-desde-el-c%C3%B3digo-fuente-y-con-virtualenv-partiendo-de-debian-8-b%C3%A1sico---sevillaguifi)
+- [HTML formatted messages](#html-formatted-messages)
 - [known problems](#known-problems)
   - [notifications](#notifications)
 - [todo / extra](#todo--extra)
@@ -427,58 +427,6 @@ homeserver="matrix.org"
 
 curl -XPOST -k -d '{"msgtype":"m.text", "body": "", "format": "org.matrix.custom.html", "formatted_body":"<b>test</b> test <font color =\"red\">red test</font> https://docs.google.com/document/d/1QPncBmMkKOo6\_B2jyBuy5FFSZJrRsq7WU5wgRSzOMho/edit#heading=h.arjuwv7itr4h <table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><td>Eve</td><td>Jackson</td><td>94</td></tr></table> https://www.w3schools.com/html/html\_tables.asp"}' "https://matrix.guifi.net:8448/\_matrix/client/r0/rooms/%21$room\_id:$room\_server/send/m.room.message?access\_token=$token"
 ```
-
-# Instalación desde el código fuente y con virtualenv partiendo de Debian 8 básico - sevillaguifi
-
-* Primero satisfacemos las dependencias necesarias:
-
-```
-sudo apt-get install build-essential python2.7-dev libffi-dev \
-                     python-pip python-setuptools sqlite3 \
-                     libssl-dev python-virtualenv libjpeg-dev libxslt1-dev
-```
-
-* Vamos a instalar el homeserver con un usuario no privilegiado del sistema:
-
-```
-virtualenv -p python2.7 ~/.synapse
-source ~/.synapse/bin/activate
-pip install --upgrade setuptools
-pip install https://github.com/matrix-org/synapse/tarball/master
-
-```
-
-* Ahora creamos los archivos de configuración (sustituye tu dominio)
-
-```
-python -m synapse.app.homeserver \
-    --server-name sevilla.guifi.net \
-    --config-path homeserver.yaml \
-    --generate-config \
-    --report-stats=yes
-
-```
-
-* Finalmente crearemos el primer usuario del sistema
-
-```
-source ~/.synapse/bin/activate
-synctl start # if not already running
-register_new_matrix_user -c homeserver.yaml https://localhost:8448
-New user localpart: Usuario1
-Password:
-Confirm password:
-Success!
-```
-
-* Para arrancar el homeserver introducimos estos comandos
-
-```
-cd ~/.synapse
-source ./bin/activate
-synctl start 
-```
-
 
 # known problems
 
