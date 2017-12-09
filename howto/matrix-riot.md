@@ -415,7 +415,15 @@ To test federation you can use this service: https://matrix.org/federationtester
 
 or use the source: https://github.com/matrix-org/matrix-federation-tester
 
-# HTML formatted messages
+# known problems
+
+## notifications
+
+some people do not receive notifications in its smartphone
+
+# todo / extra
+
+## HTML formatted messages
 
 You can send HTML formatted messages (for example for bot/alert notification) with `curl`, at the moment this is [officially not documented](https://github.com/matrix-org/matrix-doc/issues/917)
 
@@ -427,14 +435,6 @@ homeserver="matrix.org"
 
 curl -XPOST -k -d '{"msgtype":"m.text", "body": "", "format": "org.matrix.custom.html", "formatted_body":"<b>test</b> test <font color =\"red\">red test</font> https://docs.google.com/document/d/1QPncBmMkKOo6\_B2jyBuy5FFSZJrRsq7WU5wgRSzOMho/edit#heading=h.arjuwv7itr4h <table style=\"width:100%\"><tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr><tr><td>Jill</td><td>Smith</td><td>50</td></tr><tr><td>Eve</td><td>Jackson</td><td>94</td></tr></table> https://www.w3schools.com/html/html\_tables.asp"}' "https://matrix.guifi.net:8448/\_matrix/client/r0/rooms/%21$room\_id:$room\_server/send/m.room.message?access\_token=$token"
 ```
-
-# known problems
-
-## notifications
-
-some people do not receive notifications in its smartphone
-
-# todo / extra
 
 ## telegram bridge
 
