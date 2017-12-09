@@ -52,6 +52,12 @@
 
 This guide helps you to install a matrix server using authentication of a particular LDAP (guifi.net) with a postgresql database. Hope it helps you to be inspired on your particular needs.
 
+matrix-riot homeservers up & running that used this howto:
+
+- https://sevilla.guifi.net/riot
+- https://riot.guifi.net
+- https://riot.musaik.net
+
 ## First steps
 
 Run all following commands as root user
