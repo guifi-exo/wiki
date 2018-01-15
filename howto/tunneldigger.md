@@ -12,7 +12,7 @@ Segons la documentació de [Tunneldigger](https://github.com/wlanslovenija/tunne
 ```
 src-git nodewatcher https://github.com/wlanslovenija/firmware-packages-opkg.git
 ```
-Tot segit poden actualitzar i instal·lar els directoris de paquets dels *feeds*. Triem els paquets de Tunneldigger i d'altres que considerem oportuns amb *Menuconfig*.
+Tot seguit poden actualitzar i instal·lar els directoris dels paquets dels *feeds*. Triem els paquets de Tunneldigger i d'altres que considerem oportuns amb *Menuconfig*.
 ```
 ./scripts/feeds update -a
 ./scripts/feeds install -a
