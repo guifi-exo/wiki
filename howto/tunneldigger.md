@@ -1,4 +1,4 @@
-# Instal·lació del paquet per LEDE/OpenWRT
+# Instal·lació del paquet Tunneldigger per LEDE/OpenWRT
 
 Segona la documentació de tunneldigger, cal compilar una imatge de LEDE/OpenWRT per tal d'obtenir el opkg. Recordem els passos bàsics:
 ```
