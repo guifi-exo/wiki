@@ -8,11 +8,11 @@ Explorem els tags del repositori ja que per defecte el HEAD apunta cap al darrer
 ```
 git checkout tags/v17.01.4
 ```
-Segons la documentació de [Tunneldigger](https://github.com/wlanslovenija/tunneldigger), Tunnedigger per LEDE/OpenWRT es troba en el repositori de la comunitat:
+Segons la documentació de [Tunneldigger](https://github.com/wlanslovenija/tunneldigger), Tunnedigger per LEDE/OpenWRT es troba en el [repositori de la comunitat](https://github.com/wlanslovenija/firmware-packages-opkg). Aquí ens indica que hem d'editar l'arxiu de *feeds* i afegir:
 ```
-https://github.com/wlanslovenija/firmware-packages-opkg
+src-git nodewatcher https://github.com/wlanslovenija/firmware-packages-opkg.git
 ```
-Aquí en indica que hem d'editar l'arxiu de *feeds* i afegir `src-git nodewatcher https://github.com/wlanslovenija/firmware-packages-opkg.git`. Tot segit poden actualitzar i instal·lar els directoris de paquets dels *feeds*. Triem els paquets de Tunneldigger i d'altres que considerem oportuns amb *Menuconfig*.
+Tot segit poden actualitzar i instal·lar els directoris de paquets dels *feeds*. Triem els paquets de Tunneldigger i d'altres que considerem oportuns amb *Menuconfig*.
 ```
 ./scripts/feeds update -a
 ./scripts/feeds install -a
