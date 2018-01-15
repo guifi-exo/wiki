@@ -1,10 +1,10 @@
 # Instal·lació del paquet Tunneldigger per LEDE/OpenWRT
 
-Segona la documentació de tunneldigger, cal compilar una imatge de LEDE/OpenWRT per tal d'obtenir el opkg. Recordem els passos bàsics:
+Segons la documentació de tunneldigger, cal compilar una imatge de LEDE/OpenWRT per tal d'obtenir el opkg. Recordem els passos bàsics. Clonem el repositori de LEDE:
 ```
 git clone https://git.lede-project.org/source.git lede
 ```
-Explorem els tags del repositori ja que per defecte el HEAD apunta cap al darrer commit de la versió experimental. Triem la darrera estable:
+Això crearà un directori anomenat `lede` on hi tindrem tots els arxius de compilació. Explorem els tags del repositori ja que per defecte el HEAD apunta cap al darrer commit de la versió experimental. Triem la darrera estable:
 ```
 git checkout tags/v17.01.4
 ```
