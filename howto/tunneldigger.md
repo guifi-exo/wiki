@@ -19,3 +19,44 @@ Tot seguit poden actualitzar i instal·lar els directoris dels paquets dels *fee
 
 make menuconfig
 ```
+
+# Instal·lació del broker
+Falta el procés d'instal·lació amb detall...Se suposa que tenim el codi instal·lat a `/srv/tunneldiger`.
+
+Per arrencar manualment:
+```
+cd /srv/tunneldigger
+source /srv/tunneldigger/env_tunneldigger/bin/activate
+env_tunneldigger/bin/python -m tunneldigger_broker.main /srv/tunneldigger/broker/l2tp_broker.cfg
+
+```
+
+Per declarar el servei a Debian cal crear un script d'arrancada, per exemple:
+```
+#!/bin/bash
+
+WDIR=/srv/tunneldigger
+VIRTENV_DIR=/srv/tunneldigger
+CONF_FILE=l2tp_broker.cfg
+
+cd $WDIR
+source $VIRTENV_DIR/env_tunneldigger/bin/activate
+env_tunneldigger/bin/python -m tunneldigger_broker.main $WDIR/broker/$CONF_FILE
+```
+i donem permisos d'execució. Afegim l'arxiu `/etc/systemd/system/tunneldigger.service`:
+```
+[Unit]
+Description = Start tunneldigger L2TPv3 broker
+After = network.target
+
+[Service]
+ExecStart = /srv/tunneldigger/start-broker.sh
+
+[Install]
+WantedBy = multi-user.target
+```
+Finalment habilitem el nou servei en l'entorn de Debian:
+```
+systemctl daemon-reload
+systemctl enable tunneldigger.service
+```
