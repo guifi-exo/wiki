@@ -21,7 +21,7 @@ make menuconfig
 ```
 
 # Instal·lació del broker
-Falta el procés d'instal·lació amb detall...Se suposa que tenim el codi instal·lat a `/srv/tunneldiger`.
+Falta el procés d'instal·lació amb detall...Se suposa que tenim el codi instal·lat a `/srv/tunneldigger`.
 
 Per arrencar manualment:
 ```
