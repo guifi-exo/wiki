@@ -277,6 +277,14 @@ server {
     ssl_stapling_verify on;
     
     ssl_prefer_server_ciphers on;
+
+    # enable session resumption to improve https performance
+    # http://vincent.bernat.im/en/blog/2011-ssl-session-reuse-rfc5077.html
+    # found here: https://gist.github.com/plentz/6737338
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+
     # good security tips OFF
 
     ssl_certificate /etc/letsencrypt/live/${matrix_domain}/fullchain.pem;
