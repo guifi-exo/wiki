@@ -12,6 +12,7 @@ now enter via ssh
 
 ```
 wget https://downloads.openwrt.org/chaos_calmer/15.05/x86/64/openwrt-15.05-x86-64-combined-ext4.img.gz
+# lede: https://downloads.lede-project.org/releases/17.01.4/targets/x86/64/lede-17.01.4-x86-64-combined-ext4.img.gz
 gunzip openwrt-15.05-x86-64-combined-ext4.img.gz
 mv openwrt-15.05-x86-64-combined-ext4.img openwrt-15.05-x86-64-combined-ext4.raw
 # raw works, but we will convert to qcow2 (because it has extra features) -> src https://docs.openstack.org/image-guide/convert-images.html
