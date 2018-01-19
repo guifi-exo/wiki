@@ -31,6 +31,7 @@ update_wordpress.sh script:
 cd /var/www/html/wordpress
 wp core update
 wp plugin update --all
+wp theme update --all
 cd
 ```
 
