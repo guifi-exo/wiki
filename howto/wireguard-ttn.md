@@ -21,12 +21,6 @@ root@LEDE:~# opkg install wireguard luci-proto-wireguard luci-app-wireguard
 ```
 La configuració de referència pel *Gateway-keeper* és:
 ```
-config interface 'loopback'
-        option ifname 'lo'
-        option proto 'static'
-        option ipaddr '127.0.0.1'
-        option netmask '255.0.0.0'
-
 config globals 'globals'
 
 config interface 'lan'
@@ -67,7 +61,54 @@ config route
         option netmask '255.0.0.0'
         option gateway '10.228.193.97'
 ```
+Pel que fa al *TTN Broker* tenim:
+```
+config globals 'globals'
 
+config interface 'lan'
+        option type 'bridge'
+        option ifname 'eth0'
+        option proto 'static'
+        option ipaddr '10.38.140.235'
+        option netmask '255.255.255.224'
+        option ip6assign '60'
+        option dns '8.8.8.8'
+        option gateway '10.38.140.225'
+
+config interface 'wan'
+        option proto 'static'
+        option ifname 'eth1'
+        option ipaddr '109.69.10.98'
+        option netmask '255.255.255.224'
+        option gateway '109.69.10.126'
+
+config route
+        option interface 'lan'
+        option target '10.0.0.0'
+        option netmask '255.0.0.0'
+        option gateway '10.38.140.225'
+
+config interface 'ttn'
+        option proto 'wireguard'
+        option private_key '+MhXS6jVdBq7FcOubGEEUTdwiEi59mOLQlGyH+Hl5V8='
+        option listen_port '45955'
+        option mtu '1396'
+        list addresses '172.31.0.1/22'
+
+config wireguard_ttn
+        option public_key 'u7VjcLp3N2sJ7EcFjsPuRw9pYu6ogRO70NT1eewl+AU='
+        option endpoint_port '45955'
+        option endpoint_host '10.90.234.5'
+        list allowed_ips '172.16.0.0/24'
+        list allowed_ips '172.31.0.0/22'
+
+config wireguard_ttn
+        option public_key '7JfICIH5zKTSoH/5YT8kMkDmVQdg5Oy2r4PM2PId81c='
+        option endpoint_host '10.228.193.115'
+        option endpoint_port '45955'
+        list allowed_ips '172.16.1.0/24'
+        list allowed_ips '172.31.0.0/22'
+```
 
 També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense cap extensuo o plugin:
 ```
