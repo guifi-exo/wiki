@@ -19,6 +19,56 @@ Instal·lem els paquets de wireguard i supot luci:
 ```
 root@LEDE:~# opkg install wireguard luci-proto-wireguard luci-app-wireguard
 ```
+La configuració de referència pel *Gateway-keeper* és:
+```
+config interface 'loopback'
+        option ifname 'lo'
+        option proto 'static'
+        option ipaddr '127.0.0.1'
+        option netmask '255.0.0.0'
+
+config globals 'globals'
+
+config interface 'lan'
+        option type 'bridge'
+        option proto 'static'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+        option _orig_ifname 'eth0 wlan0'
+        option _orig_bridge 'true'
+        option ifname 'eth0'
+        option ipaddr '172.16.1.1'
+
+config interface 'wan'
+        option ifname 'eth1'
+        option _orig_ifname 'eth1'
+        option _orig_bridge 'false'
+        option proto 'static'
+        option ipaddr '10.228.193.115'
+        option netmask '255.255.255.224'
+        option dns '10.228.203.104'
+
+config interface 'ttn'
+        option proto 'wireguard'
+        option private_key 'mLVrzXXcGkBvE0nYxPTs/HoX6JmfIs9AiXjtMlQovkI='
+        option listen_port '45955'
+        option mtu '1396'
+        list addresses '172.31.0.3/22'
+
+config wireguard_ttn
+        list allowed_ips '0.0.0.0/0'
+        option endpoint_host '10.38.140.235'
+        option endpoint_port '45955'
+        option public_key 'LBW/StqTmQdJLWeWuIUYNkRbSFa3s3RGe7MdeLrV01E='
+
+config route
+        option interface 'wan'
+        option target '10.0.0.0'
+        option netmask '255.0.0.0'
+        option gateway '10.228.193.97'
+```
+
+
 També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense cap extensuo o plugin:
 ```
 root@LEDE:~# opkg install olsrd luci-app-olsr
