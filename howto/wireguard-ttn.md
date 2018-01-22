@@ -44,7 +44,7 @@ config interface 'wan'
 
 config interface 'ttn'
         option proto 'wireguard'
-        option private_key 'mLVrzXXcGkBvE0nYxPTs/HoX6JmfIs9AiXjtMlQovkI='
+        option private_key '6Jm4kaReQsnuyNva4wvg8D3F8V7ZbFvUB5EHpy3h73ax'
         option listen_port '45955'
         option mtu '1396'
         list addresses '172.31.0.3/22'
@@ -90,7 +90,7 @@ config route
 
 config interface 'ttn'
         option proto 'wireguard'
-        option private_key '+MhXS6jVdBq7FcOubGEEUTdwiEi59mOLQlGyH+Hl5V8='
+        option private_key 'tBtpfwf65JkCyeuhc47bt87fJRdUKhSBphXLxrKXAM8p'
         option listen_port '45955'
         option mtu '1396'
         list addresses '172.31.0.1/22'
