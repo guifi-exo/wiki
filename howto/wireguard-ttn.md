@@ -15,3 +15,11 @@ Tot seguit poden actualitzar i instal·lar els directoris dels paquets dels *fee
 
 make menuconfig
 ```
+Instal·lem els paquets de wireguard i supot luci:
+```
+root@LEDE:~# opkg install wireguard luci-proto-wireguard luci-app-wireguard
+```
+També ens caldrà un protocol d'enaminament dinàmic. Instal·lem l'OLSR sense cap extensuo o plugin:
+```
+root@LEDE:~# opkg install olsrd luci-app-olsr
+```
