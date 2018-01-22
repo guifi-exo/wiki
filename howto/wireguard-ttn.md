@@ -136,7 +136,15 @@ config LoadPlugin
 config LoadPlugin
         option library 'olsrd_httpinfo.so.0.1'
         option port '1978'
-        list Net '0.0.0.0 0.0.0.0'
+        list Net '0.0.0.0 0.0.0.0'config InterfaceDefaults
+
+config Hna4
+        option netaddr '0.0.0.0'
+        option netmask '0.0.0.0'
+
+config LoadPlugin
+        option library 'olsrd_jsoninfo.so.0.0'
+        option ignore '0'
         option ignore '1'
 
 config LoadPlugin
