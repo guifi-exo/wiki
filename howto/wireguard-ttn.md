@@ -114,3 +114,43 @@ També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense c
 ```
 root@LEDE:~# opkg install olsrd luci-app-olsr
 ```
+La confguració minimalista per tal que funcioni l'anunci de prefixes dins la VPN és:
+```
+config olsrd             
+        option IpVersion '4'
+        option FIBMetric 'flat'
+        option LinkQualityLevel '2'
+        option LinkQualityAlgorithm 'etx_ff'
+        option OlsrPort '698'
+        option Willingness '3'
+        option NatThreshold '1.0'
+
+config LoadPlugin
+        option library 'olsrd_arprefresh.so.0.1'
+        option ignore '1'
+
+config LoadPlugin
+        option library 'olsrd_dyn_gw.so.0.5'
+        option ignore '1'
+
+config LoadPlugin
+        option library 'olsrd_httpinfo.so.0.1'
+        option port '1978'
+        list Net '0.0.0.0 0.0.0.0'
+        option ignore '1'
+
+config LoadPlugin
+        option library 'olsrd_nameservice.so.0.3'
+        option ignore '1'
+
+config LoadPlugin
+        option library 'olsrd_txtinfo.so.0.1'
+        option accept '0.0.0.0'
+        option ignore '0'
+
+config Interface
+        option interface 'ttn'
+        option Mode 'ether'
+        option ignore '0'
+        option Ip4Broadcast '172.31.3.255'
+```
