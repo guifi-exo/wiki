@@ -16,10 +16,12 @@ Al mercat podreu trobar equips acabats ([CPEs](https://en.wikipedia.org/wiki/Cus
 
 Recomanem equips de 5 GHz per evitar interferències, especialment en entorns urbans massius com les ciutats.
 
+- [RB921GS-5HPacD-15S (mANTBox 15s)](https://mikrotik.com/product/RB921GS-5HPacD-15S): un router wifi per a exterior amb ràdio 5 GHz 802.11ac i antena sectorial de 120º integrada. [Commit openwrt](https://github.com/openwrt/openwrt/commit/82626cc145610b8b6485d650693629ef0b943505)
+- [RBwAPG-5HacT2HnD (wAP AC)](https://mikrotik.com/product/RBwAPG-5HacT2HnD): un router wifi per a interior/exterior amb ràdios 2.4 GHz 802.11n 2:·2 i 5 GHz 802.11ac 3:3 omnidireccionals. [Commit openwrt](https://github.com/openwrt/openwrt/commit/e15c63a37574bd15ce3a6636c2f04741ab76f7b9#diff-a8a8fafd47b7c67a2dd5176236f2ef61)
+- [Ubiquiti Nanostation M5](https://dl.ubnt.com/datasheets/nanostationm/nsm_ds_web.pdf) sèrie XM (antiga) o XW (nova): Tenen tota la funcionalitat
+- [Alfa Network N5](http://www.alfa.com.tw/products_show.php?pc=127&ps=103): alternativa a Nanostation M5. Contra, no es pot treure el PoE passthrough del port WAN. S'ha d'accedir via serial. La "versió 1" està afectada per problemes de capacitat (que la imatge no cap, i que té [32 MB de RAM](https://lede-project.org/meta/infobox/432_warning))
 - ~~Ubiquiti Nanostation 5~~: És un model massa antic, no funcionarà amb mesh/qMp
 - ~~Ubiquiti Nanostation Loco M5~~: No la recomanem, molta gent ha tingut males experiències amb elles, té mala qualitat, pot tenir comportament no esperat.
-- [Ubiquiti Nanostation M5](https://dl.ubnt.com/datasheets/nanostationm/nsm_ds_web.pdf) sèrie XM (antiga) o XW (nova): Tenen tota la funcionalitat
-- [Alfa Network N5](http://www.alfa.com.tw/products_show.php?pc=127&ps=103): alternativa a Nanostation M5. Contra, no es pot treure el PoE passthrough del port WAN
 
 ## Switch
 
