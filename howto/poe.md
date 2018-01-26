@@ -99,11 +99,10 @@ Les femelles RJ45 dels tester solen ser més adaptables a mals RJ45 que les feme
 
 # Preguntes freqüents
 
-- P: Què vol dir mA?
-- R: Vol dir mil·liampères. [Mil·li](https://ca.wikipedia.org/wiki/Mil·li) és un prefix per reduir entre 1000 la quantitat d'una dimensió. mA és tant utilitzat a electricitat com el kg (kilogram) en el dia a dia
-
-- P: Si tinc més corrent (A) la caiguda de tensió o voltatge (V) és menor?
-- R: La caiguda de tensió depén del consum de la càrrega. Un PoE de 0.5A 24V pots alimentar una càrrega de 12W i un de 1A una de 24W, per tant no arriba més lluny simplement pot alimentar més coses
+-  Què vol dir mA?
+    - Vol dir mil·liampères. [Mil·li](https://ca.wikipedia.org/wiki/Mil·li) és un prefix per reduir entre 1000 la quantitat d'una dimensió. mA és tant utilitzat a electricitat com el kg (kilogram) en el dia a dia
+- Si tinc més corrent (A) la caiguda de tensió o voltatge (V) és menor?
+    - La caiguda de tensió depén del consum de la càrrega. Un PoE de 0.5A 24V pots alimentar una càrrega de 12W i un de 1A una de 24W, per tant no arriba més lluny simplement pot alimentar més coses
 
 # Més informació
 
