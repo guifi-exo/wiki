@@ -90,6 +90,13 @@ Hi han molts convertidors que treballen de 36v a 52v d'entrada i donen 24v de so
 
 Donada tota aquesta informació, ja pots fer els teus números. A més a més, mira de disposar d'algun aparell per mesurar potència elèctrica (W), current (A), voltatge (V), etc. En el meu cas he utilitzat [aquest](http://www.conrad.fr/ce/fr/product/090158/Compteur-de-consommation-Chacon-54355) mesurador d'aparells electrònics a la llar, que em va ajudar molt per tenir els peus a terra.
 
+# Altres problemes
+
+Les femelles RJ45 dels tester solen ser més adaptables a mals RJ45 que les femelles de les ràdios. Lo que pot fer que el tester ens digui que cable està OK però no arriba potència a l'antenna, per tal d'evitar això:
+
+- utilitzar grimpadora en condicions (més de 15 €)
+- utilitzar connectors femella RJ45 de major qualitat
+
 # Preguntes freqüents
 
 - P: Què vol dir mA?
