@@ -25,7 +25,7 @@ Recomanem equips de 5 GHz per evitar interferències, especialment en entorns ur
 
 ## Switch
 
-Switchos que es poden posar [poe](poe.md) i així només pujar un cable i distribuïr la corrent entre tots els trastos
+Switchos que es poden posar [poe](../howto/poe.md) i així només pujar un cable i distribuïr la corrent entre tots els trastos
 
 - [EP R6](https://www.ubnt.com/edgemax/edgepoint/) (outdoor!) substitut del ToughSwitch, en format "outdoor".
  li podem posar openwrt/lede ! [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
