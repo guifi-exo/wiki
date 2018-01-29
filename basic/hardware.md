@@ -27,10 +27,15 @@ Recomanem equips de 5 GHz per evitar interferències, especialment en entorns ur
 
 Switchos que es poden posar [poe](../howto/poe.md) i així només pujar un cable i distribuïr la corrent entre tots els trastos
 
-- [EP R6](https://www.ubnt.com/edgemax/edgepoint/) (outdoor!) substitut del ToughSwitch, en format "outdoor".
- li podem posar openwrt/lede ! [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
-- [toughswitch](https://www.ubnt.com/accessories/toughswitch) (indoor - requereix caixa estanca) li posem firmware fabricant
-- [Netonix WS-6-MINI](https://www.netonix.com/ws-6-mini.html) (indoor - requereix caixa estanca) li posem firmware fabricant
+- [EP R6](https://www.ubnt.com/edgemax/edgepoint/) 
+  - substitut del ToughSwitch, en format "outdoor".
+  - li podem posar openwrt/lede [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
+- [toughswitch](https://www.ubnt.com/accessories/toughswitch)
+  - indoor - requereix caixa estanca
+  - li posem firmware fabricant
+- [Netonix WS-6-MINI](https://www.netonix.com/ws-6-mini.html)
+  - indoor - requereix caixa estanca
+  - li posem firmware fabricant
 
 ## Routers
 
