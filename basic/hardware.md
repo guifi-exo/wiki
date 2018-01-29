@@ -10,7 +10,7 @@ Habitualment no et serviran les botigues que pots anar presencial i per tant hau
 
 Considerem barat quan l'equip costa menys de 100 €
 
-## Equips
+## Antenes
 
 Al mercat podreu trobar equips acabats ([CPEs](https://en.wikipedia.org/wiki/Customer-premises_equipment)) que facin la funcionalitat necessària per connectar amb guifi.
 
@@ -30,7 +30,7 @@ Switchos que es poden posar [poe](../howto/poe.md) i així només pujar un cable
 - [EP R6](https://www.ubnt.com/edgemax/edgepoint/) 
   - substitut del ToughSwitch, en format "outdoor".
   - li podem posar openwrt/lede [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
-- [toughswitch](https://www.ubnt.com/accessories/toughswitch)
+- [ToughSwitch](https://www.ubnt.com/accessories/toughswitch)
   - indoor - requereix caixa estanca
   - li posem firmware fabricant
 - [Netonix WS-6-MINI](https://www.netonix.com/ws-6-mini.html)
@@ -41,6 +41,9 @@ Switchos que es poden posar [poe](../howto/poe.md) i així només pujar un cable
 
 Si vols instal·lar OpenWrt o LEDE que tinguin més de 4 MB de flash i 32 MB de RAM
 
+- [EP R6](https://www.ubnt.com/edgemax/edgepoint/) 
+  - substitut del [RB750GL](https://mikrotik.com/product/RB750GL)
+  - li podem posar openwrt/lede [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
 - En general:
     - tp-link
     - ubiquiti
