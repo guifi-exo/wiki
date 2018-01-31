@@ -7,16 +7,16 @@ Argumentem aquí per què hem triat l'opció de VPN, pros i contres...Descripci�
 
 El pla d'adreçament considerant una solució tipus VPN amb protocol d'encaminament intern:
 
-| Segment       | Subxarxa IPv4| Hosts adreçables | Comentaris  |
-| ------------- |-------------:| -----:|--------:|
-| GWs Lora Grup 1 | `172.16.N.0/24`| `254` | `N=1,2,...,255`|
-| GWs Lora Grup 2 | `172.17.N.0/24`| `254` | `N=1,2,...,255`|
-| GWs Lora Grup 3 | `172.18.N.0/24`| `254` | `N=1,2,...,255`|
-| GWs Lora Grup 4 | `172.19.N.0/24`| `254` | `N=1,2,...,255`|
-| Malla Broker 1| `172.31.0.0/22`| `1022`| |
-| Malla Broker 2| `172.31.4.0/22`| `1022`| |
-| Accés admins Wireguard | `172.31.254.0/24`| `254` | |
-
+| Segment       | Subxarxa IPv4| Hosts adreçables | Comentaris  |Prefix d'agregació|
+| ------------- |-------------:| -----:|--------:|--------:|
+| GWs Lora Grup 1 | `172.16.N.0/24`| `254` | `N=1,2,...,255`|`172.16.0.0/14`|
+| GWs Lora Grup 2 | `172.17.N.0/24`| `254` | `N=1,2,...,255`|`172.16.0.0/14`|
+| GWs Lora Grup 3 | `172.18.N.0/24`| `254` | `N=1,2,...,255`|`172.16.0.0/14`|
+| GWs Lora Grup 4 | `172.19.N.0/24`| `254` | `N=1,2,...,255`|`172.16.0.0/14`|
+| Malla Broker 1| `172.31.0.0/22`| `1022`| |`172.31.0.0/22`|
+| Malla Broker 2| `172.31.4.0/22`| `1022`| |`172.31.0.0/22`|
+| Accés admins Wireguard | `172.31.252.0/24`| `254` | |`172.31.252.0/22`|
+| Accés admins Wireguard | `172.31.253.0/24`| `254` | |`172.31.252.0/22`|
 
 
 Segons la documentació de tunneldigger, cal compilar una imatge de LEDE/OpenWRT per tal d'obtenir el opkg. Recordem els passos bàsics. Clonem el repositori de LEDE:
