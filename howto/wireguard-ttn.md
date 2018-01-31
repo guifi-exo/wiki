@@ -9,13 +9,13 @@ El pla d'adreçament considerant una solució tipus VPN amb protocol d'encaminam
 
 | Segment       | Subxarxa IPv4| Hosts adreçables | Comentaris  |
 | ------------- |-------------:| -----:|--------:|
-| GWs Lora Grup 1 | 172.16.N.0/24| 254 | N=1,2,...,255|
-| GWs Lora Grup 2 | 172.17.N.0/24| 254 | N=1,2,...,255|
-| GWs Lora Grup 3 | 172.18.N.0/24| 254 | N=1,2,...,255|
-| GWs Lora Grup 4 | 172.19.N.0/24| 254 | N=1,2,...,255|
-| Malla Broker 1| 172.31.0.0/22| 1022| |
-| Malla Broker 2| 172.31.4.0/22| 1022| |
-| Accés admins Wireguard | 172.31.254.0/24| 254 | |
+| GWs Lora Grup 1 | `172.16.N.0/24`| `254` | `N=1,2,...,255`|
+| GWs Lora Grup 2 | `172.17.N.0/24`| `254` | `N=1,2,...,255`|
+| GWs Lora Grup 3 | `172.18.N.0/24`| `254` | `N=1,2,...,255`|
+| GWs Lora Grup 4 | `172.19.N.0/24`| `254` | `N=1,2,...,255`|
+| Malla Broker 1| `172.31.0.0/22`| `1022`| |
+| Malla Broker 2| `172.31.4.0/22`| `1022`| |
+| Accés admins Wireguard | `172.31.254.0/24`| `254` | |
 
 
 
