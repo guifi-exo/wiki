@@ -93,7 +93,7 @@ config route
 
 config interface 'ttn'
         option proto 'wireguard'
-        option private_key 'tBtpfwf65JkCyeuhc47bt87fJRdUKhSBphXLxrKXAM8p'
+        option private_key 'tBtpfwf65JkCyeuhc47bt87fJRdUKhSBphXLxrKXAM8='
         option listen_port '45955'
         option mtu '1396'
         list addresses '172.31.0.1/22'
@@ -104,6 +104,7 @@ config wireguard_ttn
         option endpoint_host '10.90.234.5'
         list allowed_ips '172.16.0.0/24'
         list allowed_ips '172.31.0.0/22'
+        list allowed_ips '172.31.252.0/22'
 
 config wireguard_ttn
         option public_key '7JfICIH5zKTSoH/5YT8kMkDmVQdg5Oy2r4PM2PId81c='
@@ -111,6 +112,19 @@ config wireguard_ttn
         option endpoint_port '45955'
         list allowed_ips '172.16.1.0/24'
         list allowed_ips '172.31.0.0/22'
+        list allowed_ips '172.31.252.0/22'
+
+config interface 'adm'
+        option proto 'wireguard'
+        option private_key 'tBtpfwf65JkCyeuhc47bt87fJRdUKhSBphXLxrKXAM8='
+        list addresses '172.31.252.1/24'
+        option listen_port '51820'
+
+config wireguard_adm
+        option public_key 'CelE+tvz3yCVePvHcEK8um7Wah2CHyDmQkU4B+PKNzY='
+        list allowed_ips '172.16.0.0/14'
+        list allowed_ips '172.31.0.0/21'
+        list allowed_ips '172.31.252.0/22'
 ```
 
 També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense cap extensuo o plugin:
