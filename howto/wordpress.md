@@ -61,4 +61,6 @@ run it!
 ./update_wordpress.sh 
 Success: WordPress is up to date.
 Success: Plugin already updated.
+Success: Theme already updated.
+Success: Translations are up to date.
 ```
