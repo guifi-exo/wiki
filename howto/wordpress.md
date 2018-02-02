@@ -1,14 +1,29 @@
 # tips
 
-for installation:
+for installation: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
 
-https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
+hardening (in a nutshell: don't allow webserver to have access to all files, a potential bad php can harm it all)
 
-hardening (file permissions to user): https://stackoverflow.com/a/23755604
-
-    cd /var/www/wordpress
+    cd /var/www/html
+    chown www-data:www-data wordpress
+    cd wordpress
+    chown www-data:www-data .htaccess
     chown <username>:<username>  -R * # Let your useraccount be owner
-    chown www-data:www-data -R wp-content # Let apache be owner of wp-conte
+    chown www-data:<username> -R wp-content # Let apache be owner of wp-content
+    chmod 775 -R wp-content # allow upgrades
+
+recommended plugin: `wordfence`. checks security stuff is set up OK in wordpress
+
+    cd /var/www/html/wordpress/wp-content/plugins
+    wget https://downloads.wordpress.org/plugin/wordfence.x.x.x.zip
+    unzip wordfence.x.x.x.zip
+    chown www-data:user -R wordfence/
+    # enable from wp-admin WebGUI
+
+refs used:
+
+- https://stackoverflow.com/questions/28843695/wp-cli-error-installing-plugins-themes-could-not-create-directory-permission
+- https://stackoverflow.com/a/23755604
 
 # update wordpress via CLI
 
@@ -36,6 +51,7 @@ cd /var/www/html/wordpress
 wp core update
 wp plugin update --all
 wp theme update --all
+wp core language update
 cd
 ```
 
