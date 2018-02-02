@@ -1,4 +1,4 @@
-# tips
+# hardening wordpress (security)
 
 for installation: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
 
