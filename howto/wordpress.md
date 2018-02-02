@@ -6,6 +6,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubu
 
 hardening (file permissions to user): https://stackoverflow.com/a/23755604
 
+    cd /var/www/wordpress
+    chown <username>:<username>  -R * # Let your useraccount be owner
+    chown www-data:www-data -R wp-content # Let apache be owner of wp-conte
+
 # update wordpress via CLI
 
 ## install
