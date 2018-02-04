@@ -7,7 +7,7 @@ En aquesta entrada comentarem el procediment de compilació i instal·lació del
 # Compilació d'imatges des de les fonts snapshot
 Podem seguir les instruccions del projecte [LEDE](https://lede-project.org/docs/guide-developer/quickstart-build-images) si no tenim el codi font clonat.
 
-# Procediment de flash
+## Procediment d'instal·lació
 En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
 
 El primer pas és crear-se en un PC de treball un directori. En el meu cas `/home/user/Development/` i hi depositarem aquestes imatges:
@@ -38,7 +38,7 @@ ssh root@192.168.1.1
 ```
 No vindrà amb el password de root configurat. En aquest moment tenim el kernel i el rootfs carregats només en RAM.
 
-## BwAPG-5HacT2HnD
+### BwAPG-5HacT2HnD
 
 Per instal·lar-los de manera permanent per RBwAPG-5HacT2HnD transferim la imatge _sysupgrade_:
 ```
@@ -50,7 +50,7 @@ root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-s
 ```
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
 
-## RB921GS-5HPacD-15S
+### RB921GS-5HPacD-15S
 
 Per instal·lar-los de manera permanent per RB921GS-5HPacD-15S transferim la imatge _sysupgrade_:
 ```
