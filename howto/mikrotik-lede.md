@@ -30,7 +30,7 @@ dnsmasq -i $1 --dhcp-range=192.168.1.100,192.168.1.200 \
 ```
 Caldrà substituir `user` pel nom d'usuari que tinguem en el directori i `test` per un nom d'usuari disponible en el PC de treball. Normalment és el mateix nom en els dos casos. Fem que l'script sigui executable amb `chmod a+x loader.sh`. En el nostre cas la interfície de xarxa on connectarem el dispositiu és la `enp0s25`. Executem la comanda:
 ```
-./loader.sh enp0s25 openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
+sudo ./loader.sh enp0s25 openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
 ```
 Optem per activar el client DHCP en el dispositiu de Mikrotik a través del botó de reset. Connectem el cable de xarxa del dispositiu al PC. Desconnetem l'alimentació i la tornem a connectar mentre premem el botó de reset. El mantenim premut fins que el LED de ETH passa a intermitència ràpida. En aquest moment alliberem el botó de reset i hauríem de veure aquest els missatges de `dnsmasq` que correspon a la trasnferència del binari. Esperems uns segons i ja podem accedir al dispositiu amb ssh:
 ```
