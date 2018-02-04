@@ -10,13 +10,13 @@ Podem seguir les instruccions del projecte (https://lede-project.org/docs/guide-
 # Procediment de flash
 En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
 
-El primer pas és crear-se en un PC de treball un directori. En el meu cas `/home/user/Development/` i depositarem aquestes imatges:
+El primer pas és crear-se en un PC de treball un directori. En el meu cas `/home/user/Development/` i hi depositarem aquestes imatges:
 ```
 loader.sh
 openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
 openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
 ```
-Caldrà ara instal·lar el servidor DHCP i TFTP. Es recomana el `dnsmasq`. Si treballem amb un Debian o equivalent, només cal instal·lador des del dipòsits oficials:
+Caldrà ara instal·lar el servidor DHCP i TFTP. Es recomana el `dnsmasq`. Si treballem amb un Debian o equivalent, només cal instal·lar-lo des dels dipòsits oficials:
 ```
 sudo apt install dnsmasq
 ```
@@ -36,7 +36,7 @@ Optem per activar el client DHCP en el dispositiu de Mikrotik a través del bot�
 ```
 ssh root@192.168.1.1
 ```
-No vindrà amb el password de root configurat. Transferim la imatge _sysupgrade_:
+No vindrà amb el password de root configurat. En aquest moment tenim el kernel i el rootfs carregats només en RAM. Per instal·lar-los de manera permanent transferim la imatge _sysupgrade_:
 ```
 scp openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin root@192.168.1.1:/tmp
 ```
@@ -44,3 +44,4 @@ Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions 
 ```
 root@lede# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
 ```
+Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
