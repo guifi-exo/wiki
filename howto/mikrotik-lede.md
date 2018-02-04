@@ -5,22 +5,23 @@ A finals de 2017 ja disposem de suport quasi total per OpenWRT/LEDE, gràcies a 
 En aquesta entrada comentarem el procediment de compilació i instal·lació dels binaris en aquests dispositius. Tant aviat com estiguin disponibles les imatges estables compilades, podem passar directament a la secció d'instal·lació des de firmware OEM. L'objectiu és obtenir una imatge genèrica amb LuCI i d'altres eines útils i documentar el procediment de *flash* pel cas particular d'aquests models.
 
 # Compilació d'imatges des de les fonts snapshot
-Podem seguir les instruccions del projecte (https://lede-project.org/docs/guide-developer/quickstart-build-images)[LEDE] si no tenim el codi font clonat.
+Podem seguir les instruccions del projecte [LEDE](https://lede-project.org/docs/guide-developer/quickstart-build-images) si no tenim el codi font clonat.
 
 # Procediment de flash
 En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
 
+## RBwAPG-5HacT2HnD
 El primer pas és crear-se en un PC de treball un directori. En el meu cas `/home/user/Development/` i hi depositarem aquestes imatges:
 ```
-loader.sh
-openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
-openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
+wget https://downloads.lede-project.org/snapshots/targets/ar71xx/mikrotik/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
+wget https://downloads.lede-project.org/snapshots/targets/ar71xx/mikrotik/openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin
+wget https://downloads.lede-project.org/snapshots/targets/ar71xx/mikrotik/openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
 ```
 Caldrà ara instal·lar el servidor DHCP i TFTP. Es recomana el `dnsmasq`. Si treballem amb un Debian o equivalent, només cal instal·lar-lo des dels dipòsits oficials:
 ```
 sudo apt install dnsmasq
 ```
-L'arxiu `loader.sh` és un shell script que activa el `dnsmasq` sobre la interfície de xarxa especificada i lliura l'arxiu especificat per TFTP al dispositiu. He fet una adaptació de l'script original de la documentació [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common) per tal que permeti configurar la interfície de xarxa i el binari a transferir per la línia d'arguments.
+Creem l'arxiu `loader.sh` que serà un shell script que activa el `dnsmasq` sobre la interfície de xarxa especificada i lliura l'arxiu especificat per TFTP al dispositiu. He fet una adaptació de l'script original de la documentació [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common) per tal que permeti configurar la interfície de xarxa i el binari a transferir per la línia d'arguments.
 ```
 #/bin/bash
 ip a a 192.168.1.10/24 dev $1
@@ -36,12 +37,28 @@ Optem per activar el client DHCP en el dispositiu de Mikrotik a través del bot�
 ```
 ssh root@192.168.1.1
 ```
-No vindrà amb el password de root configurat. En aquest moment tenim el kernel i el rootfs carregats només en RAM. Per instal·lar-los de manera permanent transferim la imatge _sysupgrade_:
+No vindrà amb el password de root configurat. En aquest moment tenim el kernel i el rootfs carregats només en RAM.
+
+##RBwAPG-5HacT2HnD
+
+Per instal·lar-los de manera permanent per RBwAPG-5HacT2HnD transferim la imatge _sysupgrade_:
 ```
 scp openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin root@192.168.1.1:/tmp
 ```
 Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions de la memòria flash:
 ```
 root@lede# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
+```
+Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
+
+##RB921GS-5HPacD-15S
+
+Per aquest dispositiu en concret:
+```
+scp openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin root@192.168.1.1:/tmp
+```
+Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions de la memòria flash:
+```
+root@lede# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin
 ```
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
