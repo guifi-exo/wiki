@@ -8,7 +8,7 @@ En aquesta entrada comentarem el procediment de compilació i instal·lació del
 Podem seguir les instruccions del projecte (https://lede-project.org/docs/guide-developer/quickstart-build-images)[LEDE] si no tenim el codi font clonat.
 
 # Procediment de flash
-En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de (https://wiki.openwrt.org/toh/mikrotik/common)[OpenWRT].
+En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
 
 El primer pas és crear-se en un PC de treball un directori. En el meu cas `/home/user/Development/` i depositarem aquestes imatges:
 ```
@@ -16,3 +16,16 @@ loader.sh
 openwrt-ar71xx-mikrotik-rb-nor-flash-16M-squashfs-sysupgrade.bin
 openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf
 ```
+Caldrà ara instal·lar el servidor DHCP i TFTP. Es recomana el `dnsmasq`. Si treballem amb un Debian o equivalent, només cal instal·lador des del dipòsits oficials:
+```
+sudo apt install dnsmasq
+```
+L'arxiu `loader.sh` és un shell script que activa el `dnsmasq` sobre la interfície de xarxa especificada i lliura l'arxiu especificat per TFTP al dispositiu. He fet una adaptació de l'script original de la documentació [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
+```
+#/bin/bash
+ifconfig $1 192.168.1.10 up
+dnsmasq -i $1 --dhcp-range=192.168.1.100,192.168.1.200 \
+--dhcp-boot=$2 \
+--enable-tftp --tftp-root=/home/user/Development/ -d -u test -p0 -K --log-dhcp --bootp-dynamic
+```
+Caldrà substituir `user` pel nom d'usuari que tinguem en el directori i `test` per un nom d'usuari disponible en el PC de treball. Normalment és el mateix nom en els dos casos. Fem que l'script sigui executable amb `chmod a+x loader.sh`. En el nostre cas la interfície de xarxa on connectarem el dispositiu és la `enp0s25`.
