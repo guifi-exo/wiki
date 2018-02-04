@@ -21,6 +21,7 @@ El pla d'adreçament considerant una solució tipus VPN amb protocol d'encaminam
 | Accés admins Wireguard | `172.31.255.0/24`| `254` | |`172.31.252.0/22`|
 
 
+# Configuracions de referència
 
 La configuració de referència pel *Gateway-client* és:
 ```
