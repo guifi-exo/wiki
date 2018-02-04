@@ -46,7 +46,7 @@ scp openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin root@192
 ```
 Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions de la memòria flash:
 ```
-root@lede# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
+root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin
 ```
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
 
@@ -58,6 +58,6 @@ scp openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin root@192.168.1
 ```
 Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions de la memòria flash:
 ```
-root@lede# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin
+root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin
 ```
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
