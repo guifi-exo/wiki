@@ -369,6 +369,10 @@ edit file `vi /usr/local/bin/update-riot.sh`, add following content:
 ```
 #!/bin/bash
 
+# CHANGE here to use your specific domains
+matrix_domain="matrix.example.com"
+riot_domain="riot.example.com"
+
 # thanks MTRNord (@MTRNord:matrix.ffslfl.net)
 
 # ir a ruta de riot estatico
@@ -400,8 +404,8 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         # - point to your own homeserver
         # - select a specific welcome static page
         jq -M -r 'del(.piwik)' config.sample.json |
-          jq -M -r '.default_hs_url = "https://matrix.example.com"' |
-            jq -M -r '.welcomePageUrl = "https://riot.example.com/welcome/matrix.html"' > config.riot.example.com.json
+          jq -M -r '.default_hs_url = "https://$matrix_domain"' |
+            jq -M -r '.welcomePageUrl = "https://$riot_domain/welcome/matrix.html"' > config.$riot_domain.json
 
         cd ..
         chown -R www-data:www-data riot-web
