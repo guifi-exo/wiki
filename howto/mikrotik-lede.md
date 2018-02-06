@@ -5,7 +5,7 @@ A finals de 2017 ja disposem de suport quasi total per OpenWRT/LEDE, gràcies a 
 En aquesta entrada comentarem el procediment de compilació i instal·lació dels binaris en aquests dispositius. Tant aviat com estiguin disponibles les imatges estables compilades, podem passar directament a la secció d'instal·lació des de firmware OEM. L'objectiu és obtenir una imatge genèrica amb LuCI i d'altres eines útils i documentar el procediment de *flash* pel cas particular d'aquests models.
 
 # Compilació d'imatges des de les fonts snapshot
-Podem seguir les instruccions del projecte [LEDE](https://lede-project.org/docs/guide-developer/quickstart-build-images) si no tenim el codi font clonat.
+Podem seguir les instruccions del projecte [LEDE](https://lede-project.org/docs/guide-developer/quickstart-build-images) si no tenim el codi font clonat. Tot seguit triem els paquets que volem incloure en els binaris amb `make menuconfig`.[...]
 
 # Procediment d'instal·lació
 En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
