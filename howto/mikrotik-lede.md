@@ -58,10 +58,10 @@ root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-nand-large-ac-squashf
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
 
 # Mòduls de kernel per xips wireless
-Els mòduls de kernel amb supor pels xips wireless són:
+Els mòduls de kernel amb suport pels xips wireless considerats són:
 ```
 kmod-ath10k
 kmod-ath10k-ct
 ```
-El `kmod-ath10k` no permet configurar el mode ad-hoc (IBSS) però si AP i 802.11s. Si volem disposar del mode ad-hoc caldrà compilar les imatges amb `kmod-ath10k-ct`. Els dispositiu RB921GS-5HPacD-15S incorpora el xip wireless QCA9882 i en aquest cas caldrà també instal·lar una imatge que incorpori el firmware wireless `ath10k-firmware-qca988x`. Si fem servir la versió `-ct` caldrà afegir el firmware `ath10k-firmware-qca988x-ct` enlloc de la `ath10k-firmware-qca988x`.
+El `kmod-ath10k` no permet configurar el mode ad-hoc (IBSS) però si AP i 802.11s. Si volem disposar del mode ad-hoc caldrà compilar les imatges amb `kmod-ath10k-ct`. Els dispositiu RB921GS-5HPacD-15S incorpora el xip wireless QCA9882 i en aquest cas, caldrà també instal·lar una imatge que incorpori el firmware wireless `ath10k-firmware-qca988x`. Si fem servir la versió `-ct` caldrà afegir el firmware `ath10k-firmware-qca988x-ct` enlloc de la `ath10k-firmware-qca988x`.
 
