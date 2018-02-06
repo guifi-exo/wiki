@@ -4,9 +4,6 @@ A finals de 2017 ja disposem de suport quasi total per OpenWRT/LEDE, gràcies a 
 
 En aquesta entrada comentarem el procediment de compilació i instal·lació dels binaris en aquests dispositius. Tant aviat com estiguin disponibles les imatges estables compilades, podem passar directament a la secció d'instal·lació des de firmware OEM. L'objectiu és obtenir una imatge genèrica amb LuCI i d'altres eines útils i documentar el procediment de *flash* pel cas particular d'aquests models.
 
-# Compilació d'imatges des de les fonts snapshot
-Podem seguir les instruccions del projecte [LEDE](https://lede-project.org/docs/guide-developer/quickstart-build-images) si no tenim el codi font clonat. Tot seguit triem els paquets que volem incloure en els binaris amb `make menuconfig`.[...]
-
 # Procediment d'instal·lació
 En general els dispositius de Mikrotik no permeten el flash d'imatges terceres des de la pròpia eina de gestió del fabricant. Tanmateix permet carregar una imatge tipus `vmlinux-initramfs.elf` en RAM i després gravar la imatge a la memòria flash amb `sysupgrade`. Les instruccions genèriques les trobareu a la documentació de [OpenWRT](https://wiki.openwrt.org/toh/mikrotik/common).
 
@@ -39,7 +36,6 @@ ssh root@192.168.1.1
 No vindrà amb el password de root configurat. En aquest moment tenim el kernel i el rootfs carregats només en RAM.
 
 ## BwAPG-5HacT2HnD
-
 Per instal·lar-los de manera permanent per RBwAPG-5HacT2HnD transferim la imatge _sysupgrade_:
 ```
 scp openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-squashfs-sysupgrade.bin root@192.168.1.1:/tmp
@@ -51,7 +47,6 @@ root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-rb-nor-flash-16M-ac-s
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
 
 ## RB921GS-5HPacD-15S
-
 Per instal·lar-los de manera permanent per RB921GS-5HPacD-15S transferim la imatge _sysupgrade_:
 ```
 scp openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin root@192.168.1.1:/tmp
@@ -61,3 +56,12 @@ Accedim per ssh al dispositiu i gravem la imatge a les corresponents particions 
 root@Openwrt:~# sysupgrade -n /tmp/openwrt-ar71xx-mikrotik-nand-large-ac-squashfs-sysupgrade.bin
 ```
 Esperem uns minuts i ja tindrem el OpenWRT/LEDE instal·lat.
+
+# Mòduls de kernel per xips wireless
+Els mòduls de kernel amb supor pels xips wireless són:
+```
+kmod-ath10k
+kmod-ath10k-ct
+```
+El `kmod-ath10k` no permet configurar el mode ad-hoc (IBSS) però si AP i 802.11s. Si volem disposar del mode ad-hoc caldrà compilar les imatges amb `kmod-ath10k-ct`. Els dispositiu RB921GS-5HPacD-15S incorpora el xip wireless QCA9882 i en aquest cas caldrà també instal·lar una imatge que incorpori el firmware wireless `ath10k-firmware-qca988x`. Si fem servir la versió `-ct` caldrà afegir el firmware `ath10k-firmware-qca988x-ct` enlloc de la `ath10k-firmware-qca988x`.
+
