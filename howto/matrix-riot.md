@@ -23,6 +23,7 @@
   - [use our own integration server](#use-our-own-integration-server)
     - [particular interest: monitoring with prometheus and grafana](#particular-interest-monitoring-with-prometheus-and-grafana)
   - [more bots, bridges](#more-bots-bridges)
+- [dark things about matrix and riot](#dark-things-about-matrix-and-riot)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -527,3 +528,15 @@ procedure:
 https://github.com/turt2live/t2bot.io
 
 https://t2bot.io
+
+
+# dark things about matrix and riot
+
+Political concern: Main funder is AMDOC, search amodoc-mossad on google and you can discover something interesting. The funding situation is changing to have more funders, we will see what happen.
+
+Tecnological concern: matrix generate ALOT ot metadata on the central server, even if the communication is encrypted, the metadata are not and most of the software analysis to generate network maps use just metadata, more you have more the map is accurate
+
+Riot client is not free. Such a hype for a server-client non-free [0] software which tries to act as a Person In The Middle interconnecting any other network...
+
+[0] https://directory.fsf.org/wiki/Talk:Riot-im
+
