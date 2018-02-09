@@ -12,6 +12,8 @@ hardening (in a nutshell: don't allow webserver to have access to all files, a p
     chown www-data:<username> -R wp-content # Let apache be owner of wp-content
     chmod 775 -R wp-content # allow upgrades
 
+this hardening (file permission) makes that automatic upgrades are not working anymore (use update wordpress via CLI plus crontab) -> src https://www.wordfence.com/learn/how-to-harden-wordpress-sites/#file-permissions-and-the-wordpress-directory-structure
+
 recommended plugin: `wordfence`. checks security stuff is set up OK in wordpress
 
     cd /var/www/html/wordpress/wp-content/plugins
