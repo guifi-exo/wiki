@@ -1,6 +1,6 @@
 # Generació de firmwares de VPN per TTN-Guifi.net per dispositius LEDE/OpenWRT
 
-El projecte TTN-guifi.net es basa en la col·lació de la communitat TTN a Catalunya i la de Guifi.net per tal de desplegar una xarxa de gateways [Lora](https://en.wikipedia.org/wiki/LPWAN#LoRa) a la xarxa oberta Guifi.net.
+El projecte TTN-guifi.net es basa en la col·laboració de la communitat TTN a Catalunya i la de Guifi.net per tal de desplegar una xarxa de gateways [Lora](https://en.wikipedia.org/wiki/LPWAN#LoRa) a la xarxa oberta Guifi.net.
 
 ## Descripció de la solució
 Argumentem aquí per què hem triat l'opció de VPN, pros i contres...Descripció dels elements que conformen l'arquitectura i firmwares usats.
