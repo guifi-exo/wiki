@@ -1,6 +1,6 @@
 # Generació de firmwares de VPN per TTN-Guifi.net per dispositius LEDE/OpenWRT
 
-El projecte TTN-guifi.net es basa en la col·laboració de la communitat TTN a Catalunya i la de Guifi.net per tal de desplegar una xarxa de gateways [Lora](https://en.wikipedia.org/wiki/LPWAN#LoRa) a la xarxa oberta Guifi.net.
+El projecte TTN-guifi.net es basa en la col·laboració de la comunitat TTN a Catalunya i la de Guifi.net per tal de desplegar una xarxa de gateways [Lora](https://en.wikipedia.org/wiki/LPWAN#LoRa) a la xarxa oberta Guifi.net.
 
 ## Descripció de la solució
 Argumentem aquí per què hem triat l'opció de VPN, pros i contres...Descripció dels elements que conformen l'arquitectura i firmwares usats.
@@ -128,7 +128,7 @@ config wireguard_adm
         list allowed_ips '172.31.252.0/22'
 ```
 
-També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense cap extensuo o plugin:
+També ens caldrà un protocol d'encaminament dinàmic. Instal·lem OLSR sense cap extensió o plugin:
 ```
 root@LEDE:~# opkg install olsrd luci-app-olsr
 ```
