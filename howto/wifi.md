@@ -15,3 +15,8 @@ Para cada router:
 # Utilidades
 
 ver si una tarjeta wifi soporta modo monitor: `iw list | grep monitor`
+
+
+# Extra
+
+https://wiki.openwrt.org/doc/recipes/dumbap
