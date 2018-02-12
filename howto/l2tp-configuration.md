@@ -18,7 +18,7 @@ Cerquem el paquet *xl2tpd* i l'instal·lem. De manera opcional podem instal·lar
 
 ```
 root@OpenWrt:~# opkg update
-root@OpenWrt:~# opkg install xl2tpd ip tcpdump
+root@OpenWrt:~# opkg install xl2tpd ip tcpdump-mini
 ```
 
 ## Configuració de la connexió a Guifi.net
