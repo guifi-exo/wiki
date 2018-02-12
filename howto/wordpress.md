@@ -4,12 +4,15 @@ for installation: https://www.digitalocean.com/community/tutorials/how-to-instal
 
 hardening (in a nutshell: don't allow webserver to have access to all files, a potential bad php can harm it all)
 
+    $username="username"
     cd /var/www/html
     chown www-data:www-data wordpress
     cd wordpress
     chown www-data:www-data .htaccess
-    chown <username>:<username>  -R * # Let your useraccount be owner
-    chown www-data:<username> -R wp-content # Let apache be owner of wp-content
+    chown $username:  -R * # Let your useraccount be owner and group
+    gpasswd -a $username www-data
+    chown www-data:$username -R wp-content # Let apache be owner of wp-content
+    chown $username: -R wp-content/plugins # except plugins -> src https://stackoverflow.com/a/25865028
     chmod 775 -R wp-content # allow upgrades
 
 this hardening (file permission) makes that automatic upgrades are not working anymore (use update wordpress via CLI plus crontab) -> src https://www.wordfence.com/learn/how-to-harden-wordpress-sites/#file-permissions-and-the-wordpress-directory-structure
