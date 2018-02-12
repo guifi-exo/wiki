@@ -63,7 +63,7 @@ A la secció *Advanced Settings*, marquem els punts següents:
 - [x] Use default gateway
 - [x] Use DNS servers advertised by peer (Opcional)
 
-**Si som en una xarxa de tipus mesh, cal que `Overrride MTU = 1420`, en cas contrari `Override MTU = 1436`.** Situem la nova interfície a la zona WAN del firewall a la part *Firewall Settings*. Apliquem i desem canvis.
+**Si som en una xarxa de tipus mesh, cal que `Override MTU = 1420`, en cas contrari `Override MTU = 1436`.** Situem la nova interfície a la zona WAN del firewall a la part *Firewall Settings*. Apliquem i desem canvis.
 
 ## Configuració de la connexió d'accés a Internet per IPv6
 
