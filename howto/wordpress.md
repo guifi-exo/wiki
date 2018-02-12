@@ -49,11 +49,14 @@ update_wordpress.sh script:
 ```
 #!/bin/bash
 
+# use full path, useful in cron use case
+wp="/usr/local/bin/wp"
+
 cd /var/www/html/wordpress
-wp core update
-wp plugin update --all
-wp theme update --all
-wp core language update
+$wp core update
+$wp plugin update --all
+$wp theme update --all
+$wp core language update
 cd
 ```
 
