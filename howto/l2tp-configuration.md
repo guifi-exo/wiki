@@ -67,7 +67,7 @@ A la secció *Advanced Settings*, marquem els punts següents:
 
 ## Configuració de la connexió d'accés a Internet per IPv6
 
-L'eXO també proveeix d'accés a Internet per IPv6. Per activar-lo caldrà editar la interfície WAN6. Anem a *Physical Settings* i activem la següent opció tot emplenant el camp de text amb el valor `@exo`
+L'eXO també proveeix d'accés a Internet per IPv6. En primer lloc caldrà suprimer el prefixe ULA que ve per defecte. Deixem en blanc el camp *IPv6 ULA-Prefix* a la part inferior de *Interfaces*. Per activar IPv6 global caldrà editar la interfície WAN6. Anem a *Physical Settings* i activem la següent opció tot emplenant el camp de text amb el valor `@exo`
 
 - [X] Custom interface [ @exo ]
 
@@ -89,6 +89,7 @@ config interface 'exo'
         option username '<el-vostre-usuari>'
         option password '<el-vostre-password>'
         option ipv6 '1'
+        option mtu <el-vostre-mtu>
         option checkup_interval '10'
         option keepalive '20,10'
 ```
