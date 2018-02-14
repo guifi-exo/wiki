@@ -69,7 +69,7 @@ A la secció *Advanced Settings*, marquem els punts següents:
 
 L'eXO també proveeix d'accés a Internet per IPv6. Per activar-lo caldrà editar la interfície WAN6. Anem a *Physical Settings* i activem la següent opció tot emplenant el camp de text amb el valor `@exo`
 
-- [X] Custom interface {@exo}
+- [X] Custom interface [ @exo ]
 
 Apliqueu i deseu canvis. Per tal de fer efectiva la delegació del prefix IPv6 provinent del concentrador, caldrà editar la interfície BR-LAN i modificar el camp següent:
 
