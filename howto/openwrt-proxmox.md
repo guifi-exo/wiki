@@ -34,5 +34,22 @@ ostype: l26
 scsihw: virtio-scsi-pci
 smbios1: uuid=5fd0912e-7c0d-4bc0-8c63-642b376e2a43
 sockets: 1
-virtio0: local2:200/vm-200-disk-1.qcow2,size=60M
+scsi0: local2:200/vm-200-disk-1.qcow2,size=60M
 ```
+
+# Increase root's size
+
+By default it uses 50 MB. You can extend it.
+
+First of all resize VM's disk in proxmox
+
+Put a rescue CD to boot like for example: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/
+
+Run the operating system as live do `sudo su` and run the following commands:
+
+    parted /dev/sda resizepart 2 100%
+    e2fsck -f /dev/sda2
+    resize2fs /dev/sda2
+    reboot
+
+swap boot from CD to disk, with `df -h` you should see the new desired size
