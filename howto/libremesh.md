@@ -25,3 +25,5 @@ profile list (choose device)
 commonly
 
     ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --remote --community=qmp/v1
+
+note: cooking required ~900 MB
