@@ -9,15 +9,19 @@ go inside repo
     git clone https://github.com/libremesh/lime-sdk
     cd lime-sdk
 
-target list
+apply patch
+
+    ./cooker -f
+    snippets/regdbtz.sh
+
+target list (choose device's architecture)
 
     ./cooker --targets
 
-profile list
+profile list (choose device)
 
     ./cooker --profiles=ar71xx/generic
 
 commonly
 
-    snippets/regdbtz.sh
-    ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --remote --community=qMp/v1
+    ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --remote --community=qmp/v1
