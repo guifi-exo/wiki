@@ -210,7 +210,7 @@ xfs_growfs /dev/vda1
 
 resize disk when is a regular disk (assuming a mounted xfs disk), directly:
 
-`xfs_grow /path/to/mounted/disk`
+`xfs_growfs /path/to/mounted/disk`
 
 ### Swap
 
