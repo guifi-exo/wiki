@@ -18,7 +18,7 @@ apply patches
     snippets/regdbtz.sh
     snippets/regdbus.sh
 
-# option1: if you don't have kernel patches to apply
+## option1: if you don't have kernel patches to apply
 
 build archictecture
 
@@ -28,7 +28,7 @@ build specific device, for example:
 
     ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --remote --community=qmp/v1
 
-# option2: if you have kernel patches to apply
+## option2: if you have kernel patches to apply
 
 apply patch, for example:
 
