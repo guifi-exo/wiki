@@ -373,11 +373,13 @@ edit file `vi /usr/local/bin/update-riot.sh`, add following content:
 # CHANGE here to use your specific domains
 matrix_domain="matrix.example.com"
 riot_domain="riot.example.com"
+riot_ppath="/var/www/html" # p: parent path
+riot_rpath="riot-web" # r: relative path
 
 # thanks MTRNord (@MTRNord:matrix.ffslfl.net)
 
 # ir a ruta de riot estatico
-cd /var/www/html
+cd "$riot_ppath"
 
 content=$(curl -s https://api.github.com/repos/vector-im/riot-web/releases/latest)
 package_id=$(jq -r '.id' <<< "$content")
@@ -392,10 +394,10 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         download=$(jq -r '.browser_download_url' <<< "$download_asset")
 
         #cd /var/www
-        rm -rf riot-web.bkp
-        mv riot-web riot-web.bkp 2> /dev/null
-        mkdir riot-web
-        cd riot-web
+        rm -rf "$riot_rpath".bkp
+        mv "$riot_rpath" "$riot_rpath".bkp 2> /dev/null
+        mkdir "$riot_rpath"
+        cd "$riot_rpath"
 
         echo "New Version found starting download"
         curl -Ls "$download" | tar xz --strip-components=1 -C ./
@@ -403,14 +405,14 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         # customizations:
         # - delete piwik and change homeserver URL
         # - point to your own homeserver
-        # - select a specific welcome static page
+        # - select a specific welcome static page (if does not exist goes to default)
         jq -M -r 'del(.piwik)' config.sample.json |
           jq -M -r '.default_hs_url = "https://$matrix_domain"' |
             jq -M -r '.welcomePageUrl = "https://$riot_domain/welcome/matrix.html"' > config.$riot_domain.json
 
         cd ..
-        chown -R www-data:www-data riot-web
-        echo "$package_id" > /var/www/html/riot_version-id
+        chown -R www-data:www-data "$riot_rpath"
+        echo "$package_id" > "$riot_ppath"/riot_version-id
 
       else
         echo "Found a new version but first download link doesn't match needed file format"
