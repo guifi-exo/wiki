@@ -407,8 +407,8 @@ if [ "$package_id" != "$(cat ./riot_version-id 2> /dev/null )" ]
         # - point to your own homeserver
         # - select a specific welcome static page (if does not exist goes to default)
         jq -M -r 'del(.piwik)' config.sample.json |
-          jq -M -r '.default_hs_url = "https://$matrix_domain"' |
-            jq -M -r '.welcomePageUrl = "https://$riot_domain/welcome/matrix.html"' > config.$riot_domain.json
+          jq -M -r '.default_hs_url = "https://'$matrix_domain'"' |
+            jq -M -r '.welcomePageUrl = "https://'$riot_domain'/welcome/matrix.html"' > config.$riot_domain.json
 
         cd ..
         chown -R www-data:www-data "$riot_rpath"
@@ -514,6 +514,54 @@ procedure:
 - export riot encryption keys from userA_A to file
 - import riot encryption keys from file to userA_B
 - [optional: blank account in server A] userA_A leaves all rooms she is in
+
+script to blank account in server A:
+
+```
+#!/usr/bin/env python3
+
+import sys
+
+# https://github.com/matrix-org/matrix-python-sdk/tree/master/matrix_client
+from matrix_client.client import MatrixClient
+from matrix_client.api import MatrixRequestError
+from requests.exceptions import MissingSchema
+
+# access data
+
+ost="https://matrix.example.com"
+username="myuser"
+password="mypassword"
+
+# login
+
+client = MatrixClient(host)
+
+try:
+    client.login_with_password(username, password)
+except MatrixRequestError as e:
+    print(e)
+    if e.code == 403:
+        print("Bad username or password.")
+        sys.exit(4)
+    else:
+        print("Check your server details are correct.")
+        sys.exit(2)
+except MissingSchema as e:
+    print("Bad URL format.")
+    print(e)
+    sys.exit(3)
+
+# actions
+
+roomlist = client.get_rooms()
+
+print("leaving rooms:")
+# list() does a copy of dictoinary to avoid problem "RuntimeError: dictionary changed size during iteration" error? -> src https://stackoverflow.com/questions/11941817/how-to-avoid-runtimeerror-dictionary-changed-size-during-iteration-error
+for room in list(roomlist.values()):
+    room.leave()
+    print("  " + room.room_id)
+```
 
 ## use our own integration server
 
