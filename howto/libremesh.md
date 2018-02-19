@@ -59,6 +59,7 @@ build specific device, for example:
 
 - Q: My wifi is not working, how can I debug wifi?
     - A: `iwinfo`, `iw list`, `iw dev`
+        - extra: `iwinfo wlan0 assoc`, `iwinfo wlan0 info`, `iwinfo wlan0 txpowerlist`, `iwinfo wlan0 freqlist`, `iw phy phy0 info`
 
 # extra
 
