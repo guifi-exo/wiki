@@ -22,3 +22,5 @@ ver si una tarjeta wifi soporta modo monitor: `iw list | grep monitor`
 https://wiki.openwrt.org/doc/recipes/dumbap
 
 set 20 MHz for wifi channel https://support.apple.com/es-es/HT202068
+
+legal stuff related to wifi: https://en.wikipedia.org/wiki/List_of_WLAN_channels#5_GHz_(802.11a/h/j/n/ac/ax)
