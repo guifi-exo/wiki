@@ -20,6 +20,7 @@
   - ["telegram channel" (lista de difusión) in riot/matrix ?](#telegram-channel-lista-de-difusi%C3%B3n-in-riotmatrix-)
   - [captcha](#captcha)
   - [specification for script that migrates user from one server to another](#specification-for-script-that-migrates-user-from-one-server-to-another)
+    - [script to blank account in server A](#script-to-blank-account-in-server-a)
   - [use our own integration server](#use-our-own-integration-server)
     - [particular interest: monitoring with prometheus and grafana](#particular-interest-monitoring-with-prometheus-and-grafana)
   - [more bots, bridges](#more-bots-bridges)
@@ -496,7 +497,7 @@ https://github.com/matrix-org/synapse/blob/master/docs/CAPTCHA_SETUP.rst
 
 ## specification for script that migrates user from one server to another
 
-TODO: implement
+implementation: work in progress
 
 ingredients:
 
@@ -515,14 +516,15 @@ procedure:
 - import riot encryption keys from file to userA_B
 - [optional: blank account in server A] userA_A leaves all rooms she is in
 
-script to blank account in server A:
+### script to blank account in server A
 
-```
+```python
 #!/usr/bin/env python3
+# based on https://github.com/matrix-org/matrix-python-sdk/blob/master/samples/ChangeDisplayName.py
+# useful resource https://github.com/matrix-org/matrix-python-sdk/tree/master/matrix_client
 
 import sys
 
-# https://github.com/matrix-org/matrix-python-sdk/tree/master/matrix_client
 from matrix_client.client import MatrixClient
 from matrix_client.api import MatrixRequestError
 from requests.exceptions import MissingSchema
