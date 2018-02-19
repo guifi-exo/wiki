@@ -520,6 +520,13 @@ procedure:
 
 ```python
 #!/usr/bin/env python3
+
+# this script login the specific matrix account and LEAVES ALL ROOMS
+
+# requirements
+# - apt install python-pip3
+# - pip3 install wheel matrix_client
+
 # based on https://github.com/matrix-org/matrix-python-sdk/blob/master/samples/ChangeDisplayName.py
 # useful resource https://github.com/matrix-org/matrix-python-sdk/tree/master/matrix_client
 
@@ -531,7 +538,7 @@ from requests.exceptions import MissingSchema
 
 # access data
 
-ost="https://matrix.example.com"
+host="https://matrix.example.com"
 username="myuser"
 password="mypassword"
 
@@ -559,7 +566,7 @@ except MissingSchema as e:
 roomlist = client.get_rooms()
 
 print("leaving rooms:")
-# list() does a copy of dictoinary to avoid problem "RuntimeError: dictionary changed size during iteration" error? -> src https://stackoverflow.com/questions/11941817/how-to-avoid-runtimeerror-dictionary-changed-size-during-iteration-error
+# list() does a copy of dictionary to avoid error: "RuntimeError: dictionary changed size during iteration" -> src https://stackoverflow.com/questions/11941817/how-to-avoid-runtimeerror-dictionary-changed-size-during-iteration-error
 for room in list(roomlist.values()):
     room.leave()
     print("  " + room.room_id)
