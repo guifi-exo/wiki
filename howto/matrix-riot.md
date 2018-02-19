@@ -521,7 +521,13 @@ procedure:
 ```python
 #!/usr/bin/env python3
 
-# this script login the specific matrix account and LEAVES ALL ROOMS
+# motivation: 
+# - there are problems to deactivate account and rooms in matrix
+#     - https://github.com/matrix-org/synapse/issues/2017
+#     - https://github.com/matrix-org/synapse/issues/1853
+# - this will be part of the migration script for users between one server and another
+
+# this script login to a specific matrix account and LEAVES ALL ROOMS
 
 # requirements
 # - apt install python-pip3
