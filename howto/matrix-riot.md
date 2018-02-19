@@ -569,7 +569,7 @@ print("leaving rooms:")
 # list() does a copy of dictionary to avoid error: "RuntimeError: dictionary changed size during iteration" -> src https://stackoverflow.com/questions/11941817/how-to-avoid-runtimeerror-dictionary-changed-size-during-iteration-error
 for room in list(roomlist.values()):
     room.leave()
-    print("  " + room.room_id)
+    print("  " + room.room_id + " left")
 ```
 
 ## use our own integration server
