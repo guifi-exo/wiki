@@ -9,3 +9,4 @@
 - http://hacklabvalls.org/media/nou_node.pdf
 - http://hacklabvalls.org/media/Manual-connexio-guifinet.pdf
 - http://guifiamunt.guifi.net/wp-content/uploads/2013/12/CREAR-UN-USUARI-DE-GUIFINET-I-CREAR-UN-NODE.pdf
+- Supernodes híbrids: https://nextcloud.datalab.es/index.php/s/WioZblkzru9NCPc
