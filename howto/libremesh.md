@@ -61,6 +61,9 @@ build specific device, for example:
     - A: `iwinfo`, `iw list`, `iw dev`
         - extra: `iwinfo wlan0 assoc`, `iwinfo wlan0 info`, `iwinfo wlan0 txpowerlist`, `iwinfo wlan0 freqlist`, `iw phy phy0 info`
 
+- Q: Show me the link to the network profile that configures qMp named qmp/v1
+    - A: https://github.com/libremesh/network-profiles/tree/master/qmp/v1/etc/config
+
 # extra
 
 the new steps in qmp at the bottom: http://qmp.cat/News/35_qMp_4.0_Macondo_released
