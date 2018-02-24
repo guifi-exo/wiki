@@ -1,5 +1,7 @@
 # open virtual switch
 
+open virtual switch enables faster communications than the by default linux controller
+
 important note: ovs in debian stretch stable is buggy (I get "unable to raise network interfaces" with an awesome timeout of 5 minutes). But with [proxmox repos](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_Stretch#Adapt_your_sources.list) you will not have any problem
 
 requirements:
@@ -19,6 +21,8 @@ consider two interfaces named eno1 and eno2
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## bond backup between two interfaces
+
+You have two ethernet interfaces and you don't know what to do? You can bound them to increase redundancy
 
 ```
 source /etc/network/interfaces.d/*
@@ -68,6 +72,10 @@ iface gfs inet static
 
 ## bond lacp between two interfaces
 
+Important note: this REQUIRES setting LACP in switch
+
+This does redundancy ethernet and your bandwidth is increased in a (I think) round robin style
+
 ```
 source /etc/network/interfaces.d/*
 
@@ -115,6 +123,8 @@ iface gfs inet static
 ```
 
 ## one physical network interface (no bond)
+
+{You only want / you only have} one ethernet interface
 
 ```
 source /etc/network/interfaces.d/*
