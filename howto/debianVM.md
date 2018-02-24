@@ -221,6 +221,7 @@ swapoff -a
 mkswap -U $(blkid -s UUID -o value /dev/vdb) /dev/vdb
 swapon -a
 ```
+
 ## Checkers
 
 Disks:
