@@ -4,6 +4,12 @@
 - http://sants.guifi.net/maps/
 - http://libremap.net/
 
+# one-liner scanner
+
+Each second gives information about different quality parameters of wifi
+
+    while true; do clear; iw dev && iw dev wlan0 station dump && iw dev wlan0 link; sleep 1; done
+
 # qMp
 
 ## No puc accedir per IPv4 al qMp
