@@ -1,6 +1,12 @@
-qMp
+# Mapes de les xarxes mesh
 
-# No puc accedir per IPv4 al qMp
+- http://dsg.ac.upc.edu/qmpmon/
+- http://sants.guifi.net/maps/
+- http://libremap.net/
+
+# qMp
+
+## No puc accedir per IPv4 al qMp
 
 Requeriments: accés a l'antena a través de cable (capa dos, link layer). És a dir, tenim un cable al portàtil i a l'altre banda hi ha l'antena o un switch fins l'antena (cap router enmig).
 
@@ -31,7 +37,7 @@ reiniciem:
 
 `reboot`
 
-# Analitzar tràfic wireshark de forma còmode
+## Analitzar tràfic wireshark de forma còmode
 
 Normalment el procés per capturar tràfic és:
 
@@ -45,7 +51,7 @@ Hi ha però una manera de fer-ho només amb una comanda:
 
 src http://www.commandlinefu.com/commands/view/4373/analyze-traffic-remotely-over-ssh-w-wireshark
 
-# Obtenció del firmware
+## Obtenció del firmware
 
 per binari o compil·lació
 
