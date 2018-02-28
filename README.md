@@ -2,7 +2,7 @@ This is a multilanguage repository, you can find mixed information in catalan, e
 
 what can you find here?
 
-- [basic](./basic): articles 
+- [basic](./basic): very relevant information for all guifi user concerned about the network
 
 - [howto](./howto): technical articles with a very pragmatic approach about different topics related to guifi (spectrum, wifi, systems, protocols, etc.)
 
