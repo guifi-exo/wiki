@@ -55,6 +55,41 @@ ip rule list
 
 ip rule s
 
+### two IPs in different network interfaces of a VM
+
+you want to waste two IPs in the same VM, and make it reachable
+
+quick tips (check src for better info). substitute the values between <>
+
+```
+auto ethX
+iface ethX inet static
+        address <hostip>
+        netmask 255.255.255.224
+        post-up ip rule add to <hostip> lookup <tablename>
+        post-up ip route add default via <gatewayip> dev eth1 table <tablename>
+```
+
+```
+cat /etc/iproute2/rt_tables
+#
+# reserved values
+#
+255 local
+254 main
+253 default
+0   unspec
+#
+# local
+#
+#1  inr.ruhep
+200 <tablename>
+```
+
+reboot
+
+src https://blog.scottlowe.org/2013/05/29/a-quick-introduction-to-linux-policy-routing/
+
 ## queries routing
 
 `ip route show table <taula>`
