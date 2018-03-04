@@ -14,3 +14,7 @@ right now we only can "neutralize" router when it is separated from the ONT
 src https://wiki.bandaancha.st/Identificadores_VLAN_operadores_FTTH
 
 src https://naseros.com/2017/02/01/configuracion-de-un-router-neutro-y-configuracion-de-las-vlan/
+
+request: generic procedure for port mirroring
+    - (not tested) https://github.com/mmaraya/port-mirroring
+    - (not tested) http://www.persianov.net/tutorials/how-to-setup-openwrt-traffic-mirroring-and-snort-ids/
