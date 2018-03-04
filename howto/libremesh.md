@@ -36,7 +36,7 @@ apply patch, for example:
 
 ibuild architecture and force all compilations locally or it will not apply
 
-    ./cooker -b=ar71xx/generic --force-local
+    ./cooker -b ar71xx/generic --force-local
 
 build specific device, for example:
 
