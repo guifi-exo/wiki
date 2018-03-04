@@ -64,6 +64,9 @@ build specific device, for example:
 - Q: Show me the link to the network profile that configures qMp named qmp/v1
     - A: https://github.com/libremesh/network-profiles/tree/master/qmp/v1/etc/config
 
+- Q: How to included config files in the firmware image?
+    - A: place them in files directory, from there place the path, for example: files/etc/config/system.conf
+
 # extra
 
 the new steps in qmp at the bottom: http://qmp.cat/News/35_qMp_4.0_Macondo_released
