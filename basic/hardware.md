@@ -41,6 +41,7 @@ Switchos que es poden posar [poe](../howto/poe.md) i així només pujar un cable
 
 Si vols instal·lar OpenWrt o LEDE que tinguin més de 4 MB de flash i 32 MB de RAM
 
+- [RBwAPG-5HacT2HnD (wAP AC)](https://mikrotik.com/product/RBwAPG-5HacT2HnD): un router wifi per a interior/exterior amb ràdios 2.4 GHz 802.11n 2:·2 i 5 GHz 802.11ac 3:3 omnidireccionals. És una opció perfecte per a fer de punt d'accés dins de casa (túnels, etc.), fer desplegaments de xarxa ràpids (mesh per 5 GHz i AP per 2,4 GHz), etc. [Commit openwrt](https://github.com/openwrt/openwrt/commit/e15c63a37574bd15ce3a6636c2f04741ab76f7b9#diff-a8a8fafd47b7c67a2dd5176236f2ef61)
 - [EP R6](https://www.ubnt.com/edgemax/edgepoint/) 
   - substitut del [RB750GL](https://mikrotik.com/product/RB750GL)
   - li podem posar openwrt/lede [wiki openwrt](https://wiki.openwrt.org/toh/ubiquiti/ubiquiti_edgerouter_x_er-x_ka)
