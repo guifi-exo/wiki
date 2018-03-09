@@ -8,6 +8,7 @@ Estem preocupats per la falta de presència de dones a guifi; fem un recull de o
 - Restarters Barcelona (hi ha dones) https://therestartproject.org/groups/restarters-barcelona/
 - Associació de Dones Investigadores i Tecnòlogues a Catalunya http://www.amit-cat.org/
 - Dones Tech https://www.donestech.net
+- Cooperativa de dones http://www.dabne.net/es/home
 - Dones en Xarxa http://www.donesenxarxa.cat/
 - Espai de Dones de Pangea http://www.pangea.org/dona/espai_de_dones.htm
 - Associació 50a50 Lideratge Compartit http://www.50a50.org/
