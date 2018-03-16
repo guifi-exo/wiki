@@ -87,7 +87,7 @@ iface bond0 inet manual
   ovs_bonds   eno1 eno2
   ovs_type    OVSBond
   ovs_bridge  vmbr0
-  ovs_options bond_mode=active-backup
+  ovs_options lacp=active other_config:lacp-time=fast bond_mode=balance-tcp
 
 allow-ovs vmbr0
 
