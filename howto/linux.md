@@ -67,7 +67,7 @@ iface ethX inet static
         address <hostip>
         netmask 255.255.255.224
         post-up ip rule add to <hostip> lookup <tablename>
-        post-up ip route add default via <gatewayip> dev eth1 table <tablename>
+        post-up ip route add default via <gatewayip> dev ethX table <tablename>
 ```
 
 ```
