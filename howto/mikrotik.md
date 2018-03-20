@@ -4,5 +4,5 @@ access via ssh (from debian)
 
 as bash alias to use as `ssh-mikrotik admin@10.x.x.x`:
 
-    alias ssh-mikrotik='function _ssh-old() { ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-dss $1; }; _ssh-mikrotik'
+    alias ssh-mikrotik='function _ssh-mikrotik() { ssh -o KexAlgorithms=diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-dss $1; }; _ssh-mikrotik'
 
