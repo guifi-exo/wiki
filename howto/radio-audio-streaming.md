@@ -1,4 +1,20 @@
-# install
+## libretime
+
+don't do this on a public server !!
+
+```
+git clone https://github.com/LibreTime/libretime
+cd libretime
+./install -p -i -a
+```
+
+### docs
+
+switching between live and scheduled playout https://www.youtube.com/watch?v=qRqYtNsg-UM
+
+## liquidsoap
+
+## install
 
 convince yourself early that you need to compile yourself liquidsoap (if you are on debian 9 stretch on 2018-03-26)
 
@@ -6,7 +22,7 @@ is required to send signals and to have libretime working
 
 to install icecast2 is enough to `apt install icecast2` and put appropriate passwords to avoid intrusion
 
-## method 1 - latest version
+### method 1 - latest version
 
 ```
 apt install opam
@@ -24,7 +40,7 @@ opam install taglib mad lame vorbis cry samplerate liquidsoap opus pulseaudio
 ln -s /home/<user>/.opam/system/bin/liquidsoap /usr/bin/liquidsoap
 ```
 
-## method 2 - DYI
+### method 2 - DYI
 
 ```
 apt-get build-dep liquidsoap
@@ -37,7 +53,7 @@ make install
 
 src http://wiki.occupyboston.org/wiki/Multi-usb_mic/jackd/liquidsoap_setup
 
-# sending signals
+### sending signals
 
 send mp3 file (that loops indefinetely) or your input microphone (using pulseaudio)
 
