@@ -16,7 +16,7 @@ switching between live and scheduled playout https://www.youtube.com/watch?v=qRq
 
 ## install
 
-convince yourself early that you need to compile yourself liquidsoap (if you are on debian 9 stretch on 2018-03-26)
+convince yourself early that you need to compile yourself liquidsoap (if you are on debian 9 stretch on 2018-03-26) - https://github.com/LibreTime/libretime/issues/192
 
 is required to send signals and to have libretime working
 
