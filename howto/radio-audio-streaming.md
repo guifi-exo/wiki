@@ -31,8 +31,6 @@ opam init
 
 opam config env
 
-(dependencias debian)
-
 opam depext taglib mad lame vorbis cry samplerate liquidsoap opus pulseaudio
 
 opam install taglib mad lame vorbis cry samplerate liquidsoap opus pulseaudio
