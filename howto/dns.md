@@ -2,6 +2,8 @@
 
 Enlloc de mirar un DNS com els de proveïdors externs que probablement van molt llunys, potser és més interessant seleccionar un que està ben a prop: a telvent; i que té relació amb fundació guifi.net. Fundació puntcat: `109.69.8.51`. Més informació: http://servidordenoms.cat/
 
+extra: https://wikileaks.org/wiki/Alternative_DNS
+
 # Resolució inversa de DNS
 
 Qui s'encarrega de la resolució inversa d'una IP és el seu propietari o titular. Es pot demanar a aquesta persona o organització (normalment és qui ens ha venut el servei d'Internet) que ens doni una o vàries resolucions inverses concretes (o que hi hagi una resolució genèrica per un rang d'IPs). També es pot demanar delegació de la resolució inversa del DNS està explicada aquí (TODO: extreure com funciona): [RFC2317](http://ietf.org/rfc/rfc2317.txt)
