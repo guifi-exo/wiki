@@ -116,7 +116,7 @@ you just need to know the password
 
 way1: write in console
 
-    gpg2 --symmetric --sign --armor -r <user-identifier>
+    gpg2 --symmetric --sign --armor
 
 paste secret
 
@@ -124,7 +124,7 @@ then press enter and after that Ctrl+d
 
 way2: do it to a file
 
-    gpg2 --symmetric --sign -r <user-identifier>
+    gpg2 --symmetric --sign
 
 paste secret
 
