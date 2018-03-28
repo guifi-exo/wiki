@@ -1,3 +1,77 @@
+## icecast
+
+we assume that SSL/TLS/HTTPS is important, that's why we are compiling it. if you don't care about this just `apt install icecast2` is fine
+
+why we need to compile to get "security" capabilities:
+
+- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=744815
+- https://trac.xiph.org/ticket/2310
+
+```
+apt-get build-dep icecast2
+# trust me: https://downloads.xiph.org/releases -> https://ftp.osuosl.org/pub/xiph/releases/
+wget https://ftp.osuosl.org/pub/xiph/releases/icecast/icecast-2.4.3.tar.gz
+tar xvf icecast-2.4.3.tar.gz
+cd icecast-2.4.3
+./configure
+make
+make install
+```
+
+install icecast2 to get the service
+
+    apt install icecast2
+
+change /etc/init.d/icecast2
+
+    #DAEMON=/usr/bin/icecast2
+    DAEMON=/usr/local/bin/icecast
+
+replace:
+
+```
+    <paths>
+        <!-- basedir is only used if chroot is enabled -->
+        <basedir>/usr/share/icecast2</basedir>
+
+        <!-- Note that if <chroot> is turned on below, these paths must both
+             be relative to the new root, not the original root -->
+        <logdir>/var/log/icecast2</logdir>
+        <webroot>/usr/share/icecast2/web</webroot>
+        <adminroot>/usr/share/icecast2/admin</adminroot>
+```
+
+with:
+
+```
+    <paths>
+        <!-- basedir is only used if chroot is enabled -->
+        <basedir>/usr/local/share/icecast</basedir>
+
+        <!-- Note that if <chroot> is turned on below, these paths must both
+             be relative to the new root, not the original root -->
+        <logdir>/var/log/icecast2</logdir>
+        <webroot>/usr/local/share/icecast/web</webroot>
+        <adminroot>/usr/local/share/icecast/admin</adminroot>
+```
+
+then we can remove icecast2 debian package
+
+    apt remove icecast2
+
+assuming you configured successfully a certbot / letsencrypt HTTPS certificate:
+
+    cat /etc/letsencrypt/live/example.com/cert.pem /etc/letsencrypt/live/example.com/privkey.pem > /usr/local/share/icecast/icecast.pem
+
+TODO cron, seems that I need to restart icecast (!) and this breaks the streaming :(
+
+TODO exchange between certbot and snakeoil cert using "reload"
+
+references:
+
+- check ssl in compilation src https://jksinton.com/articles/rpi-compiling-icecast-support-openssl
+- service stuff inspired by src https://stackoverflow.com/questions/42188137/how-to-make-icecast-as-service-and-restart-it
+
 ## libretime
 
 don't do this on a public server !!
@@ -24,19 +98,45 @@ to install icecast2 is enough to `apt install icecast2` and put appropriate pass
 
 ### method 1 - latest version
 
+only first and last command as root, later we use a specific user
+
 ```
 apt install opam
 
-opam init
+adduser liquidsoap
+gpasswd -a liquidsoap sudo
+
+su -l liquidsoap 
+
+opam init -a # and say yes
 
 opam config env
 
-opam depext taglib mad lame vorbis cry samplerate liquidsoap opus pulseaudio
+# general
+# next command will need sudo
+opam depext taglib mad lame vorbis cry samplerate liquidsoap opus
+opam install taglib mad lame vorbis cry samplerate liquidsoap opus
 
-opam install taglib mad lame vorbis cry samplerate liquidsoap opus pulseaudio
-
-ln -s /home/<user>/.opam/system/bin/liquidsoap /usr/bin/liquidsoap
+# if is for your laptop and you want to use microphone input
+opam depext pulseaudio
+opam install pulseaudio
 ```
+
+install "using opam" -> src http://liquidsoap.info/download.html
+
+#### daemonize
+
+```
+# if is going to be a service running permanently
+opam install liquidsoap-daemon
+daemonize-liquidsoap.sh
+```
+
+modify accordingly `~/script/main.liq`
+
+after that:
+
+    systemctl status main-liquidsoap.service 
 
 ### method 2 - DYI
 
