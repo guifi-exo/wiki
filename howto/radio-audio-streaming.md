@@ -1,6 +1,6 @@
 ## icecast
 
-we assume that SSL/TLS/HTTPS is important, that's why we are compiling it. if you don't care about this just `apt install icecast2` is fine
+we assume that SSL/TLS/HTTPS is important (we are going to achieve: https://example.com:8443), that's why we are compiling it. if you don't care about doing `apt install icecast2` is fine
 
 why we need to compile to get "security" capabilities:
 
@@ -62,6 +62,17 @@ then we can remove icecast2 debian package
 assuming you configured successfully a certbot / letsencrypt HTTPS certificate:
 
     cat /etc/letsencrypt/live/example.com/cert.pem /etc/letsencrypt/live/example.com/privkey.pem > /usr/local/share/icecast/icecast.pem
+
+uncomment this:
+
+    <listen-socket>
+        <port>8443</port>
+        <ssl>1</ssl>
+    </listen-socket>
+
+uncomment / adapt:
+
+    <ssl-certificate>/usr/local/share/icecast/icecast.pem</ssl-certificate>
 
 TODO cron, seems that I need to restart icecast (!) and this breaks the streaming :(
 
