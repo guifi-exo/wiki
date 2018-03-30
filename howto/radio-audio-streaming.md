@@ -116,7 +116,7 @@ switching between live and scheduled playout https://www.youtube.com/watch?v=qRq
 
 ## liquidsoap
 
-## install
+### install
 
 convince yourself early that you need to compile yourself liquidsoap (if you are on debian 9 stretch on 2018-03-26) - https://github.com/LibreTime/libretime/issues/192
 
@@ -124,7 +124,7 @@ is required to send signals and to have libretime working
 
 to install icecast2 is enough to `apt install icecast2` and put appropriate passwords to avoid intrusion
 
-### method 1 - latest version
+#### method 1 - latest version
 
 only first and last command as root, later we use a specific user
 
@@ -152,7 +152,20 @@ opam install pulseaudio
 
 install "using opam" -> src http://liquidsoap.info/download.html
 
-#### daemonize
+#### method 2 - DYI
+
+```
+apt-get build-dep liquidsoap
+apt-get source liquidsoap
+cd liquidsoap-<version>
+./configure
+make
+make install
+```
+
+src http://wiki.occupyboston.org/wiki/Multi-usb_mic/jackd/liquidsoap_setup
+
+### daemonize
 
 ```
 # if is going to be a service running permanently
@@ -165,19 +178,6 @@ modify accordingly `~/script/main.liq`
 after that:
 
     systemctl status main-liquidsoap.service 
-
-### method 2 - DYI
-
-```
-apt-get build-dep liquidsoap
-apt-get source liquidsoap
-cd liquidsoap-<version>
-./configure
-make
-make install
-```
-
-src http://wiki.occupyboston.org/wiki/Multi-usb_mic/jackd/liquidsoap_setup
 
 ### sending signals
 
