@@ -91,9 +91,9 @@ uncomment / adapt:
 
     <ssl-certificate>/usr/local/share/icecast/icecast.pem</ssl-certificate>
 
-TODO cron, seems that I need to restart icecast (!) and this breaks the streaming :(
+We cannot change or renew certificate reloading the service -> src https://wiki.xiph.org/Icecast_Server/known_https_restrictions
 
-TODO exchange between certbot and snakeoil cert using "reload"
+TODO smart cron to minimize number of restarts of the service. (!) A restart is going to break the streaming
 
 references:
 
