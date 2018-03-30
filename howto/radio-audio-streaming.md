@@ -196,7 +196,9 @@ output.icecast(%mp3,
 
 ### testing switch with (catalan) voice and sounds
 
-apt install festival festvox-ca-ona-hts
+extra requirements (voice synthesis)
+
+    apt install festival festvox-ca-ona-hts
 
 add to `/etc/festival.scm`:
 
