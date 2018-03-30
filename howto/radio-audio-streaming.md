@@ -193,3 +193,68 @@ output.icecast(%mp3,
      password = "hackme", mount = "master",
      mksafe(signal))
 ```
+
+### testing switch with (catalan) voice and sounds
+
+apt install festival festvox-ca-ona-hts
+
+add to `/etc/festival.scm`:
+
+    (set! voice_default voice_upc_ca_ona_hts)
+
+strings with accents will be destroyed, for example "interrupció" -> http://festcat.talp.cat/en/usage.php
+
+```
+# concat strings -> https://bytesandbones.wordpress.com/2014/07/18/liquidsoap-concat-strings/
+# random weigths -> src "A simple radio" http://savonet.sourceforge.net/doc-svn/quick_start.html
+def template(text, freq)
+  msg = random(
+    weights = [1, 2, 10],
+    [
+      single("say: #{text}"),
+      sine(480.0, amplitude = 0.1, duration = 0.5),
+      blank(duration = 1.0)
+    ])
+  add([sine(freq, amplitude = 0.05), msg], normalize = true)
+end
+
+# A simple cross-fade -> src "Switch-based transitions" http://savonet.sourceforge.net/doc-svn/cookbook.html
+def crossfade(a,b)
+  add(normalize=false,
+      [ sequence([ blank(duration=1.),
+                   fade.initial(duration=2.,b) ]),
+        fade.final(duration=1.,a) ])
+end
+
+init = template("tros de 0 a deu segons cada minut", 800.0)
+init2 = template("tros de trenta a quaranta cinc segons cada minut", 1500.0)
+#p1 = template("program number 1")
+p2 = template("programa de deu a catorze hores", 440.0)
+p3 = template("programa de quinze a vint hores", 440.0)
+default_source = template("program per defecte", 440.0)
+
+default_transition = [
+  crossfade, # init
+  crossfade, # init2
+  crossfade, # p2
+  crossfade, # p3
+  crossfade # default source
+]
+
+signal = switch(
+  track_sensitive = false,
+  transitions = default_transition,[
+    ({ 0s-10s }, init),
+    ({ 30s-45s }, init2),
+    ({ 10h-14h }, p2),
+    ({ 15h-20h }, p3),
+    ({ true }, default_source)
+  ])
+
+#out(signal)
+
+output.icecast(%mp3,                                            
+     host = "localhost", port = 8000,
+     password = "hackme", mount = "test2.mp3",
+     mksafe(signal))
+```
