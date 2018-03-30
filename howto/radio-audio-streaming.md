@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [icecast](#icecast)
+- [libretime](#libretime)
+  - [docs](#docs)
+- [liquidsoap](#liquidsoap)
+- [install](#install)
+  - [method 1 - latest version](#method-1---latest-version)
+    - [daemonize](#daemonize)
+  - [method 2 - DYI](#method-2---dyi)
+  - [sending signals](#sending-signals)
+  - [testing switch with (catalan) voice and sounds](#testing-switch-with-catalan-voice-and-sounds)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## icecast
 
 we assume that SSL/TLS/HTTPS is important (we are going to achieve: https://example.com:8443), that's why we are compiling it. if you don't care about doing `apt install icecast2` is fine
