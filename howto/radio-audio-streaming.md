@@ -250,7 +250,7 @@ init2 = template("tros de trenta a quaranta cinc segons cada minut", 1500.0)
 #p1 = template("program number 1")
 p2 = template("programa de deu a catorze hores", 440.0)
 p3 = template("programa de quinze a vint hores", 440.0)
-default_source = template("program per defecte", 440.0)
+default_source = template("programa per defecte", 440.0)
 
 default_transition = [
   crossfade, # init
