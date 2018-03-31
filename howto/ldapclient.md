@@ -1,6 +1,7 @@
-important tasks
+suggested tasks
 
-- [ ] https://gitlab.com/femprocomuns/ldapclient/issues/3
+- [ ] security by default https://gitlab.com/femprocomuns/ldapclient/issues/3
+- [ ] document how to put this application for production usage (flask application + apache?)
 - [ ] migrate to python 3
 
 installation steps
