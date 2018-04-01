@@ -14,13 +14,13 @@ consider two interfaces named eno1 and eno2
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [bond backup between two interfaces](#bond-backup-between-two-interfaces)
-- [bond lacp between two interfaces](#bond-lacp-between-two-interfaces)
-- [one physical network interface (no bond)](#one-physical-network-interface-no-bond)
+- [Bonding active/backup between two interfaces](#bonding-active/backup-between-two-interfaces)
+- [Bonding LACP between two interfaces](#bonding-lacp-between-two-interfaces)
+- [One physical network interface (no bonding)](#one-physical-network-interface-no-bonding)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Bonding backup between two interfaces
+## Bonding active/backup between two interfaces
 
 Active/standby failover mode is where one of the ports in the link aggregation port is active and all others are in standby mode. One MAC address (MAC address of the active link) is used as the MAC address of the aggregated link.
 
@@ -122,7 +122,7 @@ iface gfs inet static
 
 ```
 
-## One physical network interface (no bond)
+## One physical network interface (no bonding)
 
 {You only want / you only have} one ethernet interface
 
