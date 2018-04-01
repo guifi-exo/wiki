@@ -1,4 +1,4 @@
-# open virtual switch
+# Open Virtual Switch
 
 open virtual switch enables faster communications than the by default linux controller
 
@@ -20,9 +20,9 @@ consider two interfaces named eno1 and eno2
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## bond backup between two interfaces
+## Bonding backup between two interfaces
 
-You have two ethernet interfaces and you don't know what to do? You can bound them to increase redundancy
+Active/standby failover mode is where one of the ports in the link aggregation port is active and all others are in standby mode. One MAC address (MAC address of the active link) is used as the MAC address of the aggregated link.
 
 ```
 source /etc/network/interfaces.d/*
@@ -70,11 +70,11 @@ iface gfs inet static
 
 ```
 
-## bond lacp between two interfaces
+## Bonding LACP between two interfaces
 
 Important note: this REQUIRES setting LACP in switch
 
-This does redundancy ethernet and your bandwidth is increased in a (I think) round robin style
+It performs load-balancing between the bonded interfaces. In `balance-tcp` mode, it uses 5-tuple (source and destination IP, source and destination port, protocol) to balance traffic across the ports in an aggregated link. In `balance-slb` uses a simple hashing algorithm on source MAC and VLAN to choose the port in an aggregated link to forward the traffic.
 
 ```
 source /etc/network/interfaces.d/*
@@ -122,7 +122,7 @@ iface gfs inet static
 
 ```
 
-## one physical network interface (no bond)
+## One physical network interface (no bond)
 
 {You only want / you only have} one ethernet interface
 
