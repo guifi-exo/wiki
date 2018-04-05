@@ -18,3 +18,15 @@ note: I recommend adding these lines in /etc/rsyslog.conf
     *.* -?DynaFile
 
 src https://openwrt.org/docs/guide-user/troubleshooting/log.essentials#network_logging
+
+# reset device
+
+    jffs2reset
+
+# back to original firmware
+
+    cd /tmp
+    wget http://www.example.org/original_firmware.bin
+    mtd -r write /tmp/original_firmware.bin firmware
+
+src https://wiki.openwrt.org/doc/howto/generic.uninstall
