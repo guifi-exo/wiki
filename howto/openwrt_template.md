@@ -12,10 +12,10 @@ opcional
 
 nota: utilitzar trunk per tenir nova versió de bird i bmx6 (amb la vella luci-app-bird4 no funciona)
 
-afegir:
+afegir al node habitual lo que el fa que sigui frontera:
 
     bird4 bird4-uci birdc4 luci-app-bird4
 
 és a dir:
 
-    bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl bird4 bird4-uci birdc4 luci-app-bird4
+    bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl bird4 bird4-uci birdc4 luci-app-bird4 luci-app-bmx6 tcpdump-mini
