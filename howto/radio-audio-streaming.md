@@ -167,9 +167,11 @@ src http://wiki.occupyboston.org/wiki/Multi-usb_mic/jackd/liquidsoap_setup
 
 ### daemonize
 
+transform your liquidsoap script as a service
+
 ```
-# if is going to be a service running permanently
 opam install liquidsoap-daemon
+cd /to/the/directory/you/want/files/created # in my case: liked `cd ~`
 daemonize-liquidsoap.sh
 ```
 
@@ -178,6 +180,18 @@ modify accordingly `~/script/main.liq`
 after that:
 
     systemctl status main-liquidsoap.service 
+
+src https://github.com/savonet/liquidsoap-daemon
+
+next service would be
+
+    daemonize-liquidsoap.sh newservice
+
+and modify accordingly `~/script/newservice.liq`
+
+to remove:
+
+    mode=remove init_type=systemd daemonize-liquidsoap newservice
 
 ### sending signals
 
@@ -262,7 +276,8 @@ default_transition = [
 
 signal = switch(
   track_sensitive = false,
-  transitions = default_transition,[
+  transitions = default_transition,
+  [
     ({ 0s-10s }, init),
     ({ 30s-45s }, init2),
     ({ 10h-14h }, p2),
@@ -277,3 +292,25 @@ output.icecast(%mp3,
      password = "hackme", mount = "test2.mp3",
      mksafe(signal))
 ```
+
+### alternative to libretime/airtime
+
+- main: take care of having always a fallback source (never stops, at the end we have silence running, and should never be modified or restarted). In this priority:
+    - live1: intented to be for live with static icecast mountpoint
+    - live2: intended to be for live with dynamic/spontaneous/ephemeral icecast mountpoint
+    - schedule: executes the scheduled radio
+
+```
+su - liquidsoap
+cd ~
+daemonize-liquidsoap.sh main
+daemonize-liquidsoap.sh live1
+daemonize-liquidsoap.sh live2
+daemonize-liquidsoap.sh schedule
+
+# live1 and live2 should only be started manually
+systemctl disable live1-liquidsoap.service 
+systemctl disable live2-liquidsoap.service
+```
+
+TODO: add files of the service
