@@ -57,6 +57,10 @@ build specific device, for example:
     - A: target list (choose device's architecture)
         ./cooker --targets
 
+- Q: ... and the available profiles?
+    - A: you need to know the target, from there you use profiles argument, for example:
+        ./cooker --profiles=ar71xx/generic
+
 - Q: My wifi is not working, how can I debug wifi?
     - A: `iwinfo`, `iw list`, `iw dev`
         - extra: `iwinfo wlan0 assoc`, `iwinfo wlan0 info`, `iwinfo wlan0 txpowerlist`, `iwinfo wlan0 freqlist`, `iw phy phy0 info`
