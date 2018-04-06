@@ -1,4 +1,4 @@
-# common start
+# common start (libremesh qmp/v1)
 
 download required packages: https://github.com/libremesh/lime-sdk#building-in-running-system
 
@@ -42,7 +42,7 @@ build specific device, for example:
 
     ./cooker -c ar71xx/generic --profile=ubnt-nano-m-xw --flavor=lime_default --community=qmp/v1
 
-# qMp compatibility - known problems
+## extra: qMp compatibility - known problems
 
 - DHCP can be down for 5 min. Probably the workaround is to use odhcp instead of dnsmasq https://github.com/libremesh/network-profiles/blob/master/kollserola/generic/etc/uci-defaults/zz-use-odhcpd
     - https://github.com/libremesh/lime-web/issues/55
@@ -50,6 +50,13 @@ build specific device, for example:
 - Wifi settings in http://10.202.45.1/cgi-bin/luci/lime/essentials.
     - Select wifi channel requires typing. We need a combobox
     - No field to change 20 Mhz or 40 Mhz. Combobox?
+
+# virtual machine
+
+    ./cooker -c x86/64 --profile=Generic --flavor=normal_node
+
+- proxmox (qcow2) [./openwrt-proxmox.md]()
+- virtualbox (vdi): `VBoxManage convertdd lede-17.01.4-normal-node-x86-64-combined-ext4.img lede-17.01.4-normal-node-x86-64-combined-ext4.vdi` src https://forums.virtualbox.org/viewtopic.php?t=8919
 
 # Q&A
 
