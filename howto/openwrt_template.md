@@ -36,4 +36,4 @@ change variable `PKG_REV`
 
 notes:
 
-- qmp 3.2.1: revision=2a87b770d3f9c254e3927dc159e2f425f2e0e83a
+- qmp 3.2.1: `revision=2a87b770d3f9c254e3927dc159e2f425f2e0e83a`
