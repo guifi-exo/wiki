@@ -165,3 +165,5 @@ print private keys
 # extra references
 
 https://github.com/dashohoxha/egpg
+
+https://wiki.archlinux.org/index.php/GnuPG
