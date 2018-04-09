@@ -1,8 +1,9 @@
 suggested tasks
 
-- [ ] security by default https://gitlab.com/femprocomuns/ldapclient/issues/3
+- [ ] security by default https://gitlab.com/femprocomuns/ldapclient/issues/3 (abstract function of hash so it is used always). the problem is in `views.py` `def edit`, password is a plain text utf-8
 - [ ] document how to put this application for production usage (flask application + apache?)
 - [ ] migrate to python 3
+- [ ] migrate from [pythonldap](https://github.com/python-ldap/python-ldap) library to [ldap3](https://github.com/cannatag/ldap3)
 
 installation steps
 
