@@ -56,3 +56,9 @@ try/test softether.org
 https://justus.berlin/2016/02/performance-of-tunneling-methods-in-openwrt/
 
 issue/discussion on libremesh: https://github.com/libremesh/lime-packages/issues/99
+
+# more references
+
+http://blog.vyos.net/ip-tunnels-i-have-known-and-loved
+
+http://blog.vyos.net/setting-up-gre-slash-ipsec-behind-nat
