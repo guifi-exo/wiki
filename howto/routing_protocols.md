@@ -6,5 +6,6 @@
 
 - classic
     - BGP
+        - eBGP http://blog.vyos.net/how-to-use-as-path-matching-in-your-bgp-policies
     - OSPF
     - RIP http://blog.vyos.net/the-night-of-living-dead-protocols-ripv2
