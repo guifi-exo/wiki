@@ -314,3 +314,7 @@ systemctl disable live2-liquidsoap.service
 ```
 
 TODO: add files of the service
+
+# other radios / examples
+
+http://dir.xiph.org/
