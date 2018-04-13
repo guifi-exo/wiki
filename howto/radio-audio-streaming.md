@@ -313,7 +313,7 @@ systemctl disable live1-liquidsoap.service
 systemctl disable live2-liquidsoap.service
 ```
 
-TODO: add files of the service
+files of the service -> https://github.com/guifi-exo/xrcb-scheduler
 
 # other radios / examples
 
