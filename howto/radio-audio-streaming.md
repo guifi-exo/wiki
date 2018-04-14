@@ -315,6 +315,10 @@ systemctl disable live2-liquidsoap.service
 
 files of the service -> https://github.com/guifi-exo/xrcb-scheduler
 
+### other references
+
+https://www.linuxjournal.com/content/creating-internet-radio-station-icecast-and-liquidsoap
+
 # other radios / examples
 
 http://dir.xiph.org/
