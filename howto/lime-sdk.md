@@ -51,12 +51,16 @@ build specific device, for example:
     - Select wifi channel requires typing. We need a combobox
     - No field to change 20 Mhz or 40 Mhz. Combobox?
 
-# virtual machine
+# in a virtual machine
 
     ./cooker -c x86/64 --profile=Generic --flavor=normal_node
 
 - proxmox (qcow2) [./openwrt-proxmox.md]()
 - virtualbox (vdi): `VBoxManage convertdd lede-17.01.4-normal-node-x86-64-combined-ext4.img lede-17.01.4-normal-node-x86-64-combined-ext4.vdi` src https://forums.virtualbox.org/viewtopic.php?t=8919
+
+# specific linux kernel options
+
+inside lime-sdk repo, navigate to `feeds/base`, there you can manage the classic `make menuconfig`
 
 # Q&A
 
@@ -78,6 +82,6 @@ build specific device, for example:
 - Q: How to included config files in the firmware image?
     - A: place them in files directory, from there place the path, for example: files/etc/config/system.conf
 
-# extra
+# extra references
 
 the new steps in qmp at the bottom: http://qmp.cat/News/35_qMp_4.0_Macondo_released
