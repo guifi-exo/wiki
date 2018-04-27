@@ -56,6 +56,7 @@ Si vols instal·lar OpenWrt o LEDE que tinguin més de 4 MB de flash i 32 MB de 
 - Routers amb SIM 4G
     - TP-Link TL-MR6400
     - TP-Link MR-200
+- La nueva álix: la [APU](https://www.pcengines.ch/apu.htm) con [Voyage Linux](http://linux.voyage.hk/) (Debian) i Bird. La ventaja fundamental de esta distribución es que monta el disco en sólo lectura. Fundamental si usas tarjetas SD. Cada cierto tiempo sincroniza las carpetas que tiene en memoria al disco. Pero si falla la luz no corrompe. [Getting started](http://linux.voyage.hk/content/getting-started-v08x)
 
 # Car
 
