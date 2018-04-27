@@ -605,3 +605,8 @@ Riot client is not free. Such a hype for a server-client non-free [0] software w
 
 [0] https://directory.fsf.org/wiki/Talk:Riot-im
 
+relevant notes:
+
+- https://matrix.org/blog/2018/04/26/matrix-and-riot-confirmed-as-the-basis-for-frances-secure-instant-messenger-app/
+- https://matrix.org/blog/2018/01/29/status-partners-up-with-new-vector-fueling-decentralised-comms-and-the-matrix-ecosystem/
+- https://matrix.org/blog/2017/07/07/a-call-to-arms-supporting-matrix/
