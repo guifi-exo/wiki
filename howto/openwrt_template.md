@@ -32,7 +32,7 @@ in flavors.conf (lime-sdk)
 
     border_node="bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl bird4 bird4-uci birdc4 luci-app-bird4 luci-app-bmx6 tcpdump-mini"
 
-# fix bmx6 version
+# how to use a specific bmx6 commit
 
 feeds/routing/bmx6/Makefile
 
