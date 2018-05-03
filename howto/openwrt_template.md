@@ -1,3 +1,7 @@
+cause: use ansible to template configuration of well-known devices
+
+status: work in progress
+
 # normal node
 
 nota: utilitzar trunk per tenir nova versió de bmx6 (amb la vella funciona)
