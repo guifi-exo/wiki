@@ -32,11 +32,11 @@ in flavors.conf (lime-sdk)
 
     border_node="bmx6-json bmx6-sms bmx6-uci-config bmx6-table luci luci-ssl bird4 bird4-uci birdc4 luci-app-bird4 luci-app-bmx6 tcpdump-mini"
 
-# how to use a specific bmx6 commit
+# how to use a particular bmx6 commit
 
 feeds/routing/bmx6/Makefile
 
-change variable `PKG_REV`
+change variable `PKG_REV` as desired. this is how it looks the file https://github.com/bmx-routing/openwrt-routing-packages/blob/master/bmx6/Makefile
 
 notes:
 
