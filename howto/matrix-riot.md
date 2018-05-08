@@ -597,7 +597,7 @@ https://t2bot.io
 
 # dark things about matrix and riot
 
-Political concern: Main funder is AMDOC, search amodoc-mossad on google and you can discover something interesting. The funding situation is changing to have more funders, we will see what happen.
+Political concern: [Main funder is AMDOC](https://matrix.org/blog/who-is-matrix-org/), search amodoc-mossad on google and you can discover something interesting. The funding situation is changing to have more funders, we will see what happen.
 
 Tecnological concern: matrix generate ALOT ot metadata on the central server, even if the communication is encrypted, the metadata are not and most of the software analysis to generate network maps use just metadata, more you have more the map is accurate
 
