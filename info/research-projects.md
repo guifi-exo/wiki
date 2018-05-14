@@ -170,6 +170,28 @@ Origin: guifilab / barcelona community
 
 Educational and brain-fitness project to improve programming and developer skills for community network folks
 
+# Improve identity management in community networks
+
+The more services you have in the network, the more registers and logins users have to do. But well, this is a general problem that affects all organizations when use open source products and cannot spend time integratin the different things
+
+LDAP allows you to use always the same user and password. One user that have to login multiple times
+
+SAML theoretically solves two problems better than LDAP:
+
+- (optional) Single Sign On (SSO)
+- Identity federation: "I don't know who are you, but let me point to the correct authority to validate you"
+
+The project can revisit LDAP technology (a good WebGUI that is secure) or introduce SAML usage
+
+Common LDAP service is `slapd` or openldap
+
+I have never tried SAML software, but I found 4 open source implementation (all of them in java, brrr):
+
+- https://www.shibboleth.net/
+- this will be used by spanish universities http://adas-sso.com/en/
+- https://www.keycloak.org/
+- https://www.gluu.org/
+
 # Open source TDMA
 
 Complexity: lot of work for a good developer
