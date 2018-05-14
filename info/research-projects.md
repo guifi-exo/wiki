@@ -22,6 +22,7 @@ important notes:
   - [(1) Network descriptor (proof of concept)](#1-network-descriptor-proof-of-concept)
   - [(2 and 3) Template-based firmware](#2-and-3-template-based-firmware)
 - [Online judge programming challenge resource](#online-judge-programming-challenge-resource)
+- [Improve identity management in community networks](#improve-identity-management-in-community-networks)
 - [Open source TDMA](#open-source-tdma)
 - [Open source implementation of 802.1aq](#open-source-implementation-of-8021aq)
 
