@@ -2,7 +2,7 @@ DFS for 802.11s works when you set up encryption in the network (because this is
 
 wpa-supplicant takes 1 minute scanning to get a free channel before it takes up
 
-right now you cannot use mesh and access point in the same radio
+~~right now you cannot use mesh and access point in the same radio~~ Daniel fixed it (or is in its way)
 
 "noscan" option in `/etc/config/wireless` allows you to use channels that are being used in the "secondary part" of a 40 MHz channel
 
