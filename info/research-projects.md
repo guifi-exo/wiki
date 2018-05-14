@@ -173,7 +173,7 @@ Educational and brain-fitness project to improve programming and developer skill
 
 # Improve identity management in community networks
 
-The more services you have in the network, the more registers and logins users have to do. But well, this is a general problem that affects all organizations when use open source products and cannot spend time integratin the different things
+The more services you have in the network, the more registers and logins users have to do. But well, this is a general problem that affects all organizations when use open source products and cannot spend time integrating the different services.
 
 LDAP allows you to use always the same user and password. One user that have to login multiple times
 
