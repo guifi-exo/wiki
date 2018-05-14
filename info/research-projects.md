@@ -1,9 +1,31 @@
+
 Research projects interesting for eXO and/or guifi and/or international community networks. This projects could be done by its community, external/conctracted professionals or academia deliverables
 
 important notes: 
 
 - this document is a draft
 - information here could be incorrect and/or outdated
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Decentralized DNS](#decentralized-dns)
+- [Solar node](#solar-node)
+- [Secure mesh](#secure-mesh)
+- [Peerstreamer](#peerstreamer)
+- [Retroshare](#retroshare)
+- [Improve wireguard](#improve-wireguard)
+- [Application to promote socialization between community network members](#application-to-promote-socialization-between-community-network-members)
+- [raspberry pi + spi interface](#raspberry-pi--spi-interface)
+- [Community network](#community-network)
+  - [(1) Network descriptor (proof of concept)](#1-network-descriptor-proof-of-concept)
+  - [(2 and 3) Template-based firmware](#2-and-3-template-based-firmware)
+- [Online judge programming challenge resource](#online-judge-programming-challenge-resource)
+- [Open source TDMA](#open-source-tdma)
+- [Open source implementation of 802.1aq](#open-source-implementation-of-8021aq)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Decentralized DNS
 
