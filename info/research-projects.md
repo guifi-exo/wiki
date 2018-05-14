@@ -201,7 +201,7 @@ Wifi vs TDMA => TDMA wins
 
 It is needed a solution that competes with privative TDMA solutions like (ubiquiti) and (mikrotik) technologies
 
-Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum for him) during hard negotiations 
+Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum) during hard negotiations 
 
 # Open source implementation of 802.1aq
 
