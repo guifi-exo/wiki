@@ -7,9 +7,13 @@ important notes:
 
 # Decentralized DNS
 
+Complexity: feasible for a developer
+
 A (simple?) decentralized DNS solutions that fits in embedded devices (lightweight) to have FQDN services with letsencrypt certificates inside the community network. Interesting additional features: revision control/snapshots and trusting framework to improve control of the registers and avoid attacks.
 
 # Solar node
+
+Complexity: feasible for an integrator
 
 OpenMPPT tracker, [presentation](https://github.com/elektra42/freifunk-open-mppt/blob/master/Freifunk-Open-MPPT-English.pdf)
 
@@ -25,6 +29,8 @@ Origin: Elektra
 
 # Secure mesh
 
+Complexity: feasible for an integrator, good developer skills are very welcome (probably requires to read source code during the documentation phase)
+
 Configuration and documentation about a network that is very secure and DFS ready
 
 Good practice: in tall places expect DFS, in short places don't expect DFS
@@ -36,6 +42,8 @@ Origin: Daniel Gölle
 
 # Peerstreamer
 
+Complexity: feasible for a developer and/or and integrator
+
 - Clustering in the serverside
 - How to put the streaming in RTP, how to play it?
 - Get capture screen working, use cases:
@@ -44,33 +52,27 @@ Origin: Daniel Gölle
 
 # Retroshare
 
+Complexity: feasible for an integrator, probably requires documentation and workshops 
+
 Discard nextcloud to upload massive content and other similar services. This puts risks on system administrators: it is better an encrypted P2P file sharing system
 
 Origin: Gioacchino Mazzurco
 
-# Open source TDMA
-
-Wifi vs TDMA => TDMA wins
-
-It is needed a solution that competes with privative TDMA solutions like (ubiquiti) and (mikrotik) technologies
-
-Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum for him) during hard negotiations 
-
-# Open source implementation of 802.1aq
-
-https://en.wikipedia.org/wiki/IEEE_802.1aq
-
-The "new" ethernet standard works mostly as MPLS (useful for multitenant network) but it is backward compatible with the old ethernet protocols which reduce its overall complexity. At the moment is not available in Linux platforms
-
 # Improve wireguard
+
+Complexity: feasible for a developer but requires creative alternative way to solve the problem
 
 Wireguard is not prepared yet for community netowrks. It uses a global clock and requires routers to synchronize NTP before they connection (chicken-egg problem)
 
 # Application to promote socialization between community network members
 
+Complexity: feasible for a developer
+
 Inspired by [tubechat](http://tube.chat/) presentation in battlemesh, an application that improves the relation and interaction between the people involved in the community network would be an interesting application. Creative ways so they discover them on the same network they are; and ways to keep the contact.
 
 # raspberry pi + spi interface
+
+Complexity: the skills needed are just find howtos and test them
 
 Document the way to flash rom of bricked routers using SPI interface connector through the GPIO interface of raspberry pi and `flashrom` program
 
@@ -88,6 +90,8 @@ the command looks like this but can contain errors
 ```
 
 # Community network
+
+Complexity: feasible for a developer
 
 ## (1) Network descriptor (proof of concept)
 
@@ -121,6 +125,8 @@ Origin: guifipedro
 
 ## (2 and 3) Template-based firmware
 
+Complexity: feasible for a developer or integrator
+
 Get one firmware for a specific device in a static oriented way (no autoconfiguration or the need of firmwares like libremesh or gluon)
 
 - (2) Compilation through specific profile (device) and the packages required by its role => https://git.kbu.freifunk.net/yanosz/node-config-feed/
@@ -135,3 +141,22 @@ Origin: guifilab / barcelona community
 # online judge programming challenge resource
 
 Educational and brain-fitness project to improve programming and developer skills for community network folks
+
+# Open source TDMA
+
+Complexity: lot of work for a good developer
+
+Wifi vs TDMA => TDMA wins
+
+It is needed a solution that competes with privative TDMA solutions like (ubiquiti) and (mikrotik) technologies
+
+Meanwhile document how to jam frequency (oh sorry no, a secret link protocol that takes all spectrum for him) during hard negotiations 
+
+# Open source implementation of 802.1aq
+
+Complexity: lot of work for a good developer
+
+https://en.wikipedia.org/wiki/IEEE_802.1aq
+
+The "new" ethernet standard works mostly as MPLS (useful for multitenant network) but it is backward compatible with the old ethernet protocols which reduce its overall complexity. At the moment is not available in Linux platforms
+
