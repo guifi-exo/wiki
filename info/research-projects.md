@@ -35,12 +35,12 @@ Complexity: feasible for an integrator, good developer skills are very welcome (
 
 Configuration and documentation about a network that is very secure and DFS ready
 
-Good practice: in tall places expect DFS, in short places don't expect DFS
-
 - Encrypted links
 - bmx7 with its "trusted routing"
 
 Origin: Daniel Gölle
+
+extra: [DFS](../howto/dfs.md)
 
 # Peerstreamer
 
