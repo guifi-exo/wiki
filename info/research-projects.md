@@ -74,6 +74,18 @@ Inspired by [tubechat](http://tube.chat/) presentation in battlemesh, an applica
 
 Document the way to flash rom of bricked routers using SPI interface connector through the GPIO interface of raspberry pi and `flashrom` program
 
+my notes:
+
+```
+reflashing eeprom of a device that is not booting
+
+https://raspberrypi-aa.github.io/session3/spi.html
+https://pinout.xyz/pinout/spi#
+
+the command looks like this but can contain errors
+
+  flashrom -p linux_spi:/dev/spidev0.0 spispeed=1000 -w /path/to/the/thing -V
+```
 
 # Community network
 
@@ -87,7 +99,7 @@ This section assumes that autoconfiguration methodologies (libremesh, gluon) or 
 
 The proposed approach is to get consensus on the full specification / description of a network. [Netjson](https://netjson.org) is a good try, but only describes specific nodes and its links. It is required the data of a zone as seen in guifi webpage
 
-The proposition is to write a proof of concept tool in python where in a git repository:
+The proposition is to write a proof of concept tool in python where in a git repository (another research could include using other P2P/decentralized solutions like IPFS/IPLD, etc.):
 
 - a zone is a directory
 - `.zone` is a file that describes the zone: IP delegation to this node, who is admin or responsible, etc.
@@ -111,8 +123,8 @@ Origin: guifipedro
 
 Get one firmware for a specific device in a static oriented way (no autoconfiguration or the need of firmwares like libremesh or gluon)
 
-- (2) Compilation through specific profile (device) and the packages required by its role
-- (3) Template configuration: /etc/config
+- (2) Compilation through specific profile (device) and the packages required by its role => https://git.kbu.freifunk.net/yanosz/node-config-feed/
+- (3) Template configuration: /etc/config => https://github.com/yanosz/mesh_testbed_generator/
 
 quality measure: mark specific commit. fork relevant git repositories? routing?
 
