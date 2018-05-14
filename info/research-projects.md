@@ -29,6 +29,8 @@ Origin: Elektra
 
 # Secure mesh
 
+note: I don't need if DFS stuff from secure mesh should be separated, probably later when we have more details. The thing is that they go together because they need wpasupplicant
+
 Complexity: feasible for an integrator, good developer skills are very welcome (probably requires to read source code during the documentation phase)
 
 Configuration and documentation about a network that is very secure and DFS ready
@@ -50,19 +52,21 @@ Complexity: feasible for a developer and/or and integrator
     - get scream of presenter in a conference through web application (no specific cable: VGA, HDMI, etc.)
     - twitch.tv style service in a decentralized manner
 
+Origin: netcommons.eu / http://peerstreamer.org/
+
 # Retroshare
 
 Complexity: feasible for an integrator, probably requires documentation and workshops 
 
 Discard nextcloud to upload massive content and other similar services. This puts risks on system administrators: it is better an encrypted P2P file sharing system
 
-Origin: Gioacchino Mazzurco
+Origin: Gioacchino Mazzurco / http://retroshare.net/
 
 # Improve wireguard
 
 Complexity: feasible for a developer but requires creative alternative way to solve the problem
 
-Wireguard is not prepared yet for community netowrks. It uses a global clock and requires routers to synchronize NTP before they connection (chicken-egg problem)
+Wireguard is not prepared yet for community networks. It uses a global clock and requires routers to synchronize NTP before they connection (chicken-egg problem)
 
 # Application to promote socialization between community network members
 
@@ -138,7 +142,7 @@ Inspiration: Yanosz
 
 Origin: guifilab / barcelona community
 
-# online judge programming challenge resource
+# Online judge programming challenge resource
 
 Educational and brain-fitness project to improve programming and developer skills for community network folks
 
