@@ -117,6 +117,7 @@ If you want facilitate plugin installation (as you may see in meet.jit.si) you h
 - pay 5$ (one time payment) - but you can register limited (20) number of applications in store -> src https://chrome.google.com/webstore/developer/about_signup
 - Verify that this is an official item for a website you own (add new, select), scp html that gives google to /usr/share/jitsi-meet (remember to use https, and set https as the url, redirection won't work)
 - check `inline install` -> src info about inline install https://developer.chrome.com/webstore/inline_installation?hl=en-US
+- Verify that this is an official item for a website you own -> src https://stackoverflow.com/questions/25920728/how-to-specify-verified-site-to-a-chrome-app
 - put `visibility options` as `unlisted`
 
 # Troubleshooting
@@ -132,6 +133,12 @@ try restarting services (or reboot):
     service jicofo restart
     service jitsi-videobridge restart
     service prosody restart
+
+## Chromium/Chrome: Screen sharing extension failed to install
+
+In the console log (F12) says: [modules/RTC/ScreenObtainer.js] <Object.handleExtensionInstallationError>:  Failed to install the extension from https://chrome.google.com/webstore/detail/pghfcfjjnafginnjcndefbljohonelcp Inline installs can only be initiated for Chrome Web Store items that have one or more verified sites.
+
+Verify the site
 
 # More info
 
