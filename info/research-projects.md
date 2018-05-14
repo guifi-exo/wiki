@@ -1,4 +1,4 @@
-Research projects interesting for eXO, guifi that could be done by its community, external/conctracted professionals or as academia work
+Research projects interesting for eXO and/or guifi and/or international community networks. This projects could be done by its community, external/conctracted professionals or academia deliverables
 
 important notes: 
 
