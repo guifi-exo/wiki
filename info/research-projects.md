@@ -117,11 +117,13 @@ the command looks like this but can contain errors
 
 # Community network
 
-Complexity: feasible for a developer
+Research on the essential tools very important for a community network
 
 ## (1) Network descriptor (proof of concept)
 
-This section assumes that autoconfiguration methodologies (libremesh, gluon) or a specific centralized technology (guifi.net) does not help to:
+Complexity: feasible for a developer
+
+This section assumes that autoconfiguration methodologies (libremesh, gluon) or a specific centralized technology (guifi.net's drupal) does not help to:
 
 - get more people involved
 - complexity equal to simple
