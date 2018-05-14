@@ -3,7 +3,7 @@ Research projects interesting for eXO and/or guifi and/or international communit
 important notes: 
 
 - this document is a draft
-- information here could be outdated
+- information here could be incorrect and/or outdated
 
 # Decentralized DNS
 
