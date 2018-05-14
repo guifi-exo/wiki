@@ -89,7 +89,7 @@ Origin: Gioacchino Mazzurco / http://retroshare.net/
 
 Complexity: feasible for a developer but requires creative alternative way to solve the problem
 
-Wireguard is not prepared yet for community networks. It uses a global clock and requires routers to synchronize NTP before they connection (chicken-egg problem)
+Wireguard is not prepared yet for community networks. It uses a global clock and requires routers to synchronize NTP before they connect (chicken-egg problem)
 
 # Application to promote socialization between community network members
 
